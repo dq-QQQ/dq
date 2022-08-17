@@ -9,12 +9,8 @@ import SwiftUI
 
 struct HomeView: View {
     var body: some View {
-        VStack {
-            ElementsOnTop()
-            Text("안녕 이건 마비노기 폰트야 부트캠프")
+            Text("dq")
                 .font(.dqBigFont)
-            
-        }
     }
 }
 

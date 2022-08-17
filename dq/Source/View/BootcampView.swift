@@ -9,7 +9,9 @@ import SwiftUI
 
 struct BootcampView: View {
     var body: some View {
-        Text("2!")
+        Text("dq")
+            .font(.dqLogoFont)
+//            .foregroundColor(.dqGreen)
     }
 }
 

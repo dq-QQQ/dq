@@ -20,12 +20,14 @@
 		A129892A28AA19A100282503 /* ClubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A129892928AA19A100282503 /* ClubView.swift */; };
 		A129892C28AA19C200282503 /* ColorExtenstion.swift in Sources */ = {isa = PBXBuildFile; fileRef = A129892B28AA19C200282503 /* ColorExtenstion.swift */; };
 		A129893328AA1EE200282503 /* Mabinogi_Classic_OTF.otf in Resources */ = {isa = PBXBuildFile; fileRef = A129893228AA1EE200282503 /* Mabinogi_Classic_OTF.otf */; };
-		A129893528AA1EF300282503 /* Pacific Northwest Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A129893428AA1EF300282503 /* Pacific Northwest Regular.ttf */; };
 		A129893828AA229100282503 /* FontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A129893728AA229100282503 /* FontExtension.swift */; };
-		A129893A28AA2F8400282503 /* BootCampModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A129893928AA2F8400282503 /* BootCampModalView.swift */; };
-		A129893C28AA2F9800282503 /* ClubModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A129893B28AA2F9800282503 /* ClubModalView.swift */; };
-		A129893E28AA2FB300282503 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A129893D28AA2FB300282503 /* InfoView.swift */; };
 		A129894028AA309100282503 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A129893F28AA309100282503 /* CustomView.swift */; };
+		A1BF878D28AD16F7003079B4 /* BootcampModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BF878C28AD16F7003079B4 /* BootcampModalView.swift */; };
+		A1BF878F28AD1703003079B4 /* ClubModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BF878E28AD1703003079B4 /* ClubModalView.swift */; };
+		A1BF879128AD1710003079B4 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BF879028AD1710003079B4 /* InfoView.swift */; };
+		A1BF879328AD1831003079B4 /* Pacific Northwest Letters W01.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A1BF879228AD1831003079B4 /* Pacific Northwest Letters W01.ttf */; };
+		A1BF879528AD1FF0003079B4 /* ViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BF879428AD1FF0003079B4 /* ViewRouter.swift */; };
+		A1BF879728AD35AD003079B4 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BF879628AD35AD003079B4 /* ViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,13 +64,15 @@
 		A129892928AA19A100282503 /* ClubView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubView.swift; sourceTree = "<group>"; };
 		A129892B28AA19C200282503 /* ColorExtenstion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtenstion.swift; sourceTree = "<group>"; };
 		A129893228AA1EE200282503 /* Mabinogi_Classic_OTF.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Mabinogi_Classic_OTF.otf; sourceTree = "<group>"; };
-		A129893428AA1EF300282503 /* Pacific Northwest Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pacific Northwest Regular.ttf"; sourceTree = "<group>"; };
 		A129893628AA202B00282503 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		A129893728AA229100282503 /* FontExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontExtension.swift; sourceTree = "<group>"; };
-		A129893928AA2F8400282503 /* BootCampModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BootCampModalView.swift; sourceTree = "<group>"; };
-		A129893B28AA2F9800282503 /* ClubModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubModalView.swift; sourceTree = "<group>"; };
-		A129893D28AA2FB300282503 /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
 		A129893F28AA309100282503 /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
+		A1BF878C28AD16F7003079B4 /* BootcampModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BootcampModalView.swift; sourceTree = "<group>"; };
+		A1BF878E28AD1703003079B4 /* ClubModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubModalView.swift; sourceTree = "<group>"; };
+		A1BF879028AD1710003079B4 /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
+		A1BF879228AD1831003079B4 /* Pacific Northwest Letters W01.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pacific Northwest Letters W01.ttf"; sourceTree = "<group>"; };
+		A1BF879428AD1FF0003079B4 /* ViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRouter.swift; sourceTree = "<group>"; };
+		A1BF879628AD35AD003079B4 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,7 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				A129891C28AA0B1C00282503 /* LaunchScreen.storyboard */,
-				A129893428AA1EF300282503 /* Pacific Northwest Regular.ttf */,
+				A1BF879228AD1831003079B4 /* Pacific Northwest Letters W01.ttf */,
 				A129893228AA1EE200282503 /* Mabinogi_Classic_OTF.otf */,
 				A12988F428AA04EC00282503 /* Assets.xcassets */,
 			);
@@ -200,9 +204,9 @@
 				A129892528AA198200282503 /* HomeView.swift */,
 				A129892728AA199300282503 /* BootcampView.swift */,
 				A129892928AA19A100282503 /* ClubView.swift */,
-				A129893928AA2F8400282503 /* BootCampModalView.swift */,
-				A129893B28AA2F9800282503 /* ClubModalView.swift */,
-				A129893D28AA2FB300282503 /* InfoView.swift */,
+				A1BF878C28AD16F7003079B4 /* BootcampModalView.swift */,
+				A1BF878E28AD1703003079B4 /* ClubModalView.swift */,
+				A1BF879028AD1710003079B4 /* InfoView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -210,6 +214,8 @@
 		A129892328AA17D800282503 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				A1BF879428AD1FF0003079B4 /* ViewRouter.swift */,
+				A1BF879628AD35AD003079B4 /* ViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -333,10 +339,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A129893528AA1EF300282503 /* Pacific Northwest Regular.ttf in Resources */,
 				A129891D28AA0B1C00282503 /* LaunchScreen.storyboard in Resources */,
 				A12988F828AA04EC00282503 /* Preview Assets.xcassets in Resources */,
 				A129893328AA1EE200282503 /* Mabinogi_Classic_OTF.otf in Resources */,
+				A1BF879328AD1831003079B4 /* Pacific Northwest Letters W01.ttf in Resources */,
 				A12988F528AA04EC00282503 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -362,17 +368,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1BF878F28AD1703003079B4 /* ClubModalView.swift in Sources */,
+				A1BF879128AD1710003079B4 /* InfoView.swift in Sources */,
 				A129892628AA198200282503 /* HomeView.swift in Sources */,
+				A1BF879528AD1FF0003079B4 /* ViewRouter.swift in Sources */,
 				A129892C28AA19C200282503 /* ColorExtenstion.swift in Sources */,
 				A129893828AA229100282503 /* FontExtension.swift in Sources */,
+				A1BF879728AD35AD003079B4 /* ViewModel.swift in Sources */,
 				A129892A28AA19A100282503 /* ClubView.swift in Sources */,
-				A129893C28AA2F9800282503 /* ClubModalView.swift in Sources */,
 				A129892828AA199300282503 /* BootcampView.swift in Sources */,
 				A129894028AA309100282503 /* CustomView.swift in Sources */,
 				A12988F328AA04EB00282503 /* MainView.swift in Sources */,
+				A1BF878D28AD16F7003079B4 /* BootcampModalView.swift in Sources */,
 				A12988F128AA04EB00282503 /* dqApp.swift in Sources */,
-				A129893E28AA2FB300282503 /* InfoView.swift in Sources */,
-				A129893A28AA2F8400282503 /* BootCampModalView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -531,7 +539,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"dq/Preview Content\"";
-				DEVELOPMENT_TEAM = VBHJCPK49S;
+				DEVELOPMENT_TEAM = DF587PT75B;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = dq/Info.plist;
@@ -563,7 +571,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"dq/Preview Content\"";
-				DEVELOPMENT_TEAM = VBHJCPK49S;
+				DEVELOPMENT_TEAM = DF587PT75B;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = dq/Info.plist;

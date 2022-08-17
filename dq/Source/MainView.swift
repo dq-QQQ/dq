@@ -8,18 +8,25 @@
 import SwiftUI
 
 struct MainView: View {
-    @State private var currentTab: Tabs = .home
-    
+    @ObservedObject var viewRouter = ViewRouter()
     var body: some View {
-        TabView(selection: $currentTab) {
-            Group {
-                home
-                bootcamp
-                club
+        GeometryReader { proxy in
+            if viewRouter.currentPage == SwitchView.main.rawValue {
+                VStack {
+                    TitleSubView(viewRouter: viewRouter, proxy: proxy)
+                    TabView(selection: $viewRouter.currentTab) {
+                        home
+                        bootcamp
+                        club
+                    }
+                    .accentColor(.dqGreen) // soon deprecated. change to tint.
+                    .edgesIgnoringSafeArea(.top)
+                }
+            }
+            else if viewRouter.currentPage == SwitchView.info.rawValue {
+                InfoView(viewRouter: viewRouter)
             }
         }
-        .accentColor(.dqGreen) // soon deprecated. change to tint.
-        .edgesIgnoringSafeArea(.top)
     }
 }
 
@@ -28,16 +35,28 @@ fileprivate extension View {
         self.tabItem {
             Image(systemName: image)
             Text(text)
-                
         }
     }
 }
 
-extension MainView {
-    private enum Tabs {
-        case home, bootcamp, club
+// Mark - SubView of MainView, Located in top
+struct TitleSubView: View {
+    @ObservedObject var viewRouter: ViewRouter
+    var proxy: GeometryProxy
+    
+    var body: some View {
+        HStack {
+            logo
+            Spacer()
+            goToInfo
+        }
+        .padding(.horizontal, proxy.size.width / 20)
     }
     
+}
+
+// **********Extension**********
+extension MainView {
     private var home: some View {
         HomeView()
             .tabItem(image: "homekit", text: "홈")
@@ -51,6 +70,26 @@ extension MainView {
     private var club: some View {
         ClubView()
             .tabItem(image: "person.3.sequence", text: "동아리")
+    }
+}
+
+extension TitleSubView {
+    private var logo: some View {
+        Text("dq")
+            .font(.dqLogoFont)
+            .foregroundColor(.dqGreen)
+            .padding()
+    }
+    
+    private var goToInfo: some View {
+        Button {
+            viewRouter.currentPage = SwitchView.info.rawValue
+        } label: {
+            Image(systemName: "person.circle")
+                .resizable()
+                .frame(width: proxy.size.width / 10 , height: proxy.size.height / 20)
+                .foregroundColor(.dqGray)
+        }
     }
 }
 

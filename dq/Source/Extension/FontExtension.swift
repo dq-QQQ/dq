@@ -11,12 +11,12 @@ import SwiftUI
 
 struct AppFontName {
     static let mainfont = "Mabinogi_Classic_OTF"
-    static let logofont = "Pacific Northwest Regular"
+    static let logofont = "PacificNorthwestLettersW01"
 }
 
 extension Font {
-    static let dqLogoFont = Font.custom(AppFontName.logofont, size: Font.TextStyle.largeTitle.size
-                                        , relativeTo: .caption)
+    static let dqLogoFont = Font.custom(AppFontName.logofont, size: Font.TextStyle.title.size
+                                        , relativeTo: .largeTitle)
     
     static let dqVeryBigFont = Font.custom(AppFontName.mainfont, size: Font.TextStyle.largeTitle.size
                                            , relativeTo: .caption)
