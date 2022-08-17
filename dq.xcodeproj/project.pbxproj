@@ -8,12 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		A12988F128AA04EB00282503 /* dqApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12988F028AA04EB00282503 /* dqApp.swift */; };
-		A12988F328AA04EB00282503 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12988F228AA04EB00282503 /* ContentView.swift */; };
+		A12988F328AA04EB00282503 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12988F228AA04EB00282503 /* MainView.swift */; };
 		A12988F528AA04EC00282503 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A12988F428AA04EC00282503 /* Assets.xcassets */; };
 		A12988F828AA04EC00282503 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A12988F728AA04EC00282503 /* Preview Assets.xcassets */; };
 		A129890228AA04EC00282503 /* dqTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A129890128AA04EC00282503 /* dqTests.swift */; };
 		A129890C28AA04EC00282503 /* dqUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A129890B28AA04EC00282503 /* dqUITests.swift */; };
 		A129890E28AA04EC00282503 /* dqUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A129890D28AA04EC00282503 /* dqUITestsLaunchTests.swift */; };
+		A129891D28AA0B1C00282503 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A129891C28AA0B1C00282503 /* LaunchScreen.storyboard */; };
+		A129892628AA198200282503 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A129892528AA198200282503 /* HomeView.swift */; };
+		A129892828AA199300282503 /* BootcampView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A129892728AA199300282503 /* BootcampView.swift */; };
+		A129892A28AA19A100282503 /* ClubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A129892928AA19A100282503 /* ClubView.swift */; };
+		A129892C28AA19C200282503 /* ColorExtenstion.swift in Sources */ = {isa = PBXBuildFile; fileRef = A129892B28AA19C200282503 /* ColorExtenstion.swift */; };
+		A129893328AA1EE200282503 /* Mabinogi_Classic_OTF.otf in Resources */ = {isa = PBXBuildFile; fileRef = A129893228AA1EE200282503 /* Mabinogi_Classic_OTF.otf */; };
+		A129893528AA1EF300282503 /* Pacific Northwest Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A129893428AA1EF300282503 /* Pacific Northwest Regular.ttf */; };
+		A129893828AA229100282503 /* FontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A129893728AA229100282503 /* FontExtension.swift */; };
+		A129893A28AA2F8400282503 /* BootCampModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A129893928AA2F8400282503 /* BootCampModalView.swift */; };
+		A129893C28AA2F9800282503 /* ClubModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A129893B28AA2F9800282503 /* ClubModalView.swift */; };
+		A129893E28AA2FB300282503 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A129893D28AA2FB300282503 /* InfoView.swift */; };
+		A129894028AA309100282503 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A129893F28AA309100282503 /* CustomView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +48,7 @@
 /* Begin PBXFileReference section */
 		A12988ED28AA04EB00282503 /* dq.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dq.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A12988F028AA04EB00282503 /* dqApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dqApp.swift; sourceTree = "<group>"; };
-		A12988F228AA04EB00282503 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		A12988F228AA04EB00282503 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		A12988F428AA04EC00282503 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A12988F728AA04EC00282503 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A12988FD28AA04EC00282503 /* dqTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = dqTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +56,19 @@
 		A129890728AA04EC00282503 /* dqUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = dqUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A129890B28AA04EC00282503 /* dqUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dqUITests.swift; sourceTree = "<group>"; };
 		A129890D28AA04EC00282503 /* dqUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dqUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		A129891C28AA0B1C00282503 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A129892528AA198200282503 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		A129892728AA199300282503 /* BootcampView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BootcampView.swift; sourceTree = "<group>"; };
+		A129892928AA19A100282503 /* ClubView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubView.swift; sourceTree = "<group>"; };
+		A129892B28AA19C200282503 /* ColorExtenstion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtenstion.swift; sourceTree = "<group>"; };
+		A129893228AA1EE200282503 /* Mabinogi_Classic_OTF.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Mabinogi_Classic_OTF.otf; sourceTree = "<group>"; };
+		A129893428AA1EF300282503 /* Pacific Northwest Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pacific Northwest Regular.ttf"; sourceTree = "<group>"; };
+		A129893628AA202B00282503 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		A129893728AA229100282503 /* FontExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontExtension.swift; sourceTree = "<group>"; };
+		A129893928AA2F8400282503 /* BootCampModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BootCampModalView.swift; sourceTree = "<group>"; };
+		A129893B28AA2F9800282503 /* ClubModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubModalView.swift; sourceTree = "<group>"; };
+		A129893D28AA2FB300282503 /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
+		A129893F28AA309100282503 /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,9 +119,9 @@
 		A12988EF28AA04EB00282503 /* dq */ = {
 			isa = PBXGroup;
 			children = (
-				A12988F028AA04EB00282503 /* dqApp.swift */,
-				A12988F228AA04EB00282503 /* ContentView.swift */,
-				A12988F428AA04EC00282503 /* Assets.xcassets */,
+				A129893628AA202B00282503 /* Info.plist */,
+				A129891B28AA0A8100282503 /* Source */,
+				A129891A28AA063800282503 /* Resources */,
 				A12988F628AA04EC00282503 /* Preview Content */,
 			);
 			path = dq;
@@ -125,6 +150,83 @@
 				A129890D28AA04EC00282503 /* dqUITestsLaunchTests.swift */,
 			);
 			path = dqUITests;
+			sourceTree = "<group>";
+		};
+		A129891A28AA063800282503 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A129891C28AA0B1C00282503 /* LaunchScreen.storyboard */,
+				A129893428AA1EF300282503 /* Pacific Northwest Regular.ttf */,
+				A129893228AA1EE200282503 /* Mabinogi_Classic_OTF.otf */,
+				A12988F428AA04EC00282503 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		A129891B28AA0A8100282503 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				A129891E28AA114F00282503 /* Application */,
+				A129892428AA17E000282503 /* Model */,
+				A129892328AA17D800282503 /* ViewModel */,
+				A129892228AA17C700282503 /* View */,
+				A12988F228AA04EB00282503 /* MainView.swift */,
+				A129893128AA1E0C00282503 /* Custom */,
+				A129891F28AA12E800282503 /* Extension */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		A129891E28AA114F00282503 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				A12988F028AA04EB00282503 /* dqApp.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		A129891F28AA12E800282503 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				A129892B28AA19C200282503 /* ColorExtenstion.swift */,
+				A129893728AA229100282503 /* FontExtension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		A129892228AA17C700282503 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A129892528AA198200282503 /* HomeView.swift */,
+				A129892728AA199300282503 /* BootcampView.swift */,
+				A129892928AA19A100282503 /* ClubView.swift */,
+				A129893928AA2F8400282503 /* BootCampModalView.swift */,
+				A129893B28AA2F9800282503 /* ClubModalView.swift */,
+				A129893D28AA2FB300282503 /* InfoView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A129892328AA17D800282503 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		A129892428AA17E000282503 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A129893128AA1E0C00282503 /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				A129893F28AA309100282503 /* CustomView.swift */,
+			);
+			path = Custom;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,7 +333,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A129893528AA1EF300282503 /* Pacific Northwest Regular.ttf in Resources */,
+				A129891D28AA0B1C00282503 /* LaunchScreen.storyboard in Resources */,
 				A12988F828AA04EC00282503 /* Preview Assets.xcassets in Resources */,
+				A129893328AA1EE200282503 /* Mabinogi_Classic_OTF.otf in Resources */,
 				A12988F528AA04EC00282503 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -257,8 +362,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A12988F328AA04EB00282503 /* ContentView.swift in Sources */,
+				A129892628AA198200282503 /* HomeView.swift in Sources */,
+				A129892C28AA19C200282503 /* ColorExtenstion.swift in Sources */,
+				A129893828AA229100282503 /* FontExtension.swift in Sources */,
+				A129892A28AA19A100282503 /* ClubView.swift in Sources */,
+				A129893C28AA2F9800282503 /* ClubModalView.swift in Sources */,
+				A129892828AA199300282503 /* BootcampView.swift in Sources */,
+				A129894028AA309100282503 /* CustomView.swift in Sources */,
+				A12988F328AA04EB00282503 /* MainView.swift in Sources */,
 				A12988F128AA04EB00282503 /* dqApp.swift in Sources */,
+				A129893E28AA2FB300282503 /* InfoView.swift in Sources */,
+				A129893A28AA2F8400282503 /* BootCampModalView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -420,9 +534,12 @@
 				DEVELOPMENT_TEAM = VBHJCPK49S;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = dq/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -449,9 +566,12 @@
 				DEVELOPMENT_TEAM = VBHJCPK49S;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = dq/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
