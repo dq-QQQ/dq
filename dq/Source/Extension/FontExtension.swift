@@ -20,7 +20,11 @@ extension Font {
     
     static let dqVeryBigFont = Font.custom(AppFontName.mainfont, size: Font.TextStyle.largeTitle.size
                                            , relativeTo: .caption)
-    static let dqBigFont = Font.custom(AppFontName.mainfont, size: Font.TextStyle.title.size
+    static let dqBigBigFont = Font.custom(AppFontName.mainfont, size: Font.TextStyle.title.size
+                                       , relativeTo: .caption)
+    static let dqBigFont = Font.custom(AppFontName.mainfont, size: Font.TextStyle.title2.size
+                                       , relativeTo: .caption)
+    static let dqBigSmallFont = Font.custom(AppFontName.mainfont, size: Font.TextStyle.title3.size
                                        , relativeTo: .caption)
     static let dqMediumBigFont = Font.custom(AppFontName.mainfont, size: Font.TextStyle.headline.size
                                              , relativeTo: .caption)

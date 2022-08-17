@@ -28,6 +28,7 @@
 		A1BF879328AD1831003079B4 /* Pacific Northwest Letters W01.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A1BF879228AD1831003079B4 /* Pacific Northwest Letters W01.ttf */; };
 		A1BF879528AD1FF0003079B4 /* ViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BF879428AD1FF0003079B4 /* ViewRouter.swift */; };
 		A1BF879728AD35AD003079B4 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BF879628AD35AD003079B4 /* ViewModel.swift */; };
+		A1BF879928AD4108003079B4 /* customModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BF879828AD4108003079B4 /* customModifier.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,7 @@
 		A1BF879228AD1831003079B4 /* Pacific Northwest Letters W01.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pacific Northwest Letters W01.ttf"; sourceTree = "<group>"; };
 		A1BF879428AD1FF0003079B4 /* ViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRouter.swift; sourceTree = "<group>"; };
 		A1BF879628AD35AD003079B4 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		A1BF879828AD4108003079B4 /* customModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customModifier.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -231,6 +233,7 @@
 			isa = PBXGroup;
 			children = (
 				A129893F28AA309100282503 /* CustomView.swift */,
+				A1BF879828AD4108003079B4 /* customModifier.swift */,
 			);
 			path = Custom;
 			sourceTree = "<group>";
@@ -379,6 +382,7 @@
 				A129892828AA199300282503 /* BootcampView.swift in Sources */,
 				A129894028AA309100282503 /* CustomView.swift in Sources */,
 				A12988F328AA04EB00282503 /* MainView.swift in Sources */,
+				A1BF879928AD4108003079B4 /* customModifier.swift in Sources */,
 				A1BF878D28AD16F7003079B4 /* BootcampModalView.swift in Sources */,
 				A12988F128AA04EB00282503 /* dqApp.swift in Sources */,
 			);

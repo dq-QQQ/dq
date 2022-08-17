@@ -8,9 +8,30 @@
 import SwiftUI
 
 struct HomeView: View {
+    @State private var showModal = false
+    
     var body: some View {
-            Text("dq")
-                .font(.dqBigFont)
+        ScrollView {
+        VStack(alignment: .leading) {
+            HStack {
+                Text("관심 있어요!")
+                Spacer()
+                Image(systemName: "arrow.right")
+            }
+            .font(.dqBigSmallFont)
+            .modifier(PaddingFromSide())
+            Spacer()
+            Text("ho")
+                .font(.dqVeryBigFont)
+            Text("ho")
+                .font(.dqVeryBigFont)
+            Text("ho")
+                .font(.dqVeryBigFont)
+            Text("ho")
+                .font(.dqVeryBigFont)
+
+        }
+        }
     }
 }
 

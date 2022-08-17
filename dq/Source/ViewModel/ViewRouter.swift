@@ -21,15 +21,21 @@ enum Tabs {
     case home, bootcamp, club
 }
 
-class ViewRouter : ObservableObject{
-    @Published var currentTab: Tabs = .home
-    let objectWillChange = PassthroughSubject<ViewRouter,Never>()
-    
+class ViewHandler : ObservableObject{
+    let objectWillChange = PassthroughSubject<ViewHandler,Never>()
     var currentPage: String = SwitchView.main.rawValue {
         didSet{
             objectWillChange.send(self)
         }
     }
+    @Published var currentTab: Tabs = .home
+    static var geoProxy: GeometryProxy?
+    
+    func setGeoProxy(_ proxy: GeometryProxy) {
+        ViewHandler.geoProxy = proxy
+    }
+    
+    func getGeoProxy() -> GeometryProxy? { ViewHandler.geoProxy }
 }
 
 

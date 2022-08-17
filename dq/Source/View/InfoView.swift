@@ -8,11 +8,11 @@
 import SwiftUI
 
 struct InfoView: View {
-    @ObservedObject var viewRouter: ViewRouter
+    @ObservedObject var viewHandler: ViewHandler
     
     var body: some View {
         Button {
-            viewRouter.currentPage = SwitchView.main.rawValue
+            viewHandler.currentPage = SwitchView.main.rawValue
         } label: {
             Text("ho")
                 .font(.largeTitle)
@@ -23,6 +23,6 @@ struct InfoView: View {
 
 struct InfoView_Previews: PreviewProvider {
     static var previews: some View {
-        InfoView(viewRouter: ViewRouter())
+        InfoView(viewHandler: ViewHandler())
     }
 }

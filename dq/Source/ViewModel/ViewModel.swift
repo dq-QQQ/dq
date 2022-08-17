@@ -8,11 +8,5 @@
 import SwiftUI
 
 class ViewModel: ObservableObject {
-    private var geoProxy: GeometryProxy?
-
-    func setGeoProxy(_ proxy: GeometryProxy) {
-        geoProxy = proxy
-    }
     
-    func getGeoProxy() -> GeometryProxy? { geoProxy }
 }

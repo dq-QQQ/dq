@@ -8,13 +8,14 @@
 import SwiftUI
 
 struct MainView: View {
-    @ObservedObject var viewRouter = ViewRouter()
+    @ObservedObject var viewHandler = ViewHandler()
+    
     var body: some View {
         GeometryReader { proxy in
-            if viewRouter.currentPage == SwitchView.main.rawValue {
+            if viewHandler.currentPage == SwitchView.main.rawValue {
                 VStack {
-                    TitleSubView(viewRouter: viewRouter, proxy: proxy)
-                    TabView(selection: $viewRouter.currentTab) {
+                    TitleSubView(viewHandler: viewHandler, proxy: proxy)
+                    TabView(selection: $viewHandler.currentTab) {
                         home
                         bootcamp
                         club
@@ -22,11 +23,15 @@ struct MainView: View {
                     .accentColor(.dqGreen) // soon deprecated. change to tint.
                     .edgesIgnoringSafeArea(.top)
                 }
+                .onAppear {
+                    viewHandler.setGeoProxy(proxy)
+                }
             }
-            else if viewRouter.currentPage == SwitchView.info.rawValue {
-                InfoView(viewRouter: viewRouter)
+            else if viewHandler.currentPage == SwitchView.info.rawValue {
+                InfoView(viewHandler: viewHandler)
             }
         }
+        
     }
 }
 
@@ -41,7 +46,7 @@ fileprivate extension View {
 
 // Mark - SubView of MainView, Located in top
 struct TitleSubView: View {
-    @ObservedObject var viewRouter: ViewRouter
+    @ObservedObject var viewHandler: ViewHandler
     var proxy: GeometryProxy
     
     var body: some View {
@@ -50,7 +55,7 @@ struct TitleSubView: View {
             Spacer()
             goToInfo
         }
-        .padding(.horizontal, proxy.size.width / 20)
+        .padding(.horizontal, proxy.size.width / 15)
     }
     
 }
@@ -78,12 +83,12 @@ extension TitleSubView {
         Text("dq")
             .font(.dqLogoFont)
             .foregroundColor(.dqGreen)
-            .padding()
+//            .padding()
     }
     
     private var goToInfo: some View {
         Button {
-            viewRouter.currentPage = SwitchView.info.rawValue
+            viewHandler.currentPage = SwitchView.info.rawValue
         } label: {
             Image(systemName: "person.circle")
                 .resizable()
