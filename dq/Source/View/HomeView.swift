@@ -21,20 +21,25 @@ struct HomeView: View {
             }
             .font(.dqBigSmallFont)
             .modifier(PaddingFromSide())
-            List(bootcampList) { bootcamp in
-                NavigationLink(destination: BootcampModalView()) {
-                    VStack(alignment: .leading) {
-                        Text(bootcamp.name)
-                            .font(.headline)
-                            .fontWeight(.bold)
-                        Text(bootcamp.process)
-                    }
-                }
+            AsyncImage(url: URL(string: "https://firebasestorage.googleapis.com/v0/b/dqapp-d00bb.appspot.com/o/42Seoul.png?alt=media&token=36f7eb9b-6a97-4f9c-aced-2c686f48a95b")) { image in
+                image.resizable()
+            } placeholder: {
+                ProgressView()
             }
-        }
-        .task {
-            bootcampList = await ho.fetchBootcamp()
-            print(bootcampList)
+            .frame(width: 100, height: 100)
+            .onTapGesture {
+                bootcampViewModel.UpdateBootcamp(bootcamp: bootcampViewModel.getDB()[0])
+            }
+//            List(bootcampList) { bootcamp in
+//                NavigationLink(destination: BootcampModalView()) {
+//                    VStack(alignment: .leading) {
+//                        Text(bootcamp.name)
+//                            .font(.headline)
+//                            .fontWeight(.bold)
+//                        Text(bootcamp.process)
+//                    }
+//                }
+//            }
         }
     }
 }

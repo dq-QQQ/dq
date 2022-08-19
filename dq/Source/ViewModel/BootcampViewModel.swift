@@ -11,12 +11,30 @@ import FirebaseFirestoreSwift
 
 class BootcampViewModel: ObservableObject {
     private let dbCollection = Firestore.firestore().collection("BootCamp")
-    private var db: [BootcampModel]?
+    private var db: [BootcampModel] = []
     
     func newBootcamp(name: String, process: String) async -> [BootcampModel] {
-        let bootcamp = BootcampModel(id: UUID().uuidString, name: name, process: process)
+        let bootcamp = BootcampModel(id: UUID().uuidString, logoURL: nil, name: name, process: process, isInterested: true)
         _ = try? dbCollection.addDocument(from: bootcamp)
         return await fetchBootcamp()
+    }
+    
+    func UpdateBootcamp(bootcamp: BootcampModel)  {
+        dbCollection.whereField("id", isEqualTo: bootcamp.id).getDocuments { snap, err in
+            if err != nil {
+                print("Error")
+                return
+            }
+            
+            for i in snap!.documents {
+                var isInterested = i.get("isInterested") as! Bool
+                isInterested.toggle()
+                DispatchQueue.main.async {
+                    i.reference.updateData(["isInterested":isInterested])
+                }
+            }
+        }
+//        return await fetchBootcamp()
     }
     
     func fetchBootcamp() async -> [BootcampModel] {
@@ -30,4 +48,12 @@ class BootcampViewModel: ObservableObject {
         
         return bootcampList
     }
+    
+    func setDB(bootcampList: [BootcampModel]) {
+        self.db = bootcampList
+    }
+    
+    func getDB() -> [BootcampModel] { db }
+    
+    
 }

@@ -10,6 +10,10 @@ import Foundation
 
 struct BootcampModel : Identifiable, Codable {
     let id: String
+    let logoURL: String?
     let name: String
     let process: String
+    let isInterested: Bool
+    
+    
 }
