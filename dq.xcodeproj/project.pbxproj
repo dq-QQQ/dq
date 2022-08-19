@@ -41,7 +41,7 @@
 		A1BF879328AD1831003079B4 /* Pacific Northwest Letters W01.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A1BF879228AD1831003079B4 /* Pacific Northwest Letters W01.ttf */; };
 		A1BF879528AD1FF0003079B4 /* ViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BF879428AD1FF0003079B4 /* ViewRouter.swift */; };
 		A1BF879728AD35AD003079B4 /* BootcampViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BF879628AD35AD003079B4 /* BootcampViewModel.swift */; };
-		A1BF879928AD4108003079B4 /* customModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BF879828AD4108003079B4 /* customModifier.swift */; };
+		A1BF879928AD4108003079B4 /* CustomModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BF879828AD4108003079B4 /* CustomModifier.swift */; };
 		A1BF87B028ADD7B3003079B4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A1BF87AF28ADD7B3003079B4 /* GoogleService-Info.plist */; };
 		A1BF87B228ADDAB6003079B4 /* BootcampModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BF87B128ADDAB6003079B4 /* BootcampModel.swift */; };
 /* End PBXBuildFile section */
@@ -89,7 +89,7 @@
 		A1BF879228AD1831003079B4 /* Pacific Northwest Letters W01.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pacific Northwest Letters W01.ttf"; sourceTree = "<group>"; };
 		A1BF879428AD1FF0003079B4 /* ViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRouter.swift; sourceTree = "<group>"; };
 		A1BF879628AD35AD003079B4 /* BootcampViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BootcampViewModel.swift; sourceTree = "<group>"; };
-		A1BF879828AD4108003079B4 /* customModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customModifier.swift; sourceTree = "<group>"; };
+		A1BF879828AD4108003079B4 /* CustomModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomModifier.swift; sourceTree = "<group>"; };
 		A1BF87AF28ADD7B3003079B4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A1BF87B128ADDAB6003079B4 /* BootcampModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BootcampModel.swift; path = dq/Source/Custom/BootcampModel.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -266,7 +266,7 @@
 			isa = PBXGroup;
 			children = (
 				A129893F28AA309100282503 /* CustomView.swift */,
-				A1BF879828AD4108003079B4 /* customModifier.swift */,
+				A1BF879828AD4108003079B4 /* CustomModifier.swift */,
 			);
 			path = Custom;
 			sourceTree = "<group>";
@@ -443,7 +443,7 @@
 				A129894028AA309100282503 /* CustomView.swift in Sources */,
 				A12988F328AA04EB00282503 /* MainView.swift in Sources */,
 				A1BF87B228ADDAB6003079B4 /* BootcampModel.swift in Sources */,
-				A1BF879928AD4108003079B4 /* customModifier.swift in Sources */,
+				A1BF879928AD4108003079B4 /* CustomModifier.swift in Sources */,
 				A1BF878D28AD16F7003079B4 /* BootcampModalView.swift in Sources */,
 				A12988F128AA04EB00282503 /* dqApp.swift in Sources */,
 			);

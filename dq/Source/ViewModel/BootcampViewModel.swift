@@ -11,10 +11,9 @@ import FirebaseFirestoreSwift
 
 class BootcampViewModel: ObservableObject {
     private let dbCollection = Firestore.firestore().collection("BootCamp")
-    private var db: [BootcampModel] = []
     
     func newBootcamp(name: String, process: String) async -> [BootcampModel] {
-        let bootcamp = BootcampModel(id: UUID().uuidString, logoURL: nil, name: name, process: process, isInterested: true)
+        let bootcamp = BootcampModel(id: UUID().uuidString, name: name, process: process, isInterested: true)
         _ = try? dbCollection.addDocument(from: bootcamp)
         return await fetchBootcamp()
     }
@@ -48,12 +47,6 @@ class BootcampViewModel: ObservableObject {
         
         return bootcampList
     }
-    
-    func setDB(bootcampList: [BootcampModel]) {
-        self.db = bootcampList
-    }
-    
-    func getDB() -> [BootcampModel] { db }
     
     
 }

@@ -27,10 +27,6 @@ struct MainView: View {
                 .onAppear {
                     viewHandler.setGeoProxy(proxy)
                 }
-                .task {
-                    bootcampViewModel.setDB(bootcampList: await bootcampViewModel.fetchBootcamp())
-                    print(bootcampViewModel.getDB())
-                }
             }
             else if viewHandler.currentPage == SwitchView.info.rawValue {
                 InfoView(viewHandler: viewHandler)

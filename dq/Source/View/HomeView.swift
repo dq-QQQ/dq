@@ -14,35 +14,63 @@ struct HomeView: View {
     @State var bootcampList: [BootcampModel] = []
     var body: some View {
         ScrollView {
-            HStack {
-                Text("관심 있어요!")
-                Spacer()
-                Image(systemName: "arrow.right")
+            interestBootcampTitle
+            ZStack {
+                Rectangle()
+                    .frame(height: 200)
+                    .foregroundColor(.dqWhite)
+                
+                ScrollView(.horizontal)  {
+                    HStack{
+                        ForEach(bootcampList) { bootcamp in
+                            let logoSize = (ViewHandler.geoProxy?.size.width ?? 400) / 4
+                            VStack {
+                                Text(bootcamp.name)
+                                    .font(.dqBigSmallFont)
+                                    .foregroundColor(.dqGreen)
+                                
+                                AsyncImage(url: URL(string: bootcamp.logoURL)) { image in
+                                    image.resizable()
+                                } placeholder: {
+                                    ProgressView()
+                                }
+                                .frame(width: logoSize, height: logoSize)
+                                .onTapGesture {
+                                    self.showModal = true
+                                }
+                                .sheet(isPresented: self.$showModal) {
+                                    BootcampModalView()
+                                }
+                            }
+                            
+                        }
+                    }
+                    .navigationBarHidden(true)
+                    .task {
+                        bootcampList = await bootcampViewModel.fetchBootcamp()
+//                        bootcampList = bootcampList.filter { $0.isInterested == true}
+                    }
+                }
             }
-            .font(.dqBigSmallFont)
-            .modifier(PaddingFromSide())
-            AsyncImage(url: URL(string: "https://firebasestorage.googleapis.com/v0/b/dqapp-d00bb.appspot.com/o/42Seoul.png?alt=media&token=36f7eb9b-6a97-4f9c-aced-2c686f48a95b")) { image in
-                image.resizable()
-            } placeholder: {
-                ProgressView()
-            }
-            .frame(width: 100, height: 100)
-            .onTapGesture {
-                bootcampViewModel.UpdateBootcamp(bootcamp: bootcampViewModel.getDB()[0])
-            }
-//            List(bootcampList) { bootcamp in
-//                NavigationLink(destination: BootcampModalView()) {
-//                    VStack(alignment: .leading) {
-//                        Text(bootcamp.name)
-//                            .font(.headline)
-//                            .fontWeight(.bold)
-//                        Text(bootcamp.process)
-//                    }
-//                }
-//            }
+            
         }
+        .modifier(PaddingFromSide())
     }
 }
+
+extension HomeView {
+    var interestBootcampTitle: some View {
+        HStack {
+            Text("관심 있어요!")
+            Spacer()
+            Image(systemName: "arrow.right")
+        }
+        .font(.dqBigSmallFont)
+    }
+    
+    
+}
+
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
@@ -50,3 +78,4 @@ struct HomeView_Previews: PreviewProvider {
             .environmentObject(BootcampViewModel())
     }
 }
+
