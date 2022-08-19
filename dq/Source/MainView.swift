@@ -9,6 +9,7 @@ import SwiftUI
 
 struct MainView: View {
     @ObservedObject var viewHandler = ViewHandler()
+    @EnvironmentObject private var bootcampViewModel: BootcampViewModel
     
     var body: some View {
         GeometryReader { proxy in
@@ -25,6 +26,10 @@ struct MainView: View {
                 }
                 .onAppear {
                     viewHandler.setGeoProxy(proxy)
+                }
+                .task {
+                    bootcampList = await ho.fetchBootcamp()
+                    print(bootcampList)
                 }
             }
             else if viewHandler.currentPage == SwitchView.info.rawValue {
@@ -101,5 +106,6 @@ extension TitleSubView {
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {
         MainView()
+            .environmentObject(BootcampViewModel())
     }
 }

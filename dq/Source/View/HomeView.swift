@@ -9,10 +9,11 @@ import SwiftUI
 
 struct HomeView: View {
     @State private var showModal = false
+    @EnvironmentObject private var bootcampViewModel: BootcampViewModel
     
+    @State var bootcampList: [BootcampModel] = []
     var body: some View {
         ScrollView {
-        VStack(alignment: .leading) {
             HStack {
                 Text("관심 있어요!")
                 Spacer()
@@ -20,17 +21,20 @@ struct HomeView: View {
             }
             .font(.dqBigSmallFont)
             .modifier(PaddingFromSide())
-            Spacer()
-            Text("ho")
-                .font(.dqVeryBigFont)
-            Text("ho")
-                .font(.dqVeryBigFont)
-            Text("ho")
-                .font(.dqVeryBigFont)
-            Text("ho")
-                .font(.dqVeryBigFont)
-
+            List(bootcampList) { bootcamp in
+                NavigationLink(destination: BootcampModalView()) {
+                    VStack(alignment: .leading) {
+                        Text(bootcamp.name)
+                            .font(.headline)
+                            .fontWeight(.bold)
+                        Text(bootcamp.process)
+                    }
+                }
+            }
         }
+        .task {
+            bootcampList = await ho.fetchBootcamp()
+            print(bootcampList)
         }
     }
 }
@@ -38,5 +42,6 @@ struct HomeView: View {
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         HomeView()
+            .environmentObject(BootcampViewModel())
     }
 }
