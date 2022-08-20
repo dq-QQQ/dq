@@ -8,13 +8,16 @@
 import SwiftUI
 
 struct BootcampModalView: View {
+    @Binding var bootcampList: [BootcampModel]
+    @Binding var bootcampID: String?
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Text(bootcampID ?? "ho")
     }
 }
-
-struct BootcampModalView_Previews: PreviewProvider {
-    static var previews: some View {
-        BootcampModalView()
-    }
-}
+//
+//struct BootcampModalView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        BootcampModalView()
+//    }
+//}

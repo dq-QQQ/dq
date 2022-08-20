@@ -22,6 +22,7 @@
 		A129893328AA1EE200282503 /* Mabinogi_Classic_OTF.otf in Resources */ = {isa = PBXBuildFile; fileRef = A129893228AA1EE200282503 /* Mabinogi_Classic_OTF.otf */; };
 		A129893828AA229100282503 /* FontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A129893728AA229100282503 /* FontExtension.swift */; };
 		A129894028AA309100282503 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A129893F28AA309100282503 /* CustomView.swift */; };
+		A17F721828B0870A007C9FFE /* CustomType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17F721728B0870A007C9FFE /* CustomType.swift */; };
 		A1A9C49428AF1DF900A0FF94 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = A1A9C49328AF1DF900A0FF94 /* FirebaseFirestore */; };
 		A1A9C49628AF1DF900A0FF94 /* FirebaseFirestoreCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = A1A9C49528AF1DF900A0FF94 /* FirebaseFirestoreCombine-Community */; };
 		A1A9C49828AF1DF900A0FF94 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = A1A9C49728AF1DF900A0FF94 /* FirebaseFirestoreSwift */; };
@@ -39,7 +40,7 @@
 		A1BF878F28AD1703003079B4 /* ClubModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BF878E28AD1703003079B4 /* ClubModalView.swift */; };
 		A1BF879128AD1710003079B4 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BF879028AD1710003079B4 /* InfoView.swift */; };
 		A1BF879328AD1831003079B4 /* Pacific Northwest Letters W01.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A1BF879228AD1831003079B4 /* Pacific Northwest Letters W01.ttf */; };
-		A1BF879528AD1FF0003079B4 /* ViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BF879428AD1FF0003079B4 /* ViewRouter.swift */; };
+		A1BF879528AD1FF0003079B4 /* ViewHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BF879428AD1FF0003079B4 /* ViewHandler.swift */; };
 		A1BF879728AD35AD003079B4 /* BootcampViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BF879628AD35AD003079B4 /* BootcampViewModel.swift */; };
 		A1BF879928AD4108003079B4 /* CustomModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BF879828AD4108003079B4 /* CustomModifier.swift */; };
 		A1BF87B028ADD7B3003079B4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A1BF87AF28ADD7B3003079B4 /* GoogleService-Info.plist */; };
@@ -83,11 +84,12 @@
 		A129893628AA202B00282503 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		A129893728AA229100282503 /* FontExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontExtension.swift; sourceTree = "<group>"; };
 		A129893F28AA309100282503 /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
+		A17F721728B0870A007C9FFE /* CustomType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomType.swift; sourceTree = "<group>"; };
 		A1BF878C28AD16F7003079B4 /* BootcampModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BootcampModalView.swift; sourceTree = "<group>"; };
 		A1BF878E28AD1703003079B4 /* ClubModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubModalView.swift; sourceTree = "<group>"; };
 		A1BF879028AD1710003079B4 /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
 		A1BF879228AD1831003079B4 /* Pacific Northwest Letters W01.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pacific Northwest Letters W01.ttf"; sourceTree = "<group>"; };
-		A1BF879428AD1FF0003079B4 /* ViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRouter.swift; sourceTree = "<group>"; };
+		A1BF879428AD1FF0003079B4 /* ViewHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewHandler.swift; sourceTree = "<group>"; };
 		A1BF879628AD35AD003079B4 /* BootcampViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BootcampViewModel.swift; sourceTree = "<group>"; };
 		A1BF879828AD4108003079B4 /* CustomModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomModifier.swift; sourceTree = "<group>"; };
 		A1BF87AF28ADD7B3003079B4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -248,7 +250,7 @@
 		A129892328AA17D800282503 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				A1BF879428AD1FF0003079B4 /* ViewRouter.swift */,
+				A1BF879428AD1FF0003079B4 /* ViewHandler.swift */,
 				A1BF879628AD35AD003079B4 /* BootcampViewModel.swift */,
 			);
 			path = ViewModel;
@@ -267,6 +269,7 @@
 			children = (
 				A129893F28AA309100282503 /* CustomView.swift */,
 				A1BF879828AD4108003079B4 /* CustomModifier.swift */,
+				A17F721728B0870A007C9FFE /* CustomType.swift */,
 			);
 			path = Custom;
 			sourceTree = "<group>";
@@ -434,11 +437,12 @@
 				A1BF878F28AD1703003079B4 /* ClubModalView.swift in Sources */,
 				A1BF879128AD1710003079B4 /* InfoView.swift in Sources */,
 				A129892628AA198200282503 /* HomeView.swift in Sources */,
-				A1BF879528AD1FF0003079B4 /* ViewRouter.swift in Sources */,
+				A1BF879528AD1FF0003079B4 /* ViewHandler.swift in Sources */,
 				A129892C28AA19C200282503 /* ColorExtenstion.swift in Sources */,
 				A129893828AA229100282503 /* FontExtension.swift in Sources */,
 				A1BF879728AD35AD003079B4 /* BootcampViewModel.swift in Sources */,
 				A129892A28AA19A100282503 /* ClubView.swift in Sources */,
+				A17F721828B0870A007C9FFE /* CustomType.swift in Sources */,
 				A129892828AA199300282503 /* BootcampView.swift in Sources */,
 				A129894028AA309100282503 /* CustomView.swift in Sources */,
 				A12988F328AA04EB00282503 /* MainView.swift in Sources */,
