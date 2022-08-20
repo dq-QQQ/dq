@@ -9,10 +9,10 @@ import SwiftUI
 
 struct BootcampModalView: View {
     @Binding var bootcampList: [BootcampModel]
-    @Binding var bootcampID: String?
+    @EnvironmentObject private var viewHandler: ViewHandler
     
     var body: some View {
-        Text(bootcampID ?? "ho")
+        Text(viewHandler.selection ?? "ho")
     }
 }
 //

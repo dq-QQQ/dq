@@ -7,20 +7,4 @@
 
 import SwiftUI
 
-struct ElementsOnTop: View {
-    var body: some View {
-        HStack {
-            Text("dq")
-                .font(.dqLogoFont)
-                .foregroundColor(.dqGreen)
-            Spacer()
-//            Button {
-//                <#code#>
-//            } label: {
-//                <#code#>
-//            }
 
-        }
-        .padding()
-    }
-}

@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct MainView: View {
-    @ObservedObject var viewHandler = ViewHandler()
-    @EnvironmentObject private var bootcampViewModel: BootcampViewModel
+    @EnvironmentObject var viewHandler: ViewHandler
+    @ObservedObject private var bootcampViewModel = FirebaseViewModel<BootcampModel>("BootCamp")
     
     var body: some View {
         GeometryReader { proxy in
@@ -61,10 +61,10 @@ struct TitleSubView: View {
     
 }
 
-// **********Extension**********
+// **********Implement**********
 extension MainView {
     private var home: some View {
-        HomeView()
+        HomeView(bootcampViewModel: bootcampViewModel)
             .tabItem(image: "homekit", text: "홈")
     }
     
@@ -102,6 +102,6 @@ extension TitleSubView {
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {
         MainView()
-            .environmentObject(BootcampViewModel())
+            .environmentObject(ViewHandler())
     }
 }

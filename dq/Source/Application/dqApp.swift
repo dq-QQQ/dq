@@ -26,7 +26,7 @@ struct dqApp: App {
     var body: some Scene {
         WindowGroup {
             MainView()
-                .environmentObject(BootcampViewModel())
+                .environmentObject(ViewHandler())
         }
     }
 }

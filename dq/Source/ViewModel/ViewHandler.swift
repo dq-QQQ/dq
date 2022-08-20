@@ -8,19 +8,6 @@
 import Combine
 import SwiftUI
 
-
-enum SwitchView: String {
-    case main = "MainView", info = "InfoView"
-}
-
-enum ho {
-    case ho, ho2
-}
-
-enum Tabs {
-    case home, bootcamp, club
-}
-
 class ViewHandler : ObservableObject{
     let objectWillChange = PassthroughSubject<ViewHandler,Never>()
     var currentPage: String = SwitchView.main.rawValue {
@@ -29,13 +16,20 @@ class ViewHandler : ObservableObject{
         }
     }
     @Published var currentTab: Tabs = .home
-    static var geoProxy: GeometryProxy?
-    
-    func setGeoProxy(_ proxy: GeometryProxy) {
-        ViewHandler.geoProxy = proxy
+    @Published var selection: String?
+    var currentTabsss: Tabs! {
+        didSet{
+            objectWillChange.send(self)
+        }
     }
     
-    func getGeoProxy() -> GeometryProxy? { ViewHandler.geoProxy }
+    var geoProxy: GeometryProxy?
+    
+    func setGeoProxy(_ proxy: GeometryProxy) {
+        geoProxy = proxy
+    }
+    
+    func getGeoProxy() -> GeometryProxy? { geoProxy }
 }
 
 

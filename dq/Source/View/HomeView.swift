@@ -9,18 +9,17 @@ import SwiftUI
 
 struct HomeView: View {
     @State private var showModal = false
-    @EnvironmentObject private var bootcampViewModel: BootcampViewModel
-    @State private var selection: String? = "Pro"
+    @ObservedObject var bootcampViewModel: FirebaseViewModel<BootcampModel>
+    @EnvironmentObject private var viewHandler: ViewHandler
     @State var bootcampList: [BootcampModel] = []
     
     var body: some View {
         ScrollView {
-            HStack {
-                Text("관심 있어요!")
-                Spacer()
-                Image(systemName: "arrow.right")
-            }
-            .font(.dqBigSmallFont)
+            Text("관심 있어요!")
+                .modifier(PaddingFromSide())
+                .frame(width: viewHandler.geoProxy?.size.width, alignment: .leading)
+            
+                .font(.dqBigSmallFont)
             
             ZStack {
                 Rectangle()
@@ -31,7 +30,7 @@ struct HomeView: View {
                 ScrollView(.horizontal)  {
                     HStack {
                         ForEach(bootcampList) { bootcamp in
-                            let logoSize = (ViewHandler.geoProxy?.size.width ?? 400) / 4
+                            let logoSize = (viewHandler.geoProxy?.size.width ?? 400) / 4
                             VStack(alignment: .center, spacing: 5) {
                                 Text(bootcamp.name)
                                     .font(.dqBigSmallFont)
@@ -44,44 +43,40 @@ struct HomeView: View {
                                 } placeholder: {
                                     ProgressView()
                                 }
-                                .frame(width: logoSize, height: (ViewHandler.geoProxy?.size.height ?? 400) / 7)
+                                .frame(width: logoSize, height: (viewHandler.geoProxy?.size.height ?? 400) / 7)
                             }
                             .sheet(isPresented: self.$showModal) {
-                                BootcampModalView(bootcampList: $bootcampList, bootcampID: $selection)
+                                BootcampModalView(bootcampList: $bootcampList)
                             }
                             .onTapGesture {
-                                selection = bootcamp.id
+                                viewHandler.selection = bootcamp.id
                                 self.showModal = true
                             }
-                                Rectangle()
-                                    .size(width: 1, height: 180)
-                                    .foregroundColor(.gray)
-                                    .padding(.vertical, 10)
-                                    .padding(.leading, 10)
-                                    
-
+                            Rectangle()
+                                .size(width: 1, height: 180)
+                                .foregroundColor(.gray)
+                                .padding(.vertical, 10)
+                                .padding(.leading, 10)
                         }
                     }
                     .padding(.horizontal, 10)
-                    .navigationBarHidden(true)
                     .task {
-                        print(fields.Android)
                         bootcampList = await bootcampViewModel.fetchBootcamp()
-                        //                        bootcampList = bootcampList.filter { $0.isInterested == true}
+//                        bootcampList = bootcampList.filter { $0.isInterested == true}
                     }
                 }
             }
             
+            .modifier(PaddingFromSide())
         }
-        .modifier(PaddingFromSide())
     }
 }
 
-
-struct HomeView_Previews: PreviewProvider {
-    static var previews: some View {
-        HomeView()
-            .environmentObject(BootcampViewModel())
-    }
-}
+//
+//struct HomeView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        HomeView(bootcampViewModel: BootcampViewModel("BootCamp"))
+//            .environmentObject(ViewHandler())
+//    }
+//}
 
