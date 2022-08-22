@@ -7,6 +7,7 @@
 
 import Foundation
 import Firebase
+import SwiftUI
 
 struct BootcampModel : Identifiable, Codable {
     let id: String
@@ -15,5 +16,4 @@ struct BootcampModel : Identifiable, Codable {
     let process: [String]
     let isInterested: Bool
     var time: Timestamp
-    
 }

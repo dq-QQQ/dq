@@ -10,6 +10,8 @@ import Firebase
 import FirebaseFirestoreSwift
 
 class BootcampViewModel: FirebaseViewModel<BootcampModel> {
+    @Published var bootcampList: [BootcampModel] = []
+    
     func newBootcamp(name: String, process: [String]) async {
         let tmp = BootcampModel(id: UUID().uuidString, name: name, process: process, isInterested: false,time: Timestamp())
         _ = try? dbCollection.addDocument(from: tmp)

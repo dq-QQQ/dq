@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-struct PaddingFromSide: ViewModifier {
+struct PaddingFromSideOnHomeView: ViewModifier {
     @EnvironmentObject private var viewHandler: ViewHandler
     
     func body(content: Content) -> some View {
@@ -18,6 +18,20 @@ struct PaddingFromSide: ViewModifier {
         } else {
             return content
                 .padding(.horizontal, 20)
+        }
+    }
+}
+
+struct PaddingFromSideOnModalView: ViewModifier {
+    @EnvironmentObject private var viewHandler: ViewHandler
+    
+    func body(content: Content) -> some View {
+        if let tmpProxy = viewHandler.getGeoProxy() {
+            return content
+                .padding(.horizontal, tmpProxy.size.width / 70)
+        } else {
+            return content
+                .padding(.horizontal, 5)
         }
     }
 }

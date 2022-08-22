@@ -17,16 +17,16 @@ struct HomeView: View {
     @ObservedObject var bootcampViewModel: BootcampViewModel
     @ObservedObject var clubViewModel: ClubViewModel
     @EnvironmentObject private var viewHandler: ViewHandler
-    @State var bootcampList: [BootcampModel] = []
+//    @State var bootcampList: [BootcampModel] = []
     
     var body: some View {
         ScrollView {
             titleOfBlock("관심있어요!")
             ZStack {
                 blockRectangle
-                customeList
+                customList
             }
-            .modifier(PaddingFromSide())
+            .modifier(PaddingFromSideOnHomeView())
         }
     }
 }
@@ -38,7 +38,7 @@ extension HomeView {
     
     func titleOfBlock(_ a: String) -> some View {
         Text(a)
-            .modifier(PaddingFromSide())
+            .modifier(PaddingFromSideOnHomeView())
             .frame(width: phoneWidth, alignment: .leading)
             .font(.dqBigSmallFont)
     }
@@ -75,20 +75,21 @@ extension HomeView {
             .padding(.vertical, phoneWidth / 40)
             .padding(.leading, phoneWidth / 40)
     }
+
     
-    var customeList: some View {
+    var customList: some View {
         ScrollView(.horizontal)  {
             HStack {
-                ForEach(bootcampList) { bootcamp in
+                ForEach(bootcampViewModel.bootcampList) { field in
                     VStack(alignment: .center, spacing: 5) {
-                        nameOfEachField(bootcamp)
-                        imageOfEachField(bootcamp)
+                        nameOfEachField(field)
+                        imageOfEachField(field)
                     }
                     .sheet(isPresented: self.$showModal) {
-                        BootcampModalView(bootcampList: $bootcampList, ho: bootcamp)
+                        BootcampModalView(bootcampList: $bootcampViewModel.bootcampList, bootcamp: field)
                     }
                     .onTapGesture {
-                        viewHandler.selection = bootcamp.id
+                        viewHandler.selection = field.id
                         self.showModal = true
                     }
                     strokeLine
@@ -96,11 +97,23 @@ extension HomeView {
             }
             .padding(.horizontal, phoneWidth / 40)
             .task {
-                bootcampList = await bootcampViewModel.fetchFireStore()
+                bootcampViewModel.bootcampList = await bootcampViewModel.fetchFireStore()
             }
         }
     }
 }
+
+// 모듈화 실패.. 할 수 있을 거 같은데..
+// cannot convert value of type to expected argument type 'binding c ' foreach매개변수에???
+//
+//struct CustomList<T: Decodable & Encodable & Identifiable>: View {
+//    @ObservedObject var firebaseViewModel: FirebaseViewModel<T>
+//
+//    var body: some View {
+//
+//    }
+//
+//}
 
 
 struct HomeView_Previews: PreviewProvider {
