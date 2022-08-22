@@ -10,9 +10,18 @@ import SwiftUI
 struct BootcampModalView: View {
     @Binding var bootcampList: [BootcampModel]
     @EnvironmentObject private var viewHandler: ViewHandler
+    @State var ho : BootcampModel
+    
     
     var body: some View {
-        Text(viewHandler.selection ?? "ho")
+
+        Text(ho.name)
+            .onAppear {
+                ho = bootcampList.filter { $0.id == viewHandler.selection}[0]
+                print(ho.time.toDateString())
+            }
+            
+        
     }
 }
 //

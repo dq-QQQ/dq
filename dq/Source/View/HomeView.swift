@@ -9,7 +9,7 @@ import SwiftUI
 
 struct HomeView: View {
     @State private var showModal = false
-    @ObservedObject var bootcampViewModel: FirebaseViewModel<BootcampModel>
+    @ObservedObject var bootcampViewModel: BootcampViewModel
     @EnvironmentObject private var viewHandler: ViewHandler
     @State var bootcampList: [BootcampModel] = []
     
@@ -46,7 +46,7 @@ struct HomeView: View {
                                 .frame(width: logoSize, height: (viewHandler.geoProxy?.size.height ?? 400) / 7)
                             }
                             .sheet(isPresented: self.$showModal) {
-                                BootcampModalView(bootcampList: $bootcampList)
+                                BootcampModalView(bootcampList: $bootcampList, ho: bootcamp)
                             }
                             .onTapGesture {
                                 viewHandler.selection = bootcamp.id
@@ -55,13 +55,14 @@ struct HomeView: View {
                             Rectangle()
                                 .size(width: 1, height: 180)
                                 .foregroundColor(.gray)
+                                .opacity(0.3)
                                 .padding(.vertical, 10)
                                 .padding(.leading, 10)
                         }
                     }
                     .padding(.horizontal, 10)
                     .task {
-                        bootcampList = await bootcampViewModel.fetchBootcamp()
+                        bootcampList = await bootcampViewModel.fetchFireStore()
 //                        bootcampList = bootcampList.filter { $0.isInterested == true}
                     }
                 }
@@ -72,11 +73,11 @@ struct HomeView: View {
     }
 }
 
-//
-//struct HomeView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        HomeView(bootcampViewModel: BootcampViewModel("BootCamp"))
-//            .environmentObject(ViewHandler())
-//    }
-//}
+
+struct HomeView_Previews: PreviewProvider {
+    static var previews: some View {
+        HomeView(bootcampViewModel: BootcampViewModel("BootCamp"))
+            .environmentObject(ViewHandler())
+    }
+}
 

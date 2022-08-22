@@ -9,8 +9,8 @@ import SwiftUI
 
 struct MainView: View {
     @EnvironmentObject var viewHandler: ViewHandler
-    @ObservedObject private var bootcampViewModel = FirebaseViewModel<BootcampModel>("BootCamp")
-    
+    @ObservedObject private var bootcampViewModel = BootcampViewModel("BootCamp")
+
     var body: some View {
         GeometryReader { proxy in
             if viewHandler.currentPage == SwitchView.main.rawValue {
@@ -69,7 +69,7 @@ extension MainView {
     }
     
     private var bootcamp: some View {
-        BootcampView()
+        BootcampView(bootcampViewModel: bootcampViewModel)
             .tabItem(image: "laptopcomputer", text: "부트캠프")
     }
     

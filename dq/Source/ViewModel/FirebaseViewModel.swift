@@ -10,19 +10,12 @@ import Firebase
 import FirebaseFirestoreSwift
 
 class FirebaseViewModel<T: Identifiable & Codable>: ObservableObject {
-    private let dbCollection: CollectionReference
-//    private var tmpForAdd: T?
+    let dbCollection: CollectionReference
     
     init(_ collectionName: String) {
         dbCollection = Firestore.firestore().collection(collectionName)
     }
-    
-//    func newBootcamp(name: String, process: [String]) async -> [BootcampModel] {
-//        let bootcamp = BootcampModel(id: UUID().uuidString, name: name, process: process, isInterested: true)
-//        _ = try? dbCollection.addDocument(from: tmpForAdd!)
-//        return await fetchBootcamp()
-//    }
-//
+
     func updateFireStore(data: T)  {
         dbCollection.whereField("id", isEqualTo: data.id).getDocuments { snap, err in
             if err != nil {
@@ -44,7 +37,6 @@ class FirebaseViewModel<T: Identifiable & Codable>: ObservableObject {
         guard let snapshot = try? await dbCollection.getDocuments() else {
             return []
         }
-        
         let data: [T] = snapshot.documents.compactMap { document in
             try? document.data(as: T.self)
         }

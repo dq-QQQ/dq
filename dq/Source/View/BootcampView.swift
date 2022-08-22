@@ -8,15 +8,22 @@
 import SwiftUI
 
 struct BootcampView: View {
+    @ObservedObject var bootcampViewModel: BootcampViewModel
     var body: some View {
-        Text("dq")
-            .font(.dqLogoFont)
-//            .foregroundColor(.dqGreen)
+        Button {
+            Task {
+                await bootcampViewModel.newBootcamp(name:"1", process:["12", "1234"])
+            }
+        } label: {
+            Text("dq")
+                .font(.dqLogoFont)
+                .foregroundColor(.dqGreen)
+        }
     }
 }
 
-struct BootcampView_Previews: PreviewProvider {
-    static var previews: some View {
-        BootcampView()
-    }
-}
+//struct BootcampView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        BootcampView()
+//    }
+//}
