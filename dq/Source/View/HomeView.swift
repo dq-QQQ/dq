@@ -5,70 +5,99 @@
 //  Created by Kyu jin Lee on 2022/08/15.
 //
 
+//                        bootcampList = bootcampList.filter { $0.isInterested == true} // 관심목록
+//                        bootcampList = bootcampList.sorted { // 마감임박순
+//                            $0.time.toDateString() < $1.time.toDateString()
+//                        }
+
 import SwiftUI
 
 struct HomeView: View {
     @State private var showModal = false
     @ObservedObject var bootcampViewModel: BootcampViewModel
+    @ObservedObject var clubViewModel: ClubViewModel
     @EnvironmentObject private var viewHandler: ViewHandler
     @State var bootcampList: [BootcampModel] = []
     
     var body: some View {
         ScrollView {
-            Text("관심 있어요!")
-                .modifier(PaddingFromSide())
-                .frame(width: viewHandler.geoProxy?.size.width, alignment: .leading)
-            
-                .font(.dqBigSmallFont)
-            
+            titleOfBlock("관심있어요!")
             ZStack {
-                Rectangle()
-                    .frame(height: 200)
-                    .foregroundColor(.dqWhite)
-                    .cornerRadius(20)
-                
-                ScrollView(.horizontal)  {
-                    HStack {
-                        ForEach(bootcampList) { bootcamp in
-                            let logoSize = (viewHandler.geoProxy?.size.width ?? 400) / 4
-                            VStack(alignment: .center, spacing: 5) {
-                                Text(bootcamp.name)
-                                    .font(.dqBigSmallFont)
-                                    .foregroundColor(.dqGreen)
-                                    .lineLimit(2)
-                                    .frame(width: logoSize, height: 60)
-                                
-                                AsyncImage(url: URL(string: bootcamp.logoURL)) { image in
-                                    image.resizable()
-                                } placeholder: {
-                                    ProgressView()
-                                }
-                                .frame(width: logoSize, height: (viewHandler.geoProxy?.size.height ?? 400) / 7)
-                            }
-                            .sheet(isPresented: self.$showModal) {
-                                BootcampModalView(bootcampList: $bootcampList, ho: bootcamp)
-                            }
-                            .onTapGesture {
-                                viewHandler.selection = bootcamp.id
-                                self.showModal = true
-                            }
-                            Rectangle()
-                                .size(width: 1, height: 180)
-                                .foregroundColor(.gray)
-                                .opacity(0.3)
-                                .padding(.vertical, 10)
-                                .padding(.leading, 10)
-                        }
+                blockRectangle
+                customeList
+            }
+            .modifier(PaddingFromSide())
+        }
+    }
+}
+
+extension HomeView {
+    var phoneWidth: CGFloat { viewHandler.getGeoProxy()?.size.width ?? 400 }
+    var phoneHeight: CGFloat { viewHandler.getGeoProxy()?.size.height ?? 800 }
+    var logoSize: CGFloat { phoneWidth / 4 }
+    
+    func titleOfBlock(_ a: String) -> some View {
+        Text(a)
+            .modifier(PaddingFromSide())
+            .frame(width: phoneWidth, alignment: .leading)
+            .font(.dqBigSmallFont)
+    }
+    
+    var blockRectangle: some View {
+        Rectangle()
+            .frame(height: phoneHeight / 4)
+            .foregroundColor(.dqWhite)
+            .cornerRadius(20)
+    }
+    
+    func nameOfEachField(_ bootcamp: BootcampModel) -> some View {
+        Text(bootcamp.name)
+            .font(.dqBigSmallFont)
+            .foregroundColor(.dqGreen)
+            .lineLimit(2)
+            .frame(width: logoSize, height: phoneHeight / 12)
+    }
+    
+    func imageOfEachField(_ bootcamp: BootcampModel) -> some View {
+        AsyncImage(url: URL(string: bootcamp.logoURL)) { image in
+            image.resizable()
+        } placeholder: {
+            ProgressView()
+        }
+        .frame(width: logoSize, height: phoneHeight / 7)
+    }
+    
+    var strokeLine: some View {
+        Rectangle()
+            .size(width: 1, height: (phoneHeight / 4) - 20)
+            .foregroundColor(.gray)
+            .opacity(0.3)
+            .padding(.vertical, phoneWidth / 40)
+            .padding(.leading, phoneWidth / 40)
+    }
+    
+    var customeList: some View {
+        ScrollView(.horizontal)  {
+            HStack {
+                ForEach(bootcampList) { bootcamp in
+                    VStack(alignment: .center, spacing: 5) {
+                        nameOfEachField(bootcamp)
+                        imageOfEachField(bootcamp)
                     }
-                    .padding(.horizontal, 10)
-                    .task {
-                        bootcampList = await bootcampViewModel.fetchFireStore()
-//                        bootcampList = bootcampList.filter { $0.isInterested == true}
+                    .sheet(isPresented: self.$showModal) {
+                        BootcampModalView(bootcampList: $bootcampList, ho: bootcamp)
                     }
+                    .onTapGesture {
+                        viewHandler.selection = bootcamp.id
+                        self.showModal = true
+                    }
+                    strokeLine
                 }
             }
-            
-            .modifier(PaddingFromSide())
+            .padding(.horizontal, phoneWidth / 40)
+            .task {
+                bootcampList = await bootcampViewModel.fetchFireStore()
+            }
         }
     }
 }
@@ -76,7 +105,8 @@ struct HomeView: View {
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView(bootcampViewModel: BootcampViewModel("BootCamp"))
+        HomeView(bootcampViewModel: BootcampViewModel("BootCamp"),
+                 clubViewModel: ClubViewModel("Club"))
             .environmentObject(ViewHandler())
     }
 }

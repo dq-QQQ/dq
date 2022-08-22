@@ -21,8 +21,8 @@
 		A129892C28AA19C200282503 /* ColorExtenstion.swift in Sources */ = {isa = PBXBuildFile; fileRef = A129892B28AA19C200282503 /* ColorExtenstion.swift */; };
 		A129893328AA1EE200282503 /* Mabinogi_Classic_OTF.otf in Resources */ = {isa = PBXBuildFile; fileRef = A129893228AA1EE200282503 /* Mabinogi_Classic_OTF.otf */; };
 		A129893828AA229100282503 /* FontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A129893728AA229100282503 /* FontExtension.swift */; };
-		A129894028AA309100282503 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A129893F28AA309100282503 /* CustomView.swift */; };
 		A17E7DD628B3849F00147D71 /* TimestampExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17E7DD528B3849F00147D71 /* TimestampExtension.swift */; };
+		A17E7DD828B3CEAE00147D71 /* ClubModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17E7DD728B3CEAE00147D71 /* ClubModel.swift */; };
 		A17F721828B0870A007C9FFE /* CustomType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17F721728B0870A007C9FFE /* CustomType.swift */; };
 		A17F721C28B0A300007C9FFE /* FirebaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17F721B28B0A300007C9FFE /* FirebaseViewModel.swift */; };
 		A17F721E28B0A9C8007C9FFE /* FirebaseViewModelChild.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17F721D28B0A9C8007C9FFE /* FirebaseViewModelChild.swift */; };
@@ -85,8 +85,8 @@
 		A129893228AA1EE200282503 /* Mabinogi_Classic_OTF.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Mabinogi_Classic_OTF.otf; sourceTree = "<group>"; };
 		A129893628AA202B00282503 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		A129893728AA229100282503 /* FontExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontExtension.swift; sourceTree = "<group>"; };
-		A129893F28AA309100282503 /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		A17E7DD528B3849F00147D71 /* TimestampExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimestampExtension.swift; sourceTree = "<group>"; };
+		A17E7DD728B3CEAE00147D71 /* ClubModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ClubModel.swift; path = dq/Source/Extension/ClubModel.swift; sourceTree = SOURCE_ROOT; };
 		A17F721728B0870A007C9FFE /* CustomType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomType.swift; sourceTree = "<group>"; };
 		A17F721B28B0A300007C9FFE /* FirebaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseViewModel.swift; sourceTree = "<group>"; };
 		A17F721D28B0A9C8007C9FFE /* FirebaseViewModelChild.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseViewModelChild.swift; sourceTree = "<group>"; };
@@ -266,6 +266,7 @@
 			isa = PBXGroup;
 			children = (
 				A1BF87B128ADDAB6003079B4 /* BootcampModel.swift */,
+				A17E7DD728B3CEAE00147D71 /* ClubModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -273,7 +274,6 @@
 		A129893128AA1E0C00282503 /* Custom */ = {
 			isa = PBXGroup;
 			children = (
-				A129893F28AA309100282503 /* CustomView.swift */,
 				A1BF879828AD4108003079B4 /* CustomModifier.swift */,
 				A17F721728B0870A007C9FFE /* CustomType.swift */,
 			);
@@ -443,6 +443,7 @@
 				A1BF878F28AD1703003079B4 /* ClubModalView.swift in Sources */,
 				A17F721E28B0A9C8007C9FFE /* FirebaseViewModelChild.swift in Sources */,
 				A1BF879128AD1710003079B4 /* InfoView.swift in Sources */,
+				A17E7DD828B3CEAE00147D71 /* ClubModel.swift in Sources */,
 				A129892628AA198200282503 /* HomeView.swift in Sources */,
 				A17F721C28B0A300007C9FFE /* FirebaseViewModel.swift in Sources */,
 				A1BF879528AD1FF0003079B4 /* ViewHandler.swift in Sources */,
@@ -451,7 +452,6 @@
 				A129892A28AA19A100282503 /* ClubView.swift in Sources */,
 				A17F721828B0870A007C9FFE /* CustomType.swift in Sources */,
 				A129892828AA199300282503 /* BootcampView.swift in Sources */,
-				A129894028AA309100282503 /* CustomView.swift in Sources */,
 				A12988F328AA04EB00282503 /* MainView.swift in Sources */,
 				A1BF87B228ADDAB6003079B4 /* BootcampModel.swift in Sources */,
 				A17E7DD628B3849F00147D71 /* TimestampExtension.swift in Sources */,

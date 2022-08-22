@@ -12,7 +12,7 @@ extension Timestamp {
     func toDateString() -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.locale = Locale(identifier: "ko_KR")
-        dateFormatter.dateFormat = "yyyy.MM.dd HH:mm"
+        dateFormatter.dateFormat = "MM월dd일 HH시mm분"
         let date = Date(timeIntervalSince1970: TimeInterval(self.seconds))
         return dateFormatter.string(from: date)
     }

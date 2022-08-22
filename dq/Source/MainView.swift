@@ -10,16 +10,22 @@ import SwiftUI
 struct MainView: View {
     @EnvironmentObject var viewHandler: ViewHandler
     @ObservedObject private var bootcampViewModel = BootcampViewModel("BootCamp")
-
+    @ObservedObject private var clubViewModel = ClubViewModel("Club")
+    
     var body: some View {
         GeometryReader { proxy in
             if viewHandler.currentPage == SwitchView.main.rawValue {
                 VStack {
                     TitleSubView(viewHandler: viewHandler, proxy: proxy)
                     TabView(selection: $viewHandler.currentTab) {
-                        home
-                        bootcamp
-                        club
+                        Group {
+                            home
+                            bootcamp
+                            club
+                        }
+                        .task {
+                            _ = await bootcampViewModel.fetchFireStore()
+                        }
                     }
                     .accentColor(.dqGreen) // soon deprecated. change to tint.
                     .edgesIgnoringSafeArea(.top)
@@ -32,7 +38,6 @@ struct MainView: View {
                 InfoView(viewHandler: viewHandler)
             }
         }
-        
     }
 }
 
@@ -64,7 +69,8 @@ struct TitleSubView: View {
 // **********Implement**********
 extension MainView {
     private var home: some View {
-        HomeView(bootcampViewModel: bootcampViewModel)
+        HomeView(bootcampViewModel: bootcampViewModel,
+                 clubViewModel: clubViewModel)
             .tabItem(image: "homekit", text: "홈")
     }
     
@@ -84,7 +90,7 @@ extension TitleSubView {
         Text("dq")
             .font(.dqLogoFont)
             .foregroundColor(.dqGreen)
-//            .padding()
+        //            .padding()
     }
     
     private var goToInfo: some View {

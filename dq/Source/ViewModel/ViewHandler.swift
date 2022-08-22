@@ -16,20 +16,14 @@ class ViewHandler : ObservableObject{
         }
     }
     @Published var currentTab: Tabs = .home
+    
     @Published var selection: String?
-    var currentTabsss: Tabs! {
-        didSet{
-            objectWillChange.send(self)
-        }
-    }
     
-    var geoProxy: GeometryProxy?
-    
-    func setGeoProxy(_ proxy: GeometryProxy) {
-        geoProxy = proxy
-    }
-    
+    private var geoProxy: GeometryProxy?
+    func setGeoProxy(_ proxy: GeometryProxy) { geoProxy = proxy }
     func getGeoProxy() -> GeometryProxy? { geoProxy }
+    
+    
 }
 
 

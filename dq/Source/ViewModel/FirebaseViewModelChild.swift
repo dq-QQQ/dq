@@ -10,9 +10,15 @@ import Firebase
 import FirebaseFirestoreSwift
 
 class BootcampViewModel: FirebaseViewModel<BootcampModel> {
-    
     func newBootcamp(name: String, process: [String]) async {
         let tmp = BootcampModel(id: UUID().uuidString, name: name, process: process, isInterested: false,time: Timestamp())
+        _ = try? dbCollection.addDocument(from: tmp)
+    }
+}
+
+class ClubViewModel: FirebaseViewModel<ClubModel> {
+    func newClub(name: String, process: [String]) async {
+        let tmp = ClubModel(id: UUID().uuidString, name: name, process: process, time: Timestamp())
         _ = try? dbCollection.addDocument(from: tmp)
     }
 }
