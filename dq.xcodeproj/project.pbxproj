@@ -18,10 +18,9 @@
 		A129892628AA198200282503 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A129892528AA198200282503 /* HomeView.swift */; };
 		A129892828AA199300282503 /* BootcampView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A129892728AA199300282503 /* BootcampView.swift */; };
 		A129892A28AA19A100282503 /* ClubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A129892928AA19A100282503 /* ClubView.swift */; };
-		A129892C28AA19C200282503 /* ColorExtenstion.swift in Sources */ = {isa = PBXBuildFile; fileRef = A129892B28AA19C200282503 /* ColorExtenstion.swift */; };
+		A129892C28AA19C200282503 /* MethodExtenstion.swift in Sources */ = {isa = PBXBuildFile; fileRef = A129892B28AA19C200282503 /* MethodExtenstion.swift */; };
 		A129893328AA1EE200282503 /* Mabinogi_Classic_OTF.otf in Resources */ = {isa = PBXBuildFile; fileRef = A129893228AA1EE200282503 /* Mabinogi_Classic_OTF.otf */; };
 		A129893828AA229100282503 /* FontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A129893728AA229100282503 /* FontExtension.swift */; };
-		A17E7DD628B3849F00147D71 /* TimestampExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17E7DD528B3849F00147D71 /* TimestampExtension.swift */; };
 		A17E7DD828B3CEAE00147D71 /* ClubModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17E7DD728B3CEAE00147D71 /* ClubModel.swift */; };
 		A17F721828B0870A007C9FFE /* CustomType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17F721728B0870A007C9FFE /* CustomType.swift */; };
 		A17F721C28B0A300007C9FFE /* FirebaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17F721B28B0A300007C9FFE /* FirebaseViewModel.swift */; };
@@ -81,11 +80,10 @@
 		A129892528AA198200282503 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		A129892728AA199300282503 /* BootcampView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BootcampView.swift; sourceTree = "<group>"; };
 		A129892928AA19A100282503 /* ClubView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubView.swift; sourceTree = "<group>"; };
-		A129892B28AA19C200282503 /* ColorExtenstion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtenstion.swift; sourceTree = "<group>"; };
+		A129892B28AA19C200282503 /* MethodExtenstion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MethodExtenstion.swift; sourceTree = "<group>"; };
 		A129893228AA1EE200282503 /* Mabinogi_Classic_OTF.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Mabinogi_Classic_OTF.otf; sourceTree = "<group>"; };
 		A129893628AA202B00282503 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		A129893728AA229100282503 /* FontExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontExtension.swift; sourceTree = "<group>"; };
-		A17E7DD528B3849F00147D71 /* TimestampExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimestampExtension.swift; sourceTree = "<group>"; };
 		A17E7DD728B3CEAE00147D71 /* ClubModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ClubModel.swift; path = dq/Source/Extension/ClubModel.swift; sourceTree = SOURCE_ROOT; };
 		A17F721728B0870A007C9FFE /* CustomType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomType.swift; sourceTree = "<group>"; };
 		A17F721B28B0A300007C9FFE /* FirebaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseViewModel.swift; sourceTree = "<group>"; };
@@ -232,9 +230,8 @@
 		A129891F28AA12E800282503 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				A129892B28AA19C200282503 /* ColorExtenstion.swift */,
+				A129892B28AA19C200282503 /* MethodExtenstion.swift */,
 				A129893728AA229100282503 /* FontExtension.swift */,
-				A17E7DD528B3849F00147D71 /* TimestampExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -447,14 +444,13 @@
 				A129892628AA198200282503 /* HomeView.swift in Sources */,
 				A17F721C28B0A300007C9FFE /* FirebaseViewModel.swift in Sources */,
 				A1BF879528AD1FF0003079B4 /* ViewHandler.swift in Sources */,
-				A129892C28AA19C200282503 /* ColorExtenstion.swift in Sources */,
+				A129892C28AA19C200282503 /* MethodExtenstion.swift in Sources */,
 				A129893828AA229100282503 /* FontExtension.swift in Sources */,
 				A129892A28AA19A100282503 /* ClubView.swift in Sources */,
 				A17F721828B0870A007C9FFE /* CustomType.swift in Sources */,
 				A129892828AA199300282503 /* BootcampView.swift in Sources */,
 				A12988F328AA04EB00282503 /* MainView.swift in Sources */,
 				A1BF87B228ADDAB6003079B4 /* BootcampModel.swift in Sources */,
-				A17E7DD628B3849F00147D71 /* TimestampExtension.swift in Sources */,
 				A1BF879928AD4108003079B4 /* CustomModifier.swift in Sources */,
 				A1BF878D28AD16F7003079B4 /* BootcampModalView.swift in Sources */,
 				A12988F128AA04EB00282503 /* dqApp.swift in Sources */,

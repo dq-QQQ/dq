@@ -13,7 +13,7 @@ class BootcampViewModel: FirebaseViewModel<BootcampModel> {
     @Published var bootcampList: [BootcampModel] = []
     
     func newBootcamp(name: String, process: [String]) async {
-        let tmp = BootcampModel(id: UUID().uuidString, name: name, process: process, isInterested: false,time: Timestamp())
+        let tmp = BootcampModel(id: UUID().uuidString, name: name, process: process, isInterested: false,time: Timestamp(), homepage: "")
         _ = try? dbCollection.addDocument(from: tmp)
     }
 }

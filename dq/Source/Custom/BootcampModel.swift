@@ -16,4 +16,5 @@ struct BootcampModel : Identifiable, Codable {
     let process: [String]
     let isInterested: Bool
     var time: Timestamp
+    var homepage: String
 }

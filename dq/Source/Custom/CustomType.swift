@@ -33,3 +33,21 @@ enum SwitchView: String {
 enum Tabs {
     case home, bootcamp, club
 }
+
+
+
+enum FieldsInfo: String, CaseIterable {
+    case name = "이름"
+    case process = "과정"
+    case time = "지원 마감일"
+    case homepage = "홈페이지"
+}
+
+
+//enum FieldsValue: BootcampModel, CaseIterable {
+//    typealias RawValue = <#type#>
+//
+//case name = self.name
+//case process = self.process
+//
+//}

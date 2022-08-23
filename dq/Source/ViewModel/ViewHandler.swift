@@ -26,4 +26,7 @@ class ViewHandler : ObservableObject{
     
 }
 
-
+//(428.0, 845.0) 12promax
+//(390.0, 763.0) 12pro
+//same           12
+//(375.0, 728.0) 12mini
