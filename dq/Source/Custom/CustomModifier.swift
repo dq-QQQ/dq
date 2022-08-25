@@ -22,17 +22,27 @@ struct PaddingFromSideOnHomeView: ViewModifier {
     }
 }
 
-struct PaddingFromSideOnModalView: ViewModifier {
-    @EnvironmentObject private var viewHandler: ViewHandler
-    
+struct TextStyleInModalView: ViewModifier {
     func body(content: Content) -> some View {
-        if let tmpProxy = viewHandler.getGeoProxy() {
-            return content
-                .padding(.horizontal, tmpProxy.size.width / 70)
-        } else {
-            return content
-                .padding(.horizontal, 5)
-        }
+        content
+            .padding(.vertical)
+            .foregroundColor(.dqGreen)
+            .font(.dqMediumBigFont)
     }
 }
 
+struct ToolbarStyleInModalView: ViewModifier {
+    var flag: Int
+    var logoSize: CGFloat
+    
+    func body(content: Content) -> some View {
+        content
+            .frame(width: flag == 0 ? logoSize : logoSize * 2, height: logoSize)
+            .foregroundColor(.dqGreen)
+            .background(
+                Rectangle()
+                    .fill(Color.dqWhite)
+                    .cornerRadius(10)
+            )
+    }
+}

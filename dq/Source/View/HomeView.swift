@@ -104,7 +104,7 @@ extension HomeView {
 }
 
 // 모듈화 실패.. 할 수 있을 거 같은데..
-// cannot convert value of type to expected argument type 'binding c ' foreach매개변수에???
+// cannot convert value of type to expected argument type 'binding c ' foreach매개변수에 제네릭 변수 넣으면 안됨
 //
 //struct CustomList<T: Decodable & Encodable & Identifiable>: View {
 //    @ObservedObject var firebaseViewModel: FirebaseViewModel<T>

@@ -4,6 +4,9 @@
 //
 //  Created by Kyu jin Lee on 2022/08/17.
 //
+//                    ForEach(FieldsValue.allCases) {
+//                        Text($0)
+//                    }
 
 import SwiftUI
 
@@ -16,95 +19,88 @@ struct BootcampModalView: View {
     var body: some View {
         NavigationView {
             ScrollView {
-                AsyncImage(url: URL(string: bootcamp.logoURL)) { image in
-                    image.resizable()
-                } placeholder: {
-                    ProgressView()
-                }
-                .onAppear {
-                    bootcamp = bootcampList.filter { $0.id == viewHandler.selection}[0]
-                }
-                .frame(width: (viewHandler.getGeoProxy()?.size.width)! - 20, height: (viewHandler.getGeoProxy()?.size.height)! / 4, alignment: .center)
-                
-               
+                logoImage
                 Spacer()
                     .frame(height: 30)
-                
                 HStack {
-                    VStack() {
-                        ForEach(FieldsInfo.allCases, id: \.self) {info in
-                            VStack {
-                                Text(info.rawValue)
-                                    .foregroundColor(.dqGreen)
-                                    .padding(.vertical)
-                                    .font(.dqMediumBigFont)
-                                
-                            }
-                        }
-                    }
-                    .foregroundColor(.dqGreen)
-                    .font(.dqMediumBigFont)
-                    .frame(width: (viewHandler.getGeoProxy()?.size.width ?? 400) / 3 - (viewHandler.getGeoProxy()?.size.width ?? 400) / 40)
-                    .background(Rectangle().fill(Color.dqWhite))
-                    .cornerRadius(30, corners: [.topLeft, .bottomLeft])
-
-                    VStack() {
-                        Text(bootcamp.name)
-                            .padding(.vertical)
-
-                        Text(bootcamp.process.reduce("") { $0 + $1 })
-                            .padding(.vertical)
-
-                        Text(bootcamp.time.toDateString())
-                            .padding(.vertical)
-
-                        Link(bootcamp.homepage, destination: URL(string: bootcamp.homepage)!)
-                            .padding(.vertical)
-                    }
-//                    ForEach(FieldsValue.allCases) {
-//                        Text($0)
-//                    }
-                    .foregroundColor(.dqGreen)
-                    .font(.dqMediumBigFont)
-                    .frame(width: (viewHandler.getGeoProxy()?.size.width ?? 400) * 2 / 3 - (viewHandler.getGeoProxy()?.size.width ?? 400) / 40)
-                    .background(Rectangle().strokeBorder(Color.dqWhite, lineWidth: 2))
+                    infoKey
+                    infoValue
                 }
             }
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
-                    Button {
-                        presentationMode.wrappedValue.dismiss()
-                    } label : {
-                        Image(systemName: "chevron.left")
-                            .frame(width: 40, height: 40)
-                            .foregroundColor(.dqGreen)
-                            .background(
-                                Rectangle()
-                                    .fill(Color.dqWhite)
-                                    .cornerRadius(10)
-                            )
-                        //                            .shadow(color: Color.black.opacity(0.3), radius: 3, x: 2, y: 2)
-                    }
+                    backButton
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    Button {
-                    } label : {
-                        Text("찜하기")
-                            .frame(width: 80, height: 40)
-                            .foregroundColor(.dqGreen)
-                            .background(
-                                Rectangle()
-                                    .fill(Color.dqWhite)
-                                    .cornerRadius(10)
-                            )
-                        //                            .shadow(color: Color.black.opacity(0.3), radius: 3, x: 2, y: 2)
-                    }
+                    setInterest
                 }
             }
         }
-        
     }
 }
+
+extension BootcampModalView {
+    var phoneWidth: CGFloat { viewHandler.getGeoProxy()?.size.width ?? 400 }
+    var phoneHeight: CGFloat { viewHandler.getGeoProxy()?.size.height ?? 800 }
+    
+    var logoImage: some View {
+        AsyncImage(url: URL(string: bootcamp.logoURL)) { image in
+            image.resizable()
+        } placeholder: {
+            ProgressView()
+        }
+        .frame(width: phoneWidth - 20, height: phoneHeight / 4, alignment: .center)
+        .onAppear {
+            bootcamp = bootcampList.filter { $0.id == viewHandler.selection}[0]
+        }
+    }
+    
+    var infoKey: some View {
+        VStack() {
+            ForEach(FieldsInfo.allCases, id: \.self) {info in
+                VStack {
+                    Text(info.rawValue)
+                        .modifier(TextStyleInModalView())
+                }
+            }
+        }
+        .frame(width: phoneWidth / 3 - phoneWidth / 40)
+        .background(Rectangle().fill(Color.dqWhite))
+        .cornerRadius(30, corners: [.topLeft, .bottomLeft])
+    }
+    
+    var infoValue: some View {
+        VStack() {
+            Group {
+                Text(bootcamp.name)
+                Text(bootcamp.process.reduce("") { $0 + $1 })
+                Text(bootcamp.time.toDateString())
+                Link(bootcamp.homepage, destination: URL(string: bootcamp.homepage)!)
+            }
+            .modifier(TextStyleInModalView())
+        }
+        .frame(width: phoneWidth * 2 / 3 - phoneWidth / 40)
+        .background(Rectangle().strokeBorder(Color.dqWhite, lineWidth: 2))
+    }
+    
+    var backButton: some View {
+        Button {
+            presentationMode.wrappedValue.dismiss()
+        } label : {
+            Image(systemName: "chevron.left")
+                .modifier(ToolbarStyleInModalView(flag: 0, logoSize: phoneWidth / 10))
+        }
+    }
+    
+    var setInterest: some View {
+        Button {
+        } label : {
+            Text("찜하기")
+                .modifier(ToolbarStyleInModalView(flag: 1, logoSize: phoneWidth / 10))
+        }
+    }
+}
+
 
 //struct BootcampModalView_Previews: PreviewProvider {
 //    static var previews: some View {
