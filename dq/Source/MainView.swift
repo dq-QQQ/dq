@@ -11,7 +11,7 @@ struct MainView: View {
     @EnvironmentObject var viewHandler: ViewHandler
     @ObservedObject private var bootcampViewModel = BootcampViewModel("BootCamp")
     @ObservedObject private var clubViewModel = ClubViewModel("Club")
-
+//    private var 
     var body: some View {
         GeometryReader { proxy in
             if viewHandler.currentPage == SwitchView.main.rawValue {

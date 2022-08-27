@@ -5,26 +5,28 @@
 //  Created by Kyu jin Lee on 2022/08/15.
 //
 
-//                        bootcampList = bootcampList.filter { $0.isInterested == true} // 관심목록
-//                        bootcampList = bootcampList.sorted { // 마감임박순
-//                            $0.time.toDateString() < $1.time.toDateString()
-//                        }
-
 import SwiftUI
 
 struct HomeView: View {
-    @State private var showModal = false
     @ObservedObject var bootcampViewModel: BootcampViewModel
     @ObservedObject var clubViewModel: ClubViewModel
     @EnvironmentObject private var viewHandler: ViewHandler
-//    @State var bootcampList: [BootcampModel] = []
     
     var body: some View {
         ScrollView {
+            
             titleOfBlock("관심있어요!")
             ZStack {
                 blockRectangle
-                customList
+                CustomList(flag: 0, bootcampViewModel: bootcampViewModel)
+            }
+            .modifier(PaddingFromSideOnHomeView())
+            Spacer()
+                .frame(height: phoneHeight / 15)
+            titleOfBlock("지원기간이 얼마 안남았어요!")
+            ZStack {
+                blockRectangle
+                CustomList(flag: 1, bootcampViewModel: bootcampViewModel)
             }
             .modifier(PaddingFromSideOnHomeView())
         }
@@ -49,6 +51,55 @@ extension HomeView {
             .foregroundColor(.dqWhite)
             .cornerRadius(20)
     }
+}
+
+struct CustomList: View {
+    var flag: Int
+    @State var bootcampList: [BootcampModel] = []
+    @EnvironmentObject private var viewHandler: ViewHandler
+    @ObservedObject var bootcampViewModel: BootcampViewModel
+    @State private var showModal = false
+    
+    var body: some View {
+        ScrollView(.horizontal)  {
+            HStack {
+                ForEach(bootcampList) { field in
+                    VStack(alignment: .center, spacing: 5) {
+                        nameOfEachField(field)
+                        imageOfEachField(field)
+                    }
+                    .sheet(isPresented: self.$showModal) {
+                        BootcampModalView(bootcampList: $bootcampList, bootcamp: field)
+                    }
+                    .onTapGesture {
+                        viewHandler.selection = field.id
+                        self.showModal = true
+                    }
+                    strokeLine
+                }
+            }
+            .padding(.horizontal, 10)
+            .task {
+                bootcampList = await bootcampViewModel.fetchFireStore()
+                switch flag {
+                case 0: // 관심목록
+                    bootcampList = bootcampList.filter { $0.isInterested == true}
+                case 1: // 마감임박순
+                    bootcampList = bootcampList.sorted {
+                        $0.time.toDateString() < $1.time.toDateString()
+                    }
+                default:
+                    break;
+                }
+            }
+        }
+    }
+}
+
+extension CustomList {
+    var phoneWidth: CGFloat { viewHandler.getGeoProxy()?.size.width ?? 400 }
+    var phoneHeight: CGFloat { viewHandler.getGeoProxy()?.size.height ?? 800 }
+    var logoSize: CGFloat { phoneWidth / 4 }
     
     func nameOfEachField(_ bootcamp: BootcampModel) -> some View {
         Text(bootcamp.name)
@@ -75,45 +126,7 @@ extension HomeView {
             .padding(.vertical, phoneWidth / 40)
             .padding(.leading, phoneWidth / 40)
     }
-
-    
-    var customList: some View {
-        ScrollView(.horizontal)  {
-            HStack {
-                ForEach(bootcampViewModel.bootcampList) { field in
-                    VStack(alignment: .center, spacing: 5) {
-                        nameOfEachField(field)
-                        imageOfEachField(field)
-                    }
-                    .sheet(isPresented: self.$showModal) {
-                        BootcampModalView(bootcampList: $bootcampViewModel.bootcampList, bootcamp: field)
-                    }
-                    .onTapGesture {
-                        viewHandler.selection = field.id
-                        self.showModal = true
-                    }
-                    strokeLine
-                }
-            }
-            .padding(.horizontal, phoneWidth / 40)
-            .task {
-                bootcampViewModel.bootcampList = await bootcampViewModel.fetchFireStore()
-            }
-        }
-    }
 }
-
-// 모듈화 실패.. 할 수 있을 거 같은데..
-// cannot convert value of type to expected argument type 'binding c ' foreach매개변수에 제네릭 변수 넣으면 안됨
-//
-//struct CustomList<T: Decodable & Encodable & Identifiable>: View {
-//    @ObservedObject var firebaseViewModel: FirebaseViewModel<T>
-//
-//    var body: some View {
-//
-//    }
-//
-//}
 
 
 struct HomeView_Previews: PreviewProvider {
