@@ -61,7 +61,6 @@ struct BootcampView: View {
         }
         .task {
             bootcampList = await bootcampViewModel.fetchFireStore()
-            
         }
     }
 }

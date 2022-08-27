@@ -86,7 +86,7 @@ struct CustomList: View {
                     bootcampList = bootcampList.filter { $0.isInterested == true}
                 case 1: // 마감임박순
                     bootcampList = bootcampList.sorted {
-                        $0.time.toDateString() < $1.time.toDateString()
+                        $0.applyDeadline.toDateString() < $1.applyDeadline.toDateString()
                     }
                 default:
                     break;

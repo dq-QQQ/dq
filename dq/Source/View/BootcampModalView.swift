@@ -74,8 +74,11 @@ extension BootcampModalView {
             Group {
                 Text(bootcamp.name)
                 Text(bootcamp.process.reduce("") { $0 + $1 })
-                Text(bootcamp.time.toDateString())
+                Text(bootcamp.applyDeadline.toDateString())
                 Link(bootcamp.homepage, destination: URL(string: bootcamp.homepage)!)
+                Text(bootcamp.fee)
+                Text(bootcamp.place[1])
+                Text(bootcamp.period)
             }
             .modifier(TextStyleInModalView())
         }
