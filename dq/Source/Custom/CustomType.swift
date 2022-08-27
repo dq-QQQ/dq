@@ -11,7 +11,8 @@ enum logosURLs : String {
     case defaultURL = "https://firebasestorage.googleapis.com/v0/b/dqapp-d00bb.appspot.com/o/empty.jpg?alt=media&token=82c55199-507b-41e5-9275-07e72bff42d4"
 }
 
-enum fields: String, CaseIterable {
+enum Fields: String, CaseIterable {
+    case All = "전체"
     case iOS = "iOS"
     case Android = "Android"
     case FrontEnd = "FrontEnd"

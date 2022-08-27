@@ -71,16 +71,19 @@ extension MainView {
     private var home: some View {
         HomeView(bootcampViewModel: bootcampViewModel,
                  clubViewModel: clubViewModel)
+            .tag(Tabs.home)
             .tabItem(image: "homekit", text: "홈")
     }
     
     private var bootcamp: some View {
         BootcampView(bootcampViewModel: bootcampViewModel)
+            .tag(Tabs.bootcamp)
             .tabItem(image: "laptopcomputer", text: "부트캠프")
     }
     
     private var club: some View {
         ClubView()
+            .tag(Tabs.club)
             .tabItem(image: "person.3.sequence", text: "동아리")
     }
 }

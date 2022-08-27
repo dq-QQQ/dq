@@ -26,6 +26,15 @@ class ViewHandler : ObservableObject{
     
 }
 
+class ViewHandler2 {
+    let objectWillChange = PassthroughSubject<ViewHandler2,Never>()
+    var currentPage: String = Fields.All.rawValue {
+        didSet{
+            objectWillChange.send(self)
+        }
+    }
+}
+
 //(428.0, 845.0) 12promax
 //(390.0, 763.0) 12pro
 //same           12
