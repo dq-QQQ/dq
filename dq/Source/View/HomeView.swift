@@ -106,7 +106,7 @@ extension CustomList {
             .font(.dqBigSmallFont)
             .foregroundColor(.dqGreen)
             .lineLimit(2)
-            .frame(width: logoSize, height: phoneHeight / 12)
+            .frame(width: logoSize, height: phoneHeight / 12, alignment: .center)
     }
     
     func imageOfEachField(_ bootcamp: BootcampModel) -> some View {

@@ -73,12 +73,16 @@ extension BootcampModalView {
         VStack() {
             Group {
                 Text(bootcamp.name)
-                Text(bootcamp.process.reduce("") { $0 + $1 })
+                Text(bootcamp.process.reduce("") { $0 + ($0 == "" ? "" : "/") + $1 })
                 Text(bootcamp.applyDeadline.toDateString())
-                Link(bootcamp.homepage, destination: URL(string: bootcamp.homepage)!)
+                Link(destination: URL(string: bootcamp.homepage)!) {
+                    Text("Link")
+                        .underline()
+                }
                 Text(bootcamp.fee)
                 Text(bootcamp.place[1])
                 Text(bootcamp.period)
+                Text(bootcamp.organizer)
             }
             .modifier(TextStyleInModalView())
         }

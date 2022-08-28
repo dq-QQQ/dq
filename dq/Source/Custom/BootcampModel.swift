@@ -20,4 +20,5 @@ struct BootcampModel : Identifiable, Codable {
     var period : String
     var place: [String]
     var fee: String
+    var organizer: String
 }

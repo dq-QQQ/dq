@@ -45,6 +45,7 @@ enum FieldsInfo: String, CaseIterable {
     case fee = "비용"
     case place = "장소"
     case period = "기간"
+    case organizer = "주관"
 }
 
 
