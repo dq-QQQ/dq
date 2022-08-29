@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Firebase
 
 extension Color {
     static let dqGreen = Color(hex: "#07422D")
@@ -27,8 +28,6 @@ extension Color {
     }
 }
 
-import Firebase
-
 extension Timestamp {
     func toDateString() -> String {
         let dateFormatter = DateFormatter()
@@ -36,6 +35,15 @@ extension Timestamp {
         dateFormatter.dateFormat = "MM월dd일 HH시mm분"
         let date = Date(timeIntervalSince1970: TimeInterval(self.seconds))
         return dateFormatter.string(from: date)
+    }
+}
+
+ extension View {
+    func tabItem(image: String, text:String) -> some View {
+        self.tabItem {
+            Image(systemName: image)
+            Text(text)
+        }
     }
 }
 

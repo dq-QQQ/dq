@@ -12,7 +12,7 @@ import SwiftUI
 
 struct BootcampModalView: View {
     @Binding var bootcampList: [BootcampModel]
-    @EnvironmentObject private var viewHandler: ViewHandler
+    @EnvironmentObject private var viewModel: ViewModel
     @State var bootcamp : BootcampModel
     @Environment(\.presentationMode) var presentationMode
     
@@ -40,8 +40,8 @@ struct BootcampModalView: View {
 }
 
 extension BootcampModalView {
-    var phoneWidth: CGFloat { viewHandler.getGeoProxy()?.size.width ?? 400 }
-    var phoneHeight: CGFloat { viewHandler.getGeoProxy()?.size.height ?? 800 }
+    var phoneWidth: CGFloat { viewModel.getPhoneSize().width }
+    var phoneHeight: CGFloat { viewModel.getPhoneSize().height }
     
     var logoImage: some View {
         AsyncImage(url: URL(string: bootcamp.logoURL)) { image in
@@ -51,13 +51,13 @@ extension BootcampModalView {
         }
         .frame(width: phoneWidth - 20, height: phoneHeight / 4, alignment: .center)
         .onAppear {
-            bootcamp = bootcampList.filter { $0.id == viewHandler.selection}[0]
+            bootcamp = bootcampList.filter { $0.id == viewModel.selection}[0]
         }
     }
     
     var infoKey: some View {
         VStack() {
-            ForEach(FieldsInfo.allCases, id: \.self) {info in
+            ForEach(BootcampInfo.allCases, id: \.self) {info in
                 VStack {
                     Text(info.rawValue)
                         .modifier(TextStyleInModalView())

@@ -10,7 +10,7 @@ import Firebase
 
 struct ClubModel : Identifiable, Codable {
     let id: String
-    var logoURL: String = logosURLs.defaultURL.rawValue
+    var logoURL: String = defaultURL
     var name: String
     let process: [String]
 //    let isInterested: Bool

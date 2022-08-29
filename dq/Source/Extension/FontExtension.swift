@@ -4,7 +4,6 @@
 //
 //  Created by Kyu jin Lee on 2022/08/15.
 //
-//  Default Font를 바꾸려했지만 실패해서 extension으로 해줌
 
 import SwiftUI
 
@@ -52,44 +51,6 @@ extension Font.TextStyle {
         case .caption2: return 10
         @unknown default:
             return 8
-        }
-    }
-}
-
-// 이 밑으로는 Default Font 바꾸려다가 실패한 코드
-// 좀 더 공부해볼 부분
-// UIKit에서는 되던데..
-extension UIFontDescriptor.AttributeName {
-    static let nsctFontUIUsage =
-        UIFontDescriptor.AttributeName(rawValue: "NSCTFontUIUsageAttribute")
-}
-
-extension UIFont {
-
-    @objc class func mySystemFont(ofSize size: CGFloat) -> UIFont {
-        return UIFont(name: AppFontName.mainfont, size: size)!
-    }
-
-    @objc convenience init(myCoder aDecoder: NSCoder) {
-        if let fontDescriptor = aDecoder.decodeObject(forKey: "UIFontDescriptor") as? UIFontDescriptor {
-                let fontName = AppFontName.mainfont
-                self.init(name: fontName, size: fontDescriptor.pointSize)!
-
-        } else {
-            self.init(myCoder: aDecoder)
-        }
-    }
-
-    class func overrideInitialize() {
-        if self == UIFont.self {
-            let systemFontMethod = class_getClassMethod(self, #selector(systemFont(ofSize:)))
-            let mySystemFontMethod = class_getClassMethod(self, #selector(mySystemFont(ofSize:)))
-            method_exchangeImplementations(systemFontMethod!, mySystemFontMethod!)
-
-
-            let initCoderMethod = class_getInstanceMethod(self, #selector(UIFontDescriptor.init(coder:)))
-            let myInitCoderMethod = class_getInstanceMethod(self, #selector(UIFont.init(myCoder:)))
-            method_exchangeImplementations(initCoderMethod!, myInitCoderMethod!)
         }
     }
 }

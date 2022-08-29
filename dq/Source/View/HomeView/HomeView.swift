@@ -10,7 +10,7 @@ import SwiftUI
 struct HomeView: View {
     @ObservedObject var bootcampViewModel: BootcampViewModel
     @ObservedObject var clubViewModel: ClubViewModel
-    @EnvironmentObject private var viewHandler: ViewHandler
+    @EnvironmentObject private var viewModel: ViewModel
     
     var body: some View {
         ScrollView {
@@ -34,8 +34,8 @@ struct HomeView: View {
 }
 
 extension HomeView {
-    var phoneWidth: CGFloat { viewHandler.getGeoProxy()?.size.width ?? 400 }
-    var phoneHeight: CGFloat { viewHandler.getGeoProxy()?.size.height ?? 800 }
+    var phoneWidth: CGFloat { viewModel.getPhoneSize().width }
+    var phoneHeight: CGFloat { viewModel.getPhoneSize().height  }
     var logoSize: CGFloat { phoneWidth / 4 }
     
     func titleOfBlock(_ a: String) -> some View {
@@ -56,7 +56,7 @@ extension HomeView {
 struct CustomList: View {
     var flag: Int
     @State var bootcampList: [BootcampModel] = []
-    @EnvironmentObject private var viewHandler: ViewHandler
+    @EnvironmentObject private var viewModel: ViewModel
     @ObservedObject var bootcampViewModel: BootcampViewModel
     @State private var showModal = false
     
@@ -72,7 +72,7 @@ struct CustomList: View {
                         BootcampModalView(bootcampList: $bootcampList, bootcamp: field)
                     }
                     .onTapGesture {
-                        viewHandler.selection = field.id
+                        viewModel.selection = field.id
                         self.showModal = true
                     }
                     strokeLine
@@ -97,8 +97,8 @@ struct CustomList: View {
 }
 
 extension CustomList {
-    var phoneWidth: CGFloat { viewHandler.getGeoProxy()?.size.width ?? 400 }
-    var phoneHeight: CGFloat { viewHandler.getGeoProxy()?.size.height ?? 800 }
+    var phoneWidth: CGFloat { viewModel.getPhoneSize().width }
+    var phoneHeight: CGFloat { viewModel.getPhoneSize().height  }
     var logoSize: CGFloat { phoneWidth / 4 }
     
     func nameOfEachField(_ bootcamp: BootcampModel) -> some View {
@@ -133,7 +133,7 @@ struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         HomeView(bootcampViewModel: BootcampViewModel("BootCamp"),
                  clubViewModel: ClubViewModel("Club"))
-            .environmentObject(ViewHandler())
+            .environmentObject(ViewModel())
     }
 }
 

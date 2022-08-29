@@ -9,16 +9,11 @@ import Foundation
 import SwiftUI
 
 struct PaddingFromSideOnHomeView: ViewModifier {
-    @EnvironmentObject private var viewHandler: ViewHandler
+    @EnvironmentObject private var viewModel: ViewModel
     
     func body(content: Content) -> some View {
-        if let tmpProxy = viewHandler.getGeoProxy() {
-            return content
-                .padding(.horizontal, tmpProxy.size.width / 15)
-        } else {
-            return content
-                .padding(.horizontal, 20)
-        }
+        content
+            .padding(.horizontal, viewModel.getPhoneSize().width / 20)
     }
 }
 

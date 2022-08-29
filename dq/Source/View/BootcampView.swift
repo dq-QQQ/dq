@@ -9,8 +9,8 @@ import SwiftUI
 
 struct BootcampView: View {
     @ObservedObject var bootcampViewModel: BootcampViewModel
-    @EnvironmentObject var viewHandler: ViewHandler
-    var viewHandler2 =  ViewHandler2()
+    @EnvironmentObject var viewModel: ViewModel
+    var vh2 =  VH2()
     @State var bootcampList: [BootcampModel] = []
     @State var showModals: Bool = false
     @State private var searchText = ""
@@ -21,12 +21,12 @@ struct BootcampView: View {
                 HStack {
                     ForEach(Fields.allCases, id: \.self) { field in
                         Button {
-                            viewHandler2.currentPage = field.rawValue
-                            if viewHandler2.currentPage == Fields.All.rawValue {
+                            vh2.currentPage = field.rawValue
+                            if vh2.currentPage == Fields.All.rawValue {
                                 Task { bootcampList = await bootcampViewModel.fetchFireStore() }
                             } else {
                                 Task { bootcampList = await bootcampViewModel.fetchFireStore()
-                                    bootcampList = bootcampList.filter { $0.process.contains(viewHandler2.currentPage) == true
+                                    bootcampList = bootcampList.filter { $0.process.contains(vh2.currentPage) == true
                                     }
                                 }
                             }
@@ -105,7 +105,7 @@ struct BootcampView: View {
                         BootcampModalView(bootcampList: $bootcampList, bootcamp: field)
                     }
                     .onTapGesture {
-                        viewHandler.selection = field.id
+                        viewModel.selection = field.id
                         self.showModals = true
                         hideKeyboard()
                     }
@@ -127,8 +127,8 @@ extension View {
 }
 
 extension BootcampView {
-    var phoneWidth: CGFloat { viewHandler.getGeoProxy()?.size.width ?? 400 }
-    var phoneHeight: CGFloat { viewHandler.getGeoProxy()?.size.height ?? 800 }
+    var phoneWidth: CGFloat { viewModel.getPhoneSize().width }
+    var phoneHeight: CGFloat { viewModel.getPhoneSize().height  }
     var logoSize: CGFloat { phoneWidth / 3 }
     
     
