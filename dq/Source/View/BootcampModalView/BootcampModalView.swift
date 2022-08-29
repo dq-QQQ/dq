@@ -15,7 +15,7 @@ struct BootcampModalView: View {
     
     var body: some View {
         NavigationView {
-            ScrollView {
+            ScrollView(showsIndicators: false) {
                 LogoImage(bootcampList: $bootcampList, bootcamp: $bootcamp)
                 
                 Spacer().frame(height: 30)
