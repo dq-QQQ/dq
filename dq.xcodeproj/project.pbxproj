@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		A11B9F0D28BCE83E0005A906 /* TitleBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11B9F0C28BCE83E0005A906 /* TitleBar.swift */; };
 		A11B9F1128BCEF8F0005A906 /* TabViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11B9F1028BCEF8F0005A906 /* TabViews.swift */; };
+		A11B9F1428BCF80A0005A906 /* CustomList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11B9F1328BCF80A0005A906 /* CustomList.swift */; };
+		A11B9F1628BCF8740005A906 /* Block.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11B9F1528BCF8740005A906 /* Block.swift */; };
 		A12988F128AA04EB00282503 /* dqApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12988F028AA04EB00282503 /* dqApp.swift */; };
 		A12988F328AA04EB00282503 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12988F228AA04EB00282503 /* MainView.swift */; };
 		A12988F528AA04EC00282503 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A12988F428AA04EC00282503 /* Assets.xcassets */; };
@@ -70,6 +72,8 @@
 /* Begin PBXFileReference section */
 		A11B9F0C28BCE83E0005A906 /* TitleBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleBar.swift; sourceTree = "<group>"; };
 		A11B9F1028BCEF8F0005A906 /* TabViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViews.swift; sourceTree = "<group>"; };
+		A11B9F1328BCF80A0005A906 /* CustomList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomList.swift; sourceTree = "<group>"; };
+		A11B9F1528BCF8740005A906 /* Block.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Block.swift; sourceTree = "<group>"; };
 		A12988ED28AA04EB00282503 /* dq.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dq.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A12988F028AA04EB00282503 /* dqApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dqApp.swift; sourceTree = "<group>"; };
 		A12988F228AA04EB00282503 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -154,6 +158,8 @@
 			isa = PBXGroup;
 			children = (
 				A129892528AA198200282503 /* HomeView.swift */,
+				A11B9F1328BCF80A0005A906 /* CustomList.swift */,
+				A11B9F1528BCF8740005A906 /* Block.swift */,
 			);
 			path = HomeView;
 			sourceTree = "<group>";
@@ -474,9 +480,11 @@
 				A129892828AA199300282503 /* BootcampView.swift in Sources */,
 				A12988F328AA04EB00282503 /* MainView.swift in Sources */,
 				A1BF87B228ADDAB6003079B4 /* BootcampModel.swift in Sources */,
+				A11B9F1628BCF8740005A906 /* Block.swift in Sources */,
 				A1BF879928AD4108003079B4 /* CustomModifier.swift in Sources */,
 				A1BF878D28AD16F7003079B4 /* BootcampModalView.swift in Sources */,
 				A11B9F0D28BCE83E0005A906 /* TitleBar.swift in Sources */,
+				A11B9F1428BCF80A0005A906 /* CustomList.swift in Sources */,
 				A12988F128AA04EB00282503 /* dqApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

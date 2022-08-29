@@ -12,7 +12,6 @@ class ViewModel : ObservableObject{
     @Published var currentTab: Tabs = .home
     @Published var selection: String?
     
-    
     private var geoProxy: GeometryProxy?
     func setGeoProxy(_ proxy: GeometryProxy) { geoProxy = proxy }
     func getPhoneSize() -> CGSize {
@@ -22,8 +21,6 @@ class ViewModel : ObservableObject{
             return CGSize(width: 800.0, height: 400.0)
         }
     }
-    
-    
 }
 
 class MainViewHandler : ObservableObject {

@@ -40,9 +40,6 @@ class FirebaseViewModel<T: Identifiable & Codable>: ObservableObject {
         let data: [T] = snapshot.documents.compactMap { document in
             try? document.data(as: T.self)
         }
-        
         return data
     }
-    
-    
 }
