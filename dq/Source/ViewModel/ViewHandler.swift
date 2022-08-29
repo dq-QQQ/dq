@@ -8,9 +8,12 @@
 import Combine
 import SwiftUI
 
-class ViewModel : ObservableObject{
+class ViewModel : ObservableObject {
     @Published var currentTab: Tabs = .home
     @Published var selection: String?
+    
+//    @Published var bootcampList: [[BootcampModel]] = [[]]
+//    var bootcamp = BootcampViewModel("BootCamp")
     
     private var geoProxy: GeometryProxy?
     func setGeoProxy(_ proxy: GeometryProxy) { geoProxy = proxy }

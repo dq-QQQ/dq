@@ -31,7 +31,7 @@ enum Tabs {
     case home, bootcamp, club
 }
 
-enum BootcampInfo: String, CaseIterable {
+enum BootcampInformations: String, CaseIterable {
     case name = "이름"
     case process = "과정"
     case time = "지원 마감일"

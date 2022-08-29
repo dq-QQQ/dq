@@ -14,10 +14,10 @@ struct Block: View {
     @EnvironmentObject private var viewModel: ViewModel
     
     var body: some View {
-        titleOfBlock("관심있어요!")
+        titleOfBlock(title)
         ZStack {
             blockRectangle
-            CustomList(flag: 0, bootcampViewModel: bootcampViewModel)
+            ListInBlock(flag: flag, bootcampViewModel: bootcampViewModel)
         }
         .modifier(PaddingFromSideOnHomeView())
     }

@@ -26,7 +26,7 @@ struct TabViews: View {
     }
 }
 
-private extension TabViews {
+extension TabViews {
     private var home: some View {
         HomeView(bootcampViewModel: bootcampViewModel,
                  clubViewModel: clubViewModel)
