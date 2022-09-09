@@ -49,7 +49,7 @@ extension Bootcamps {
     var logoSize: CGFloat { phoneWidth / 3 }
     
     func imageOfEachField(_ bootcamp: BootcampModel) -> some View {
-        AsyncImage(url: URL(string: bootcamp.logoURL)) { image in
+        MyAsyncImage(url: URL(string: bootcamp.logoURL)) { image in
             image.resizable()
         } placeholder: {
             ProgressView()

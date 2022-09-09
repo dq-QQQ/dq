@@ -19,6 +19,7 @@
 		A11B9F2E28BD07110005A906 /* Bootcamps.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11B9F2D28BD07110005A906 /* Bootcamps.swift */; };
 		A11B9F3028BD09680005A906 /* ShortInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11B9F2F28BD09680005A906 /* ShortInfo.swift */; };
 		A11B9F3228BD0B230005A906 /* Interest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11B9F3128BD0B230005A906 /* Interest.swift */; };
+		A11B9F5028CB240E0005A906 /* CustomAsyncImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11B9F4F28CB240E0005A906 /* CustomAsyncImage.swift */; };
 		A12988F128AA04EB00282503 /* dqApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12988F028AA04EB00282503 /* dqApp.swift */; };
 		A12988F328AA04EB00282503 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12988F228AA04EB00282503 /* MainView.swift */; };
 		A12988F528AA04EC00282503 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A12988F428AA04EC00282503 /* Assets.xcassets */; };
@@ -35,7 +36,7 @@
 		A129893828AA229100282503 /* FontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A129893728AA229100282503 /* FontExtension.swift */; };
 		A17E7DD828B3CEAE00147D71 /* ClubModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17E7DD728B3CEAE00147D71 /* ClubModel.swift */; };
 		A17F721828B0870A007C9FFE /* CustomType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17F721728B0870A007C9FFE /* CustomType.swift */; };
-		A17F721C28B0A300007C9FFE /* FirebaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17F721B28B0A300007C9FFE /* FirebaseViewModel.swift */; };
+		A17F721C28B0A300007C9FFE /* FirebaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17F721B28B0A300007C9FFE /* FirebaseModel.swift */; };
 		A17F721E28B0A9C8007C9FFE /* FirebaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17F721D28B0A9C8007C9FFE /* FirebaseViewModel.swift */; };
 		A1A9C49428AF1DF900A0FF94 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = A1A9C49328AF1DF900A0FF94 /* FirebaseFirestore */; };
 		A1A9C49628AF1DF900A0FF94 /* FirebaseFirestoreCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = A1A9C49528AF1DF900A0FF94 /* FirebaseFirestoreCombine-Community */; };
@@ -90,6 +91,7 @@
 		A11B9F2D28BD07110005A906 /* Bootcamps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bootcamps.swift; sourceTree = "<group>"; };
 		A11B9F2F28BD09680005A906 /* ShortInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortInfo.swift; sourceTree = "<group>"; };
 		A11B9F3128BD0B230005A906 /* Interest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interest.swift; sourceTree = "<group>"; };
+		A11B9F4F28CB240E0005A906 /* CustomAsyncImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAsyncImage.swift; sourceTree = "<group>"; };
 		A12988ED28AA04EB00282503 /* dq.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dq.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A12988F028AA04EB00282503 /* dqApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dqApp.swift; sourceTree = "<group>"; };
 		A12988F228AA04EB00282503 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -110,7 +112,7 @@
 		A129893728AA229100282503 /* FontExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontExtension.swift; sourceTree = "<group>"; };
 		A17E7DD728B3CEAE00147D71 /* ClubModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ClubModel.swift; path = dq/Source/Extension/ClubModel.swift; sourceTree = SOURCE_ROOT; };
 		A17F721728B0870A007C9FFE /* CustomType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomType.swift; sourceTree = "<group>"; };
-		A17F721B28B0A300007C9FFE /* FirebaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseViewModel.swift; sourceTree = "<group>"; };
+		A17F721B28B0A300007C9FFE /* FirebaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseModel.swift; sourceTree = "<group>"; };
 		A17F721D28B0A9C8007C9FFE /* FirebaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseViewModel.swift; sourceTree = "<group>"; };
 		A1BF878C28AD16F7003079B4 /* BootcampModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BootcampModalView.swift; sourceTree = "<group>"; };
 		A1BF878E28AD1703003079B4 /* ClubModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubModalView.swift; sourceTree = "<group>"; };
@@ -331,7 +333,7 @@
 			children = (
 				A1BF87B128ADDAB6003079B4 /* BootcampModel.swift */,
 				A17E7DD728B3CEAE00147D71 /* ClubModel.swift */,
-				A17F721B28B0A300007C9FFE /* FirebaseViewModel.swift */,
+				A17F721B28B0A300007C9FFE /* FirebaseModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -341,6 +343,7 @@
 			children = (
 				A1BF879828AD4108003079B4 /* CustomModifier.swift */,
 				A17F721728B0870A007C9FFE /* CustomType.swift */,
+				A11B9F4F28CB240E0005A906 /* CustomAsyncImage.swift */,
 			);
 			path = Custom;
 			sourceTree = "<group>";
@@ -510,7 +513,7 @@
 				A1BF879128AD1710003079B4 /* InfoView.swift in Sources */,
 				A17E7DD828B3CEAE00147D71 /* ClubModel.swift in Sources */,
 				A129892628AA198200282503 /* HomeView.swift in Sources */,
-				A17F721C28B0A300007C9FFE /* FirebaseViewModel.swift in Sources */,
+				A17F721C28B0A300007C9FFE /* FirebaseModel.swift in Sources */,
 				A11B9F3228BD0B230005A906 /* Interest.swift in Sources */,
 				A11B9F3028BD09680005A906 /* ShortInfo.swift in Sources */,
 				A11B9F2428BD02FE0005A906 /* BootcampInfo.swift in Sources */,
@@ -526,6 +529,7 @@
 				A17F721828B0870A007C9FFE /* CustomType.swift in Sources */,
 				A129892828AA199300282503 /* BootcampView.swift in Sources */,
 				A12988F328AA04EB00282503 /* MainView.swift in Sources */,
+				A11B9F5028CB240E0005A906 /* CustomAsyncImage.swift in Sources */,
 				A1BF87B228ADDAB6003079B4 /* BootcampModel.swift in Sources */,
 				A11B9F1628BCF8740005A906 /* Block.swift in Sources */,
 				A1BF879928AD4108003079B4 /* CustomModifier.swift in Sources */,
@@ -692,7 +696,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"dq/Preview Content\"";
-				DEVELOPMENT_TEAM = DF587PT75B;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = dq/Info.plist;
@@ -725,7 +729,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"dq/Preview Content\"";
-				DEVELOPMENT_TEAM = DF587PT75B;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = dq/Info.plist;
