@@ -18,9 +18,3 @@ class BootcampViewModel: FirebaseModel<BootcampModel>, ObservableObject {
 //    }
 }
 
-class ClubViewModel: FirebaseModel<ClubModel>, ObservableObject {
-    func newClub(name: String, process: [String]) async {
-        let tmp = ClubModel(id: UUID().uuidString, name: name, process: process, time: Timestamp())
-        _ = try? dbCollection.addDocument(from: tmp)
-    }
-}

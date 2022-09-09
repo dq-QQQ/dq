@@ -15,6 +15,22 @@ struct Bootcamps: View {
     @Binding var searchText: String
     
     var body: some View {
+        if #available(iOS 15.0, *) {
+            content
+                .task { bootcampList = await bootcampViewModel.fetchFireStore() }
+        } else {
+            content
+                .onAppear() { Task { bootcampList = await bootcampViewModel.fetchFireStore() } }
+        }
+    }
+}
+
+extension Bootcamps {
+    var phoneWidth: CGFloat { viewModel.getPhoneSize().width }
+    var phoneHeight: CGFloat { viewModel.getPhoneSize().height  }
+    var logoSize: CGFloat { phoneWidth / 3 }
+    
+    private var content: some View {
         ScrollView(showsIndicators: false) {
             ForEach(bootcampList.filter{$0.name.hasPrefix(searchText)}) { bootcamp in
                 HStack {
@@ -37,16 +53,7 @@ struct Bootcamps: View {
                 }
             }
         }
-        .task {
-            bootcampList = await bootcampViewModel.fetchFireStore()
-        }
     }
-}
-
-extension Bootcamps {
-    var phoneWidth: CGFloat { viewModel.getPhoneSize().width }
-    var phoneHeight: CGFloat { viewModel.getPhoneSize().height  }
-    var logoSize: CGFloat { phoneWidth / 3 }
     
     func imageOfEachField(_ bootcamp: BootcampModel) -> some View {
         MyAsyncImage(url: URL(string: bootcamp.logoURL)) { image in

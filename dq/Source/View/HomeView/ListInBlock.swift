@@ -15,18 +15,25 @@ struct ListInBlock: View {
     
     var body: some View {
         ScrollView(.horizontal)  {
-            HStack {
-                ElementsInList(bootcampList: $bootcampList, bootcampViewModel: bootcampViewModel)
-            }
-            .padding(.horizontal, 10)
-            .task {
-                await processing()
+            if #available(iOS 15.0, *) {
+                content
+                    .task { await processing() }
+            } else {
+                content
+                    .onAppear() { Task { await processing() } }
             }
         }
     }
 }
 
 private extension ListInBlock {
+    private var content: some View {
+        HStack {
+            ElementsInList(bootcampList: $bootcampList, bootcampViewModel: bootcampViewModel)
+        }
+        .padding(.horizontal, 10)
+    }
+    
     func processing() async {
         bootcampList = await bootcampViewModel.fetchFireStore()
         switch flag {

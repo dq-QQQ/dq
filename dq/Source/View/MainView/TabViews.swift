@@ -13,25 +13,32 @@ struct TabViews: View {
     @ObservedObject private var clubViewModel = ClubViewModel("Club")
     
     var body: some View {
-        TabView(selection: $viewModel.currentTab) {
-//            Group {
-                home
-                bootcamp
-                club
-//            }
+        if #available(iOS 15.0, *) {
+            content
+                .task { _ = await bootcampViewModel.fetchFireStore() }
+        } else {
+            content
+                .onAppear() { Task { _ = await bootcampViewModel.fetchFireStore() } }
         }
-        .task { _ = await bootcampViewModel.fetchFireStore() }
-        .accentColor(.dqGreen) // soon deprecated. change to tint.
-        .edgesIgnoringSafeArea(.top)
     }
 }
 
 extension TabViews {
+    private var content: some View {
+        TabView(selection: $viewModel.currentTab) {
+            home
+            bootcamp
+            club
+        }
+        .accentColor(.dqGreen) // soon deprecated. change to tint.
+        .edgesIgnoringSafeArea(.top)
+    }
+    
     private var home: some View {
         HomeView(bootcampViewModel: bootcampViewModel,
                  clubViewModel: clubViewModel)
-            .tag(Tabs.home)
-            .tabItem(image: "homekit", text: "홈")
+        .tag(Tabs.home)
+        .tabItem(image: "homekit", text: "홈")
     }
     
     private var bootcamp: some View {
