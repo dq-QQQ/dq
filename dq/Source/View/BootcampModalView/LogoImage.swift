@@ -4,12 +4,13 @@
 //
 //  Created by Kyu jin Lee on 2022/08/29.
 //
+// MyAsyncImage를 사용하면 42서울 로고만 계속 뜸 추후 개선 예정
 
 import SwiftUI
 
 struct LogoImage: View {
     @EnvironmentObject private var viewModel: ViewModel
-    @Binding var bootcampList: [BootcampModel]
+    var bootcampList: [BootcampModel]
     @Binding var bootcamp : BootcampModel
     
     var body: some View {
@@ -19,10 +20,6 @@ struct LogoImage: View {
             ProgressView()
         }
         .frame(width: phoneWidth - 20, height: phoneHeight / 4, alignment: .center)
-        .onAppear {
-            bootcamp = bootcampList.filter { $0.id == viewModel.selection}[0]
-            print(bootcamp.name)
-        }
     }
 }
 

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct BootcampInfo: View {
     @EnvironmentObject private var viewModel: ViewModel
-    @State var bootcamp : BootcampModel
+    @Binding var bootcamp : BootcampModel
     
     var body: some View {
         HStack {

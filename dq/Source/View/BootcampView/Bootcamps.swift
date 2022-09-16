@@ -43,13 +43,13 @@ extension Bootcamps {
                 .cornerRadius(6)
                 .shadow(color:.dqGray, radius: 6)
                 .padding([.leading, .top, .trailing])
-                .sheet(isPresented: self.$showModals) {
-                    BootcampModalView(bootcampList: $bootcampList, bootcamp: bootcamp)
-                }
                 .onTapGesture {
                     viewModel.selection = bootcamp.id
                     self.showModals = true
                     hideKeyboard()
+                }
+                .sheet(isPresented: self.$showModals) {
+                    BootcampModalView(bootcampList: $bootcampList, bootcamp: bootcamp)
                 }
             }
         }
