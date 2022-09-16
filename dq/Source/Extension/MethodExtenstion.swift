@@ -67,3 +67,13 @@ struct RoundedCorner: Shape {
         return Path(path.cgPath)
     }
 }
+
+
+extension HorizontalAlignment {
+    private enum CurrentAlignment : AlignmentID {
+        static func defaultValue(in d: ViewDimensions) -> CGFloat {
+            return d[HorizontalAlignment.center]
+        }
+    }
+    static let horizontalAlignment = HorizontalAlignment(CurrentAlignment.self)
+}

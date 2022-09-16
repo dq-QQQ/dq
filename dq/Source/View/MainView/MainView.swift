@@ -21,7 +21,6 @@ struct MainView: View {
             default                       : main(proxy)
             }
         }
-        
     }
 }
 
