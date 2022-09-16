@@ -13,7 +13,7 @@ struct LogoImage: View {
     @Binding var bootcamp : BootcampModel
     
     var body: some View {
-        MyAsyncImage(url: URL(string: bootcamp.logoURL)) { image in
+        AsyncImage(url: URL(string: bootcamp.logoURL)) { image in
             image.resizable()
         } placeholder: {
             ProgressView()
@@ -21,6 +21,7 @@ struct LogoImage: View {
         .frame(width: phoneWidth - 20, height: phoneHeight / 4, alignment: .center)
         .onAppear {
             bootcamp = bootcampList.filter { $0.id == viewModel.selection}[0]
+            print(bootcamp.name)
         }
     }
 }

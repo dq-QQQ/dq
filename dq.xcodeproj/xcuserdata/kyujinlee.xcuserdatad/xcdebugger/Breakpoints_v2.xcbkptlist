@@ -20,5 +20,69 @@
             landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "13BDFDCB-FCB3-4BA7-929C-8B833447EA54"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "dq/Source/View/BootcampView/Interest.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "12"
+            endingLineNumber = "12"
+            landmarkName = "Interest"
+            landmarkType = "14">
+            <Locations>
+               <Location
+                  uuid = "13BDFDCB-FCB3-4BA7-929C-8B833447EA54 - 3fb0095029a25990"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "dq.Interest.list.getter : SwiftUI.FetchedResults&lt;dq.InterestedList&gt;"
+                  moduleName = "dq"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kyujinlee/swift/dq/dq/Source/View/BootcampView/Interest.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "186">
+               </Location>
+               <Location
+                  uuid = "13BDFDCB-FCB3-4BA7-929C-8B833447EA54 - 5e94a3ef9f11b3a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "dq.Interest.$list.getter : SwiftUI.Binding&lt;SwiftUI.FetchRequest&lt;dq.InterestedList&gt;.Configuration&gt;"
+                  moduleName = "dq"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kyujinlee/swift/dq/dq/Source/View/BootcampView/Interest.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "186">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E036E742-AD40-4C6B-A329-06ED8C01ED6E"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "dq/Source/View/BootcampView/Interest.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

@@ -22,6 +22,10 @@ struct BootcampModalView: View {
                 
                 BootcampInfo(bootcamp: bootcamp)
             }
+//            .onAppear {
+//                bootcamp = bootcampList.filter { $0.id == viewModel.selection}[0]
+//                print(bootcamp.name)
+//            }
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                     backButton

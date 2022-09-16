@@ -12,6 +12,7 @@ struct ListInBlock: View {
     @State var bootcampList: [BootcampModel] = []
     @EnvironmentObject private var viewModel: ViewModel
     @ObservedObject var bootcampViewModel: BootcampViewModel
+    @FetchRequest( sortDescriptors: [] ) var list: FetchedResults<InterestedList>
     
     var body: some View {
         ScrollView(.horizontal)  {
@@ -38,7 +39,14 @@ private extension ListInBlock {
         bootcampList = await bootcampViewModel.fetchFireStore()
         switch flag {
         case 0: // 관심목록
-            bootcampList = bootcampList.filter { $0.isInterested == true}
+            bootcampList = bootcampList.filter {
+                for element in list {
+                    if element.elementID == $0.id {
+                        return true
+                    }
+                }
+                return false
+            }
         case 1: // 마감임박순
             bootcampList = bootcampList.sorted {
                 $0.applyDeadline.toDateString() < $1.applyDeadline.toDateString()

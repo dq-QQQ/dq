@@ -1,49 +1,49 @@
 {
   "images" : [
     {
-      "filename" : "IMG_0316 복사본-22.jpg",
+      "filename" : "IMG_0316 복사본 2-1.jpg",
       "idiom" : "iphone",
       "scale" : "2x",
-      "size" : "20x20"
-    },
-    {
-      "filename" : "IMG_0316 복사본-3.jpg",
-      "idiom" : "iphone",
-      "scale" : "3x",
       "size" : "20x20"
     },
     {
       "filename" : "IMG_0316 복사본-4.jpg",
       "idiom" : "iphone",
+      "scale" : "3x",
+      "size" : "20x20"
+    },
+    {
+      "filename" : "IMG_0316 복사본-8.jpg",
+      "idiom" : "iphone",
       "scale" : "2x",
       "size" : "29x29"
     },
     {
-      "filename" : "IMG_0316 복사본-7.jpg",
+      "filename" : "IMG_0316 복사본-11.jpg",
       "idiom" : "iphone",
       "scale" : "3x",
       "size" : "29x29"
     },
     {
-      "filename" : "IMG_0316 복사본-19.jpg",
+      "filename" : "IMG_0316 복사본-24.jpg",
       "idiom" : "iphone",
       "scale" : "2x",
       "size" : "40x40"
     },
     {
-      "filename" : "IMG_0316 복사본-9.jpg",
+      "filename" : "IMG_0316 복사본-5.jpg",
       "idiom" : "iphone",
       "scale" : "3x",
       "size" : "40x40"
     },
     {
-      "filename" : "IMG_0316 복사본-1.jpg",
+      "filename" : "IMG_0316 복사본-2.jpg",
       "idiom" : "iphone",
       "scale" : "2x",
       "size" : "60x60"
     },
     {
-      "filename" : "IMG_0316 복사본-18.jpg",
+      "filename" : "IMG_0316 복사본-28.jpg",
       "idiom" : "iphone",
       "scale" : "3x",
       "size" : "60x60"
@@ -73,13 +73,13 @@
       "size" : "29x29"
     },
     {
-      "filename" : "IMG_0316 복사본-15.jpg",
+      "filename" : "IMG_0316 복사본-22.jpg",
       "idiom" : "ipad",
       "scale" : "1x",
       "size" : "40x40"
     },
     {
-      "filename" : "IMG_0316 복사본-24.jpg",
+      "filename" : "IMG_0316 복사본-20.jpg",
       "idiom" : "ipad",
       "scale" : "2x",
       "size" : "40x40"
@@ -103,7 +103,7 @@
       "size" : "83.5x83.5"
     },
     {
-      "filename" : "IMG_0316 복사본-20.jpg",
+      "filename" : "IMG_0316 복사본-26.jpg",
       "idiom" : "ios-marketing",
       "scale" : "1x",
       "size" : "1024x1024"

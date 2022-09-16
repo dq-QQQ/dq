@@ -10,7 +10,9 @@ import SwiftUI
 struct MainView: View {
     @EnvironmentObject var viewModel: ViewModel
     @ObservedObject var mainViewHandler = MainViewHandler()
-
+    
+    
+    
     var body: some View {
         GeometryReader { proxy in
             switch mainViewHandler.currentPage {
@@ -19,6 +21,7 @@ struct MainView: View {
             default                       : main(proxy)
             }
         }
+        
     }
 }
 

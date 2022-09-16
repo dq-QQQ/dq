@@ -14,7 +14,6 @@ struct BootcampModel : Identifiable, Codable {
     var logoURL: String = defaultURL
     var name: String
     let process: [String]
-    let isInterested: Bool
     var applyDeadline: Timestamp
     var homepage: String
     var period : String
