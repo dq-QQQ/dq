@@ -38,6 +38,9 @@
 		A17F721828B0870A007C9FFE /* CustomType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17F721728B0870A007C9FFE /* CustomType.swift */; };
 		A17F721C28B0A300007C9FFE /* FirebaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17F721B28B0A300007C9FFE /* FirebaseModel.swift */; };
 		A17F721E28B0A9C8007C9FFE /* BootcampViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17F721D28B0A9C8007C9FFE /* BootcampViewModel.swift */; };
+		A197604A28D61D34001F3198 /* ViewHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A197604928D61D34001F3198 /* ViewHandler.swift */; };
+		A197604C28D61DEA001F3198 /* UserNotificationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A197604B28D61DEA001F3198 /* UserNotificationModel.swift */; };
+		A197604E28D6CE70001F3198 /* UserNotificationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A197604D28D6CE70001F3198 /* UserNotificationViewModel.swift */; };
 		A1A9C49428AF1DF900A0FF94 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = A1A9C49328AF1DF900A0FF94 /* FirebaseFirestore */; };
 		A1A9C49628AF1DF900A0FF94 /* FirebaseFirestoreCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = A1A9C49528AF1DF900A0FF94 /* FirebaseFirestoreCombine-Community */; };
 		A1A9C49828AF1DF900A0FF94 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = A1A9C49728AF1DF900A0FF94 /* FirebaseFirestoreSwift */; };
@@ -56,7 +59,7 @@
 		A1BF878F28AD1703003079B4 /* ClubModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BF878E28AD1703003079B4 /* ClubModalView.swift */; };
 		A1BF879128AD1710003079B4 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BF879028AD1710003079B4 /* InfoView.swift */; };
 		A1BF879328AD1831003079B4 /* Pacific Northwest Letters W01.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A1BF879228AD1831003079B4 /* Pacific Northwest Letters W01.ttf */; };
-		A1BF879528AD1FF0003079B4 /* ViewHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BF879428AD1FF0003079B4 /* ViewHandler.swift */; };
+		A1BF879528AD1FF0003079B4 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BF879428AD1FF0003079B4 /* ViewModel.swift */; };
 		A1BF879928AD4108003079B4 /* CustomModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BF879828AD4108003079B4 /* CustomModifier.swift */; };
 		A1BF87B028ADD7B3003079B4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A1BF87AF28ADD7B3003079B4 /* GoogleService-Info.plist */; };
 		A1BF87B228ADDAB6003079B4 /* BootcampModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BF87B128ADDAB6003079B4 /* BootcampModel.swift */; };
@@ -127,12 +130,15 @@
 		A17F721728B0870A007C9FFE /* CustomType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomType.swift; sourceTree = "<group>"; };
 		A17F721B28B0A300007C9FFE /* FirebaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseModel.swift; sourceTree = "<group>"; };
 		A17F721D28B0A9C8007C9FFE /* BootcampViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BootcampViewModel.swift; sourceTree = "<group>"; };
+		A197604928D61D34001F3198 /* ViewHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewHandler.swift; sourceTree = "<group>"; };
+		A197604B28D61DEA001F3198 /* UserNotificationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNotificationModel.swift; sourceTree = "<group>"; };
+		A197604D28D6CE70001F3198 /* UserNotificationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNotificationViewModel.swift; sourceTree = "<group>"; };
 		A1B8C84528CB83FF0043B654 /* ClubViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubViewModel.swift; sourceTree = "<group>"; };
 		A1BF878C28AD16F7003079B4 /* BootcampModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BootcampModalView.swift; sourceTree = "<group>"; };
 		A1BF878E28AD1703003079B4 /* ClubModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubModalView.swift; sourceTree = "<group>"; };
 		A1BF879028AD1710003079B4 /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
 		A1BF879228AD1831003079B4 /* Pacific Northwest Letters W01.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pacific Northwest Letters W01.ttf"; sourceTree = "<group>"; };
-		A1BF879428AD1FF0003079B4 /* ViewHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewHandler.swift; sourceTree = "<group>"; };
+		A1BF879428AD1FF0003079B4 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		A1BF879828AD4108003079B4 /* CustomModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomModifier.swift; sourceTree = "<group>"; };
 		A1BF87AF28ADD7B3003079B4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A1BF87B128ADDAB6003079B4 /* BootcampModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BootcampModel.swift; path = dq/Source/Custom/BootcampModel.swift; sourceTree = SOURCE_ROOT; };
@@ -350,9 +356,11 @@
 		A129892328AA17D800282503 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				A1BF879428AD1FF0003079B4 /* ViewHandler.swift */,
+				A1BF879428AD1FF0003079B4 /* ViewModel.swift */,
 				A17F721D28B0A9C8007C9FFE /* BootcampViewModel.swift */,
 				A1B8C84528CB83FF0043B654 /* ClubViewModel.swift */,
+				A197604928D61D34001F3198 /* ViewHandler.swift */,
+				A197604D28D6CE70001F3198 /* UserNotificationViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -363,6 +371,7 @@
 				A1BF87B128ADDAB6003079B4 /* BootcampModel.swift */,
 				A17E7DD728B3CEAE00147D71 /* ClubModel.swift */,
 				A17F721B28B0A300007C9FFE /* FirebaseModel.swift */,
+				A197604B28D61DEA001F3198 /* UserNotificationModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -559,20 +568,23 @@
 				A1BF878F28AD1703003079B4 /* ClubModalView.swift in Sources */,
 				A17F721E28B0A9C8007C9FFE /* BootcampViewModel.swift in Sources */,
 				A1BF879128AD1710003079B4 /* InfoView.swift in Sources */,
+				A197604C28D61DEA001F3198 /* UserNotificationModel.swift in Sources */,
 				A17E7DD828B3CEAE00147D71 /* ClubModel.swift in Sources */,
 				A1DF43FE28D36A33000128E0 /* InterestedList.xcdatamodeld in Sources */,
 				A129892628AA198200282503 /* HomeView.swift in Sources */,
 				A17F721C28B0A300007C9FFE /* FirebaseModel.swift in Sources */,
 				A1DF43FB28D36733000128E0 /* CoreDataStack.swift in Sources */,
 				A11B9F3228BD0B230005A906 /* Interest.swift in Sources */,
+				A197604A28D61D34001F3198 /* ViewHandler.swift in Sources */,
 				A11B9F3028BD09680005A906 /* ShortInfo.swift in Sources */,
 				A1B8C84628CB83FF0043B654 /* ClubViewModel.swift in Sources */,
 				A11B9F2428BD02FE0005A906 /* BootcampInfo.swift in Sources */,
 				A11B9F2628BD04670005A906 /* SearchBar.swift in Sources */,
 				A11B9F1E28BD01470005A906 /* LogoImage.swift in Sources */,
+				A197604E28D6CE70001F3198 /* UserNotificationViewModel.swift in Sources */,
 				A11B9F2E28BD07110005A906 /* Bootcamps.swift in Sources */,
 				A11B9F1128BCEF8F0005A906 /* TabViews.swift in Sources */,
-				A1BF879528AD1FF0003079B4 /* ViewHandler.swift in Sources */,
+				A1BF879528AD1FF0003079B4 /* ViewModel.swift in Sources */,
 				A129892C28AA19C200282503 /* MethodExtenstion.swift in Sources */,
 				A129893828AA229100282503 /* FontExtension.swift in Sources */,
 				A129892A28AA19A100282503 /* ClubView.swift in Sources */,

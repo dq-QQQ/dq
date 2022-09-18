@@ -10,7 +10,8 @@ import SwiftUI
 struct MainView: View {
     @EnvironmentObject var viewModel: ViewModel
     @ObservedObject var mainViewHandler = MainViewHandler()
-    
+    @FetchRequest( sortDescriptors: [] ) var list: FetchedResults<InterestedList>
+    @EnvironmentObject private var userNotificationViewModel: UserNotificationViewModel
     
     
     var body: some View {
@@ -20,6 +21,9 @@ struct MainView: View {
             case SwitchView.info.rawValue : info
             default                       : main(proxy)
             }
+        }
+        .onAppear {
+            userNotificationViewModel.getAuthorization()
         }
     }
 }

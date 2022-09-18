@@ -29,10 +29,15 @@ extension Color {
 }
 
 extension Timestamp {
-    func toDateString() -> String {
+    func toDateString(flag: Int) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.locale = Locale(identifier: "ko_KR")
-        dateFormatter.dateFormat = "MM월dd일 HH시mm분"
+        switch flag {
+        case 0: dateFormatter.dateFormat = "MM월dd일 HH시mm분"
+        case 1: dateFormatter.dateFormat = "YYYYMMddHHmm"
+        default: break
+        }
+        
         let date = Date(timeIntervalSince1970: TimeInterval(self.seconds))
         return dateFormatter.string(from: date)
     }
@@ -76,4 +81,18 @@ extension HorizontalAlignment {
         }
     }
     static let horizontalAlignment = HorizontalAlignment(CurrentAlignment.self)
+}
+
+
+extension String {
+    func substring(from: Int, to: Int) -> String {
+        guard from < count, to >= 0, to - from >= 0 else {
+            return ""
+        }
+        
+        let startIndex = index(self.startIndex, offsetBy: from)
+        let endIndex = index(self.startIndex, offsetBy: to + 1)
+        
+        return String(self[startIndex ..< endIndex])
+    }
 }

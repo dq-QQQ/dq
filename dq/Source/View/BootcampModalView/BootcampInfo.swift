@@ -42,7 +42,7 @@ private extension BootcampInfo {
             Group {
                 Text(bootcamp.name)
                 Text(bootcamp.process.reduce("") { $0 + ($0 == "" ? "" : "/") + $1 })
-                Text(bootcamp.applyDeadline.toDateString())
+                Text(bootcamp.applyDeadline.toDateString(flag: 0))
                 Link(destination: URL(string: bootcamp.homepage)!) { Text("Link").underline() }
                 Text(bootcamp.fee)
                 Text(bootcamp.place[1])

@@ -20,9 +20,6 @@ struct BootcampModalView: View {
         NavigationView {
             ScrollView(showsIndicators: false) {
                 LogoImage(bootcampList: bootcampList, bootcamp: $bootcamp)
-                    .onAppear {
-                        print(bootcamp.name, bootcamp.process)
-                    }
                 
                 Spacer().frame(height: 30)
                 
@@ -70,8 +67,9 @@ extension BootcampModalView {
             return Button {
                 let interestedList = InterestedList(context: moc)
                 interestedList.elementName = bootcamp.name
-                interestedList.expireDate = bootcamp.applyDeadline.toDateString()
+                interestedList.expireDate = bootcamp.applyDeadline.toDateString(flag: 0)
                 interestedList.elementID = bootcamp.id
+                interestedList.flag = 0
                 try? moc.save()
             } label: {
                 Text("찜하기")

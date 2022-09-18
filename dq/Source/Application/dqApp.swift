@@ -19,6 +19,7 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 @main
 struct dqApp: App {
     @StateObject private var coreDataStack = CoreDataStack(modelName: "InterestedList")
+    
     // register app delegate for Firebase setup
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     init() {
@@ -29,6 +30,7 @@ struct dqApp: App {
         WindowGroup {
             MainView()
                 .environmentObject(ViewModel())
+                .environmentObject(UserNotificationViewModel())
                 .environment(\.managedObjectContext, coreDataStack.managedObjectContext)
         }
     }

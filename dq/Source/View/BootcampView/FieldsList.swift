@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct FieldsList: View {
-    var vh2 =  VH2()
+    @ObservedObject var fieldsViewHandler =  FieldsViewHandler()
     @ObservedObject var bootcampViewModel: BootcampViewModel
     @Binding var bootcampList: [BootcampModel]
     @State var selectedFields: Fields = .All
@@ -20,13 +20,13 @@ struct FieldsList: View {
                 ForEach(Fields.allCases, id: \.self) { field in
                     VStack {
                         Button {
-                            vh2.currentPage = field.rawValue
+                            fieldsViewHandler.currentPage = field.rawValue
                             selectedFields = field
-                            if vh2.currentPage == Fields.All.rawValue {
+                            if fieldsViewHandler.currentPage == Fields.All.rawValue {
                                 Task { bootcampList = await bootcampViewModel.fetchFireStore() }
                             } else {
                                 Task { bootcampList = await bootcampViewModel.fetchFireStore()
-                                    bootcampList = bootcampList.filter { $0.process.contains(vh2.currentPage) == true
+                                    bootcampList = bootcampList.filter { $0.process.contains(fieldsViewHandler.currentPage) == true
                                     }
                                 }
                             }

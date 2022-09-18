@@ -49,7 +49,7 @@ private extension ListInBlock {
             }
         case 1: // 마감임박순
             bootcampList = bootcampList.sorted {
-                $0.applyDeadline.toDateString() < $1.applyDeadline.toDateString()
+                $0.applyDeadline.toDateString(flag: 0) < $1.applyDeadline.toDateString(flag: 0)
             }
         default:
             break;

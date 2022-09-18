@@ -11,11 +11,15 @@ struct TabViews: View {
     @EnvironmentObject var viewModel: ViewModel
     @ObservedObject private var bootcampViewModel = BootcampViewModel("BootCamp")
     @ObservedObject private var clubViewModel = ClubViewModel("Club")
+    @FetchRequest( sortDescriptors: [] ) var list: FetchedResults<InterestedList>
+    @Environment(\.managedObjectContext) var moc
+    @State var bootcampList: [BootcampModel] = []
+    @EnvironmentObject var userNotificationViewModel: UserNotificationViewModel
     
     var body: some View {
         if #available(iOS 15.0, *) {
             content
-                .task { _ = await bootcampViewModel.fetchFireStore() }
+                .task { bootcampList = await bootcampViewModel.fetchFireStore()}
         } else {
             content
                 .onAppear() { Task { _ = await bootcampViewModel.fetchFireStore() } }
@@ -37,6 +41,23 @@ extension TabViews {
     private var home: some View {
         HomeView(bootcampViewModel: bootcampViewModel,
                  clubViewModel: clubViewModel)
+        .task {
+            bootcampList = await bootcampViewModel.fetchFireStore()
+            for i in 0..<list.count {
+                for j in 0..<bootcampList.count {
+                    if list[i].elementID == bootcampList[j].id {
+                        if list[i].expireDate != bootcampList[j].applyDeadline.toDateString(flag: 1) {
+                            list[i].expireDate = bootcampList[j].applyDeadline.toDateString(flag: 1)
+                            try? moc.save()
+                            userNotificationViewModel.resetNotification(id: bootcampList[j].id,
+                                                                        name: bootcampList[j].name, expireDate: bootcampList[j].applyDeadline.toDateString(flag: 1), flag: 0)
+                        }
+                    }
+                }
+            }
+            
+            
+        }
         .tag(Tabs.home)
         .tabItem(image: "homekit", text: "홈")
     }

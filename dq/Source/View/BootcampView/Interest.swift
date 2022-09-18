@@ -11,6 +11,7 @@ struct Interest: View {
     var bootcamp: BootcampModel
     @FetchRequest( sortDescriptors: [] ) var list: FetchedResults<InterestedList>
     @Environment(\.managedObjectContext) var moc
+    @EnvironmentObject private var userNotificationViewModel: UserNotificationViewModel
     
     var body: some View {
         VStack {
@@ -18,6 +19,7 @@ struct Interest: View {
             if whether.0 {
                 Button {
                     moc.delete(list[whether.1])
+                    userNotificationViewModel.removeNotification(id: bootcamp.id)
                 } label: {
                     Image(systemName: "heart.fill")
                         .resizable()
@@ -29,9 +31,14 @@ struct Interest: View {
                 Button {
                     let interestedList = InterestedList(context: moc)
                     interestedList.elementName = bootcamp.name
-                    interestedList.expireDate = bootcamp.applyDeadline.toDateString()
+                    interestedList.expireDate = bootcamp.applyDeadline.toDateString(flag: 1)
                     interestedList.elementID = bootcamp.id
+                    interestedList.flag = 0
                     try? moc.save()
+                    userNotificationViewModel.addNotification(id: bootcamp.id,
+                                                              name: bootcamp.name,
+                                                              expireDate: bootcamp.applyDeadline.toDateString(flag: 1),
+                                                              flag: 0)
                 } label: {
                     Image(systemName: "heart")
                         .resizable()

@@ -16,7 +16,7 @@ struct BootcampView: View {
     var body: some View {
         VStack {
             FieldsList(bootcampViewModel: bootcampViewModel, bootcampList: $bootcampList)
-            hr
+            hr 
             SearchBar(text: $searchText).padding(.top, 10)
             Bootcamps(bootcampViewModel: bootcampViewModel, bootcampList: $bootcampList, searchText: $searchText)
         }
