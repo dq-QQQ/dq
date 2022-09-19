@@ -13,12 +13,12 @@ struct MainView: View {
     @FetchRequest( sortDescriptors: [] ) var list: FetchedResults<InterestedList>
     @EnvironmentObject private var userNotificationViewModel: UserNotificationViewModel
     
-    
     var body: some View {
         GeometryReader { proxy in
             switch mainViewHandler.currentPage {
             case SwitchView.main.rawValue : main(proxy)
             case SwitchView.info.rawValue : ho(ho: mainViewHandler)
+            case SwitchView.admin.rawValue: InfoView(mainViewHandler: mainViewHandler)
             default                       : main(proxy)
             }
 //            main(proxy)
@@ -32,15 +32,28 @@ struct MainView: View {
 private extension MainView {
     private func main(_ proxy: GeometryProxy) -> some View {
         VStack {
-            TitleBar(proxy: proxy)
+            TitleBar(mainViewHandler: mainViewHandler, proxy: proxy)
             TabViews(mainViewHandler: mainViewHandler)
         }
         .onAppear { viewModel.setGeoProxy(proxy) }
     }
-//
-//    private var info: some View {
-//        InfoView(mainViewHandler: mainViewHandler)
-//    }
+
+    private var info: some View {
+        InfoView(mainViewHandler: mainViewHandler)
+    }
+}
+
+struct InfoView: View {
+    var mainViewHandler: MainViewHandler
+    
+    var body: some View {
+        Button {
+            mainViewHandler.currentPage = SwitchView.main.rawValue
+        } label: {
+            Text("admin page")
+        }
+
+    }
 }
 
 struct ho: View {
@@ -55,10 +68,10 @@ struct ho: View {
 
     }
 }
-
-struct MainView_Previews: PreviewProvider {
-    static var previews: some View {
-        MainView()
-            .environmentObject(ViewModel())
-    }
-}
+//
+//struct MainView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        MainView()
+//            .environmentObject(ViewModel())
+//    }
+//}

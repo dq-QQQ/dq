@@ -25,6 +25,7 @@ enum Fields: String, CaseIterable {
 enum SwitchView: String {
     case main = "MainView"
     case info = "InfoView"
+    case admin = "AdminView"
 }
 
 enum Tabs {

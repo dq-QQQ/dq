@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Firebase
 
 struct HomeView: View {
     @ObservedObject var bootcampViewModel: BootcampViewModel
@@ -23,12 +24,18 @@ struct HomeView: View {
             
             
             Button {
-                ho.currentPage = SwitchView.info.rawValue
+                //                ho.currentPage = SwitchView.info.rawValue
+                //                print(UIDevice.current.identifierForVendor!.uuidString)
+                
+                let db = Database.database(url: "https://dqapp-d00bb-default-rtdb.asia-southeast1.firebasedatabase.app").reference()
+                db.child("admin").observeSingleEvent(of: .value) {snapshot in
+                    let value = snapshot.value as? String ?? "" //2번째 줄
+                    print(value)
+                }
             } label: {
                 Text("ho")
                     .font(.dqBigFont)
             }
-
         }
         
     }
