@@ -15,6 +15,8 @@ struct TabViews: View {
     @Environment(\.managedObjectContext) var moc
     @State var bootcampList: [BootcampModel] = []
     @EnvironmentObject var userNotificationViewModel: UserNotificationViewModel
+    @ObservedObject var mainViewHandler: MainViewHandler
+    
     
     var body: some View {
         if #available(iOS 15.0, *) {
@@ -30,7 +32,11 @@ struct TabViews: View {
 extension TabViews {
     private var content: some View {
         TabView(selection: $viewModel.currentTab) {
+            if mainViewHandler.currentPage == SwitchView.main.rawValue {
             home
+            } else {
+                ho(ho: mainViewHandler)
+            }
             bootcamp
             club
         }
@@ -40,7 +46,7 @@ extension TabViews {
     
     private var home: some View {
         HomeView(bootcampViewModel: bootcampViewModel,
-                 clubViewModel: clubViewModel)
+                        clubViewModel: clubViewModel, ho: mainViewHandler)
         .task {
             bootcampList = await bootcampViewModel.fetchFireStore()
             for i in 0..<list.count {
@@ -55,8 +61,6 @@ extension TabViews {
                     }
                 }
             }
-            
-            
         }
         .tag(Tabs.home)
         .tabItem(image: "homekit", text: "홈")
@@ -73,12 +77,12 @@ extension TabViews {
             .tag(Tabs.club)
             .tabItem(image: "person.3.sequence", text: "동아리")
     }
-    
-    
 }
 
-struct TabViews_Previews: PreviewProvider {
-    static var previews: some View {
-        TabViews()
-    }
-}
+
+
+//struct TabViews_Previews: PreviewProvider {
+//    static var previews: some View {
+//        TabViews()
+//    }
+//}

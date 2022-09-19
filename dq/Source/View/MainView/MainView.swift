@@ -18,9 +18,10 @@ struct MainView: View {
         GeometryReader { proxy in
             switch mainViewHandler.currentPage {
             case SwitchView.main.rawValue : main(proxy)
-            case SwitchView.info.rawValue : info
+            case SwitchView.info.rawValue : ho(ho: mainViewHandler)
             default                       : main(proxy)
             }
+//            main(proxy)
         }
         .onAppear {
             userNotificationViewModel.getAuthorization()
@@ -31,17 +32,29 @@ struct MainView: View {
 private extension MainView {
     private func main(_ proxy: GeometryProxy) -> some View {
         VStack {
-            TitleBar(mainViewHandler: mainViewHandler, proxy: proxy)
-            TabViews()
+            TitleBar(proxy: proxy)
+            TabViews(mainViewHandler: mainViewHandler)
         }
         .onAppear { viewModel.setGeoProxy(proxy) }
     }
-    
-    private var info: some View {
-        InfoView(mainViewHandler: mainViewHandler)
-    }
+//
+//    private var info: some View {
+//        InfoView(mainViewHandler: mainViewHandler)
+//    }
 }
 
+struct ho: View {
+    @ObservedObject var ho: MainViewHandler
+    var body: some View {
+        Button {
+            ho.currentPage = SwitchView.main.rawValue
+        } label: {
+            Text("ho")
+                .font(.dqBigFont)
+        }
+
+    }
+}
 
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {
