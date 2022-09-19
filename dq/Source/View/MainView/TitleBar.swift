@@ -10,25 +10,22 @@ import Firebase
 
 struct TitleBar: View {
     @ObservedObject var mainViewHandler: MainViewHandler
+    @ObservedObject var realtimeFirebase = RealtimeFirebase()
+    let deviceUUID = UIDevice.current.identifierForVendor!.uuidString
     var proxy: GeometryProxy
-    let db = Database.database(url: "https://dqapp-d00bb-default-rtdb.asia-southeast1.firebasedatabase.app").reference()
-    @State var value = ""
 
     var body: some View {
         HStack {
             logo
             Spacer()
-            if value == UIDevice.current.identifierForVendor!.uuidString {
-            goToInfo
+            if realtimeFirebase.getAdminUUID() == deviceUUID {
+                goToInfo
             } else {
                 EmptyView()
             }
         }
         .onAppear {
-            db.child("admin").observeSingleEvent(of: .value) {snapshot in
-                value = snapshot.value as? String ?? "" //2번째 줄
-                print(value)
-            }
+            realtimeFirebase.setAdminUUID()
         }
         .padding(.horizontal, proxy.size.width / 15)
     }

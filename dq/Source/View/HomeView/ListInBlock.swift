@@ -11,7 +11,7 @@ struct ListInBlock: View {
     var flag: Int
     @State var bootcampList: [BootcampModel] = []
     @EnvironmentObject private var viewModel: ViewModel
-    @ObservedObject var bootcampViewModel: BootcampViewModel
+    var fbBootcamp: FirebaseBootcamp
     @FetchRequest( sortDescriptors: [] ) var list: FetchedResults<InterestedList>
     
     var body: some View {
@@ -30,13 +30,13 @@ struct ListInBlock: View {
 private extension ListInBlock {
     private var content: some View {
         HStack {
-            ElementsInList(bootcampList: $bootcampList, bootcampViewModel: bootcampViewModel)
+            ElementsInList(bootcampList: $bootcampList)
         }
         .padding(.horizontal, 10)
     }
     
     func processing() async {
-        bootcampList = await bootcampViewModel.fetchFireStore()
+        bootcampList = await fbBootcamp.fetchFireStore()
         switch flag {
         case 0: // 관심목록
             bootcampList = bootcampList.filter {

@@ -9,7 +9,7 @@ import Foundation
 import Firebase
 import FirebaseFirestoreSwift
 
-class ClubViewModel: FirebaseModel<ClubModel>, ObservableObject {
+class FirebaseClub: FirebaseLogic<ClubModel> {
     func newClub(name: String, process: [String]) async {
         let tmp = ClubModel(id: UUID().uuidString, name: name, process: process, time: Timestamp())
         _ = try? dbCollection.addDocument(from: tmp)

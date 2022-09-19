@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct Bootcamps: View {
-    @ObservedObject var bootcampViewModel: BootcampViewModel
+    var fbBootcamp: FirebaseBootcamp
     @EnvironmentObject var viewModel: ViewModel
     @State var showModals: Bool = false
     @Binding var bootcampList: [BootcampModel]
@@ -17,10 +17,10 @@ struct Bootcamps: View {
     var body: some View {
         if #available(iOS 15.0, *) {
             content
-                .task { bootcampList = await bootcampViewModel.fetchFireStore() }
+                .task { bootcampList = await fbBootcamp.fetchFireStore() }
         } else {
             content
-                .onAppear() { Task { bootcampList = await bootcampViewModel.fetchFireStore() } }
+                .onAppear() { Task { bootcampList = await fbBootcamp.fetchFireStore() } }
         }
     }
 }

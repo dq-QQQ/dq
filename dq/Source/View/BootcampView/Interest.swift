@@ -23,8 +23,8 @@ struct Interest: View {
                 } label: {
                     Image(systemName: "heart.fill")
                         .resizable()
-                        .frame(width: 20, height: 20)
-                        .foregroundColor(.red)
+                        .frame(width: 25, height: 25)
+                        .foregroundColor(.dqRed)
                         .padding([.top, .trailing], 5)
                 }
             } else {
@@ -42,8 +42,8 @@ struct Interest: View {
                 } label: {
                     Image(systemName: "heart")
                         .resizable()
-                        .frame(width: 20, height: 20)
-                        .foregroundColor(.red)
+                        .frame(width: 25, height: 25)
+                        .foregroundColor(.dqRed)
                         .padding([.top, .trailing], 5)
                 }
             }

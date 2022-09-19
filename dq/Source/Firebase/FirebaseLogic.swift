@@ -9,8 +9,9 @@ import Foundation
 import Firebase
 import FirebaseFirestoreSwift
 
-class FirebaseModel<T: Identifiable & Codable> {
+class FirebaseLogic<T: Identifiable & Codable> {
     let dbCollection: CollectionReference
+    
     
     init(_ collectionName: String) {
         dbCollection = Firestore.firestore().collection(collectionName)

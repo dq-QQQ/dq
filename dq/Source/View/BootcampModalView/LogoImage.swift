@@ -19,7 +19,7 @@ struct LogoImage: View {
         } placeholder: {
             ProgressView()
         }
-        .frame(width: phoneWidth - 20, height: phoneHeight / 4, alignment: .center)
+        .frame(width: phoneWidth * 3 / 4, height: phoneWidth * 3 / 4, alignment: .center)
     }
 }
 

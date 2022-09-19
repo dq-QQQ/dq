@@ -9,8 +9,8 @@ import SwiftUI
 
 struct TabViews: View {
     @EnvironmentObject var viewModel: ViewModel
-    @ObservedObject private var bootcampViewModel = BootcampViewModel("BootCamp")
-    @ObservedObject private var clubViewModel = ClubViewModel("Club")
+    var fbBootcamp = FirebaseBootcamp("BootCamp")
+    var fbClub = FirebaseClub("Club")
     @FetchRequest( sortDescriptors: [] ) var list: FetchedResults<InterestedList>
     @Environment(\.managedObjectContext) var moc
     @State var bootcampList: [BootcampModel] = []
@@ -21,10 +21,10 @@ struct TabViews: View {
     var body: some View {
         if #available(iOS 15.0, *) {
             content
-                .task { bootcampList = await bootcampViewModel.fetchFireStore()}
+                .task { bootcampList = await fbBootcamp.fetchFireStore()}
         } else {
             content
-                .onAppear() { Task { _ = await bootcampViewModel.fetchFireStore() } }
+                .onAppear() { Task { _ = await fbBootcamp.fetchFireStore() } }
         }
     }
 }
@@ -39,16 +39,17 @@ extension TabViews {
             }
             bootcamp
             club
+            description
         }
         .accentColor(.dqGreen) // soon deprecated. change to tint.
         .edgesIgnoringSafeArea(.top)
     }
     
     private var home: some View {
-        HomeView(bootcampViewModel: bootcampViewModel,
-                        clubViewModel: clubViewModel, ho: mainViewHandler)
+        HomeView(fbBootcamp: fbBootcamp,
+                 fbClub: fbClub, ho: mainViewHandler)
         .task {
-            bootcampList = await bootcampViewModel.fetchFireStore()
+            bootcampList = await fbBootcamp.fetchFireStore()
             for i in 0..<list.count {
                 for j in 0..<bootcampList.count {
                     if list[i].elementID == bootcampList[j].id {
@@ -67,7 +68,7 @@ extension TabViews {
     }
     
     private var bootcamp: some View {
-        BootcampView(bootcampViewModel: bootcampViewModel)
+        BootcampView(fbBootcamp: fbBootcamp)
             .tag(Tabs.bootcamp)
             .tabItem(image: "laptopcomputer", text: "부트캠프")
     }
@@ -76,6 +77,12 @@ extension TabViews {
         ClubView()
             .tag(Tabs.club)
             .tabItem(image: "person.3.sequence", text: "동아리")
+    }
+    
+    private var description: some View {
+        DescriptionView()
+            .tag(Tabs.description)
+            .tabItem(image: "book", text: "분야별 소개")
     }
 }
 

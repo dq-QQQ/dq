@@ -10,14 +10,14 @@ import SwiftUI
 struct Block: View {
     var title: String
     var flag: Int
-    @ObservedObject var bootcampViewModel: BootcampViewModel
+    var fbBootcamp: FirebaseBootcamp
     @EnvironmentObject private var viewModel: ViewModel
     
     var body: some View {
         titleOfBlock(title)
         ZStack {
             blockRectangle
-            ListInBlock(flag: flag, bootcampViewModel: bootcampViewModel)
+            ListInBlock(flag: flag, fbBootcamp: fbBootcamp)
         }
         .modifier(PaddingFromSideOnHomeView())
     }
@@ -42,9 +42,9 @@ private extension Block {
             .cornerRadius(20)
     }
 }
-
-struct Block_Previews: PreviewProvider {
-    static var previews: some View {
-        Block(title: "관심있어요!", flag: 0, bootcampViewModel: BootcampViewModel("bootcamp"))
-    }
-}
+//
+//struct Block_Previews: PreviewProvider {
+//    static var previews: some View {
+//        Block(title: "관심있어요!", flag: 0, fbBootcamp: fbBootcamp("bootcamp"))
+//    }
+//}

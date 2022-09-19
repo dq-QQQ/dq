@@ -9,7 +9,7 @@ import SwiftUI
 
 struct FieldsList: View {
     @ObservedObject var fieldsViewHandler =  FieldsViewHandler()
-    @ObservedObject var bootcampViewModel: BootcampViewModel
+    var fbBootcamp: FirebaseBootcamp
     @Binding var bootcampList: [BootcampModel]
     @State var selectedFields: Fields = .All
     @State var width: CGFloat = 80
@@ -23,9 +23,9 @@ struct FieldsList: View {
                             fieldsViewHandler.currentPage = field.rawValue
                             selectedFields = field
                             if fieldsViewHandler.currentPage == Fields.All.rawValue {
-                                Task { bootcampList = await bootcampViewModel.fetchFireStore() }
+                                Task { bootcampList = await fbBootcamp.fetchFireStore() }
                             } else {
-                                Task { bootcampList = await bootcampViewModel.fetchFireStore()
+                                Task { bootcampList = await fbBootcamp.fetchFireStore()
                                     bootcampList = bootcampList.filter { $0.process.contains(fieldsViewHandler.currentPage) == true
                                     }
                                 }

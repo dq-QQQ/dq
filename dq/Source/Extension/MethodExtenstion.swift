@@ -12,6 +12,7 @@ extension Color {
     static let dqGreen = Color(hex: "#07422D")
     static let dqGray = Color(hex: "#86868B")
     static let dqWhite = Color(hex: "#EAEBE2")
+    static let dqRed = Color(hex: "C24E6D")
     
     //16진수로 RGB를 받는 이니셜라이저
     init(hex: String) {

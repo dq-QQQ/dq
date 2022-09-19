@@ -27,18 +27,17 @@ struct TextStyleInModalView: ViewModifier {
 }
 
 struct ToolbarStyleInModalView: ViewModifier {
-    var flag: Int
     var logoSize: CGFloat
     
     func body(content: Content) -> some View {
         content
-            .frame(width: flag == 0 ? logoSize : logoSize * 2, height: logoSize)
-            .foregroundColor(.dqGreen)
-            .background(
-                Rectangle()
-                    .fill(Color.dqWhite)
-                    .cornerRadius(10)
-            )
+            .foregroundColor(.dqRed)
+            .frame(width: logoSize, height: logoSize)
+//            .background(
+//                Rectangle()
+//                    .fill(Color.dqWhite)
+//                    .cornerRadius(10)
+//            )
     }
 }
 

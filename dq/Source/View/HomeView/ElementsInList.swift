@@ -10,7 +10,6 @@ import SwiftUI
 struct ElementsInList: View {
     @EnvironmentObject private var viewModel: ViewModel
     @Binding var bootcampList: [BootcampModel]
-    @ObservedObject var bootcampViewModel: BootcampViewModel
     @State private var showModal = false
     
     var body: some View {

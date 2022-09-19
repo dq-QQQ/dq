@@ -30,7 +30,7 @@ struct BootcampModalView: View {
             }
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
-                    backButton
+                    goToLink
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {
                     setInterest
@@ -44,14 +44,21 @@ extension BootcampModalView {
     var phoneWidth: CGFloat { viewModel.getPhoneSize().width }
     var phoneHeight: CGFloat { viewModel.getPhoneSize().height }
     
-    var backButton: some View {
+    var goToLink: some View {
         Button {
-            presentationMode.wrappedValue.dismiss()
-        } label : {
-            Image(systemName: "chevron.left")
-                .modifier(ToolbarStyleInModalView(flag: 0, logoSize: phoneWidth / 10))
+        } label: {
+            Link(destination: URL(string: bootcamp.homepage)!) { Text("Link").underline() }
+                .font(.dqBigFont)
+                .foregroundColor(.dqGreen)
+//                .background {
+//                    Rectangle()
+//                        .fill(Color.dqWhite)
+//                        .cornerRadius(10)
+//                }
+//                .padding()
         }
     }
+    
     
     var setInterest: some View {
         let whether = isInterested(id: bootcamp.id)
@@ -60,8 +67,9 @@ extension BootcampModalView {
                 moc.delete(list[whether.1])
                 try? moc.save()
             } label: {
-                Text("찜하기 해제")
-                    .modifier(ToolbarStyleInModalView(flag: 1, logoSize: phoneWidth / 10))
+                Image(systemName: "heart.fill")
+                    .resizable()
+                    .modifier(ToolbarStyleInModalView(logoSize: phoneWidth / 12))
             }
         } else {
             return Button {
@@ -72,8 +80,9 @@ extension BootcampModalView {
                 interestedList.flag = 0
                 try? moc.save()
             } label: {
-                Text("찜하기")
-                    .modifier(ToolbarStyleInModalView(flag: 1, logoSize: phoneWidth / 10))
+                Image(systemName: "heart")
+                    .resizable()
+                    .modifier(ToolbarStyleInModalView(logoSize: phoneWidth / 12))
             }
         }
     }

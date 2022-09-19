@@ -9,29 +9,22 @@ import SwiftUI
 import Firebase
 
 struct HomeView: View {
-    @ObservedObject var bootcampViewModel: BootcampViewModel
-    @ObservedObject var clubViewModel: ClubViewModel
+    var fbBootcamp: FirebaseBootcamp
+    var fbClub: FirebaseClub
     @EnvironmentObject private var viewModel: ViewModel
     @ObservedObject var ho: MainViewHandler
     
     var body: some View {
         ScrollView {
-            Block(title: "관심있어요!", flag: 0, bootcampViewModel: bootcampViewModel)
+            Block(title: "관심있어요!", flag: 0, fbBootcamp: fbBootcamp)
             
             Spacer().frame(height: viewModel.getPhoneSize().height / 15)
             
-            Block(title: "지원기간이 얼마 안남았어요!", flag: 1, bootcampViewModel: bootcampViewModel)
+            Block(title: "지원기간이 얼마 안남았어요!", flag: 1, fbBootcamp: fbBootcamp)
             
             
             Button {
-                //                ho.currentPage = SwitchView.info.rawValue
-                //                print(UIDevice.current.identifierForVendor!.uuidString)
-                
-                let db = Database.database(url: "https://dqapp-d00bb-default-rtdb.asia-southeast1.firebasedatabase.app").reference()
-                db.child("admin").observeSingleEvent(of: .value) {snapshot in
-                    let value = snapshot.value as? String ?? "" //2번째 줄
-                    print(value)
-                }
+                ho.currentPage = SwitchView.info.rawValue
             } label: {
                 Text("ho")
                     .font(.dqBigFont)
@@ -43,7 +36,7 @@ struct HomeView: View {
 //
 //struct HomeView_Previews: PreviewProvider {
 //    static var previews: some View {
-//        HomeView(bootcampViewModel: BootcampViewModel("BootCamp"),
+//        HomeView(fbBootcamp: fbBootcamp("BootCamp"),
 //                 clubViewModel: ClubViewModel("Club"))
 //            .environmentObject(ViewModel())
 //    }
