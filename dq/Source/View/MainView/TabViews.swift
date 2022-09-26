@@ -21,10 +21,10 @@ struct TabViews: View {
     var body: some View {
         if #available(iOS 15.0, *) {
             content
-                .task { bootcampList = await fbBootcamp.fetchFireStore()}
+//                .task { bootcampList = await fbBootcamp.fetchFireStore()}
         } else {
             content
-                .onAppear() { Task { _ = await fbBootcamp.fetchFireStore() } }
+//                .onAppear() { Task { _ = await fbBootcamp.fetchFireStore() } }
         }
     }
 }

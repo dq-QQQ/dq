@@ -29,6 +29,9 @@ struct FieldsList: View {
             }
             .modifier(PaddingFromSideOnHomeView())
         }
+        .onDisappear {
+            selectedFields = .All
+        }
     }
 }
 
