@@ -8,16 +8,18 @@
 import SwiftUI
 
 struct MainView: View {
+    // Use: Settinng the proxy
     @EnvironmentObject var viewModel: ViewModel
+    // Use: Showing the View according to currentPage Value
     @ObservedObject var mainViewHandler = MainViewHandler()
+    // Use: getting authorization
     @EnvironmentObject private var userNotificationViewModel: UserNotificationViewModel
     
     var body: some View {
         GeometryReader { proxy in
             switch mainViewHandler.currentPage {
             case SwitchView.main.rawValue : main(proxy)
-            case SwitchView.info.rawValue : ho(ho: mainViewHandler)
-            case SwitchView.admin.rawValue: InfoView(mainViewHandler: mainViewHandler)
+            case SwitchView.admin.rawValue: AdminView(mainViewHandler: mainViewHandler)
             default                       : main(proxy)
             }
         }
@@ -35,36 +37,8 @@ private extension MainView {
         }
         .onAppear { viewModel.setGeoProxy(proxy) }
     }
-
-    private var info: some View {
-        InfoView(mainViewHandler: mainViewHandler)
-    }
 }
 
-struct InfoView: View {
-    var mainViewHandler: MainViewHandler
-    
-    var body: some View {
-        Button {
-            mainViewHandler.currentPage = SwitchView.main.rawValue
-        } label: {
-            Text("admin page")
-        }
-    }
-}
-
-struct ho: View {
-    @ObservedObject var ho: MainViewHandler
-    var body: some View {
-        Button {
-            ho.currentPage = SwitchView.main.rawValue
-        } label: {
-            Text("ho")
-                .font(.dqBigFont)
-        }
-
-    }
-}
 //
 //struct MainView_Previews: PreviewProvider {
 //    static var previews: some View {

@@ -61,7 +61,6 @@ public enum MyAsyncImagePhase {
     }
 }
 
-
 public struct MyAsyncImage<Content> : View where Content : View {
     private let url: URL?
     private let content: (MyAsyncImagePhase) -> Content
@@ -136,7 +135,6 @@ private struct ContentBody<Content: View>: View {
         guard let url = url else {
             return
         }
-        
         URLSession.shared.dataTask(with: url) { data, _, error in
             DispatchQueue.main.async {
                 if let error = error {

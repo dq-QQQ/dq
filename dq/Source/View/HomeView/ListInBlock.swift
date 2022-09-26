@@ -9,9 +9,9 @@ import SwiftUI
 
 struct ListInBlock: View {
     var flag: Int
+    var fbBootcamp: FirebaseBootcamp
     @State var bootcampList: [BootcampModel] = []
     @EnvironmentObject private var viewModel: ViewModel
-    var fbBootcamp: FirebaseBootcamp
     @FetchRequest( sortDescriptors: [] ) var list: FetchedResults<InterestedList>
     
     var body: some View {
@@ -30,7 +30,7 @@ struct ListInBlock: View {
 private extension ListInBlock {
     private var content: some View {
         HStack {
-            ElementsInList(bootcampList: $bootcampList)
+            ElementsInList(bootcampList: $bootcampList, flag: flag)
         }
         .padding(.horizontal, 10)
     }

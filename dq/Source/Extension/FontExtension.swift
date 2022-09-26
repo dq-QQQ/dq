@@ -7,7 +7,6 @@
 
 import SwiftUI
 
-
 struct AppFontName {
     static let mainfont = "Mabinogi_Classic_OTF"
     static let logofont = "PacificNorthwestLettersW01"

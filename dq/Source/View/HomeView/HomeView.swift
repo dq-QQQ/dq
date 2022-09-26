@@ -22,9 +22,8 @@ struct HomeView: View {
             
             Block(title: "지원기간이 얼마 안남았어요!", flag: 1, fbBootcamp: fbBootcamp)
             
-            
             Button {
-                ho.currentPage = SwitchView.info.rawValue
+                ho.currentPage = SwitchView.admin.rawValue
             } label: {
                 Text("ho")
                     .font(.dqBigFont)

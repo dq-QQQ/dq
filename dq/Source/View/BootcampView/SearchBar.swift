@@ -14,14 +14,14 @@ struct SearchBar: View {
         HStack {
             HStack {
                 Image(systemName: "magnifyingglass")
- 
+                
                 TextField("Search", text: $text)
                     .foregroundColor(.primary)
- 
+                
                 if !text.isEmpty {
-                    Button(action: {
+                    Button {
                         self.text = ""
-                    }) {
+                    } label: {
                         Image(systemName: "xmark.circle.fill")
                     }
                 } else {

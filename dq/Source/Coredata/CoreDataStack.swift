@@ -36,10 +36,11 @@ class CoreDataStack: ObservableObject {
         }
     }
     
-    func appendInterestedList(element: String, date: String, id: String) {
+    func appendInterestedList(element: String, date: String, id: String, flag: Int) {
         let interestedList = InterestedList(context: managedObjectContext)
         interestedList.elementName = element
         interestedList.expireDate = date
         interestedList.elementID = id
+        interestedList.flag = Int64(flag)
     }
 }

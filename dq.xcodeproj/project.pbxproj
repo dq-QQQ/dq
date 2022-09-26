@@ -35,8 +35,6 @@
 		A129893328AA1EE200282503 /* Mabinogi_Classic_OTF.otf in Resources */ = {isa = PBXBuildFile; fileRef = A129893228AA1EE200282503 /* Mabinogi_Classic_OTF.otf */; };
 		A129893828AA229100282503 /* FontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A129893728AA229100282503 /* FontExtension.swift */; };
 		A160D17228D8C00A004B1A0B /* AdminView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A160D17128D8C00A004B1A0B /* AdminView.swift */; };
-		A160D17928D8C18A004B1A0B /* DescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A160D17828D8C18A004B1A0B /* DescriptionView.swift */; };
-		A160D17C28D8C1AD004B1A0B /* DescriptionModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A160D17B28D8C1AD004B1A0B /* DescriptionModalView.swift */; };
 		A160D17E28D8C4CC004B1A0B /* RealtimeFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A160D17D28D8C4CC004B1A0B /* RealtimeFirebase.swift */; };
 		A17E7DD828B3CEAE00147D71 /* ClubModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17E7DD728B3CEAE00147D71 /* ClubModel.swift */; };
 		A17F721828B0870A007C9FFE /* CustomType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17F721728B0870A007C9FFE /* CustomType.swift */; };
@@ -130,8 +128,6 @@
 		A129893628AA202B00282503 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		A129893728AA229100282503 /* FontExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontExtension.swift; sourceTree = "<group>"; };
 		A160D17128D8C00A004B1A0B /* AdminView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminView.swift; sourceTree = "<group>"; };
-		A160D17828D8C18A004B1A0B /* DescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionView.swift; sourceTree = "<group>"; };
-		A160D17B28D8C1AD004B1A0B /* DescriptionModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionModalView.swift; sourceTree = "<group>"; };
 		A160D17D28D8C4CC004B1A0B /* RealtimeFirebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealtimeFirebase.swift; sourceTree = "<group>"; };
 		A17E7DD728B3CEAE00147D71 /* ClubModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ClubModel.swift; path = dq/Source/Extension/ClubModel.swift; sourceTree = SOURCE_ROOT; };
 		A17F721728B0870A007C9FFE /* CustomType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomType.swift; sourceTree = "<group>"; };
@@ -356,8 +352,6 @@
 				A11B9F1C28BCFF320005A906 /* BootcampModalView */,
 				A160D17528D8C151004B1A0B /* ClubView */,
 				A160D17628D8C16A004B1A0B /* ClubModalView */,
-				A160D17728D8C179004B1A0B /* DescriptionView */,
-				A160D17A28D8C19A004B1A0B /* DescriptionModalView */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -425,22 +419,6 @@
 				A1BF878E28AD1703003079B4 /* ClubModalView.swift */,
 			);
 			path = ClubModalView;
-			sourceTree = "<group>";
-		};
-		A160D17728D8C179004B1A0B /* DescriptionView */ = {
-			isa = PBXGroup;
-			children = (
-				A160D17828D8C18A004B1A0B /* DescriptionView.swift */,
-			);
-			path = DescriptionView;
-			sourceTree = "<group>";
-		};
-		A160D17A28D8C19A004B1A0B /* DescriptionModalView */ = {
-			isa = PBXGroup;
-			children = (
-				A160D17B28D8C1AD004B1A0B /* DescriptionModalView.swift */,
-			);
-			path = DescriptionModalView;
 			sourceTree = "<group>";
 		};
 		A1A9C49228AF1DF900A0FF94 /* Frameworks */ = {
@@ -625,7 +603,6 @@
 				A1BF878F28AD1703003079B4 /* ClubModalView.swift in Sources */,
 				A17F721E28B0A9C8007C9FFE /* FirebaseBootcamp.swift in Sources */,
 				A197604C28D61DEA001F3198 /* UserNotificationModel.swift in Sources */,
-				A160D17C28D8C1AD004B1A0B /* DescriptionModalView.swift in Sources */,
 				A17E7DD828B3CEAE00147D71 /* ClubModel.swift in Sources */,
 				A1DF43FE28D36A33000128E0 /* InterestedList.xcdatamodeld in Sources */,
 				A129892628AA198200282503 /* HomeView.swift in Sources */,
@@ -644,7 +621,6 @@
 				A160D17E28D8C4CC004B1A0B /* RealtimeFirebase.swift in Sources */,
 				A1BF879528AD1FF0003079B4 /* ViewModel.swift in Sources */,
 				A129892C28AA19C200282503 /* MethodExtenstion.swift in Sources */,
-				A160D17928D8C18A004B1A0B /* DescriptionView.swift in Sources */,
 				A129893828AA229100282503 /* FontExtension.swift in Sources */,
 				A129892A28AA19A100282503 /* ClubView.swift in Sources */,
 				A11B9F2C28BD05960005A906 /* FieldsList.swift in Sources */,

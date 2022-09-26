@@ -9,13 +9,13 @@ import SwiftUI
 
 struct TabViews: View {
     @EnvironmentObject var viewModel: ViewModel
-    var fbBootcamp = FirebaseBootcamp("BootCamp")
-    var fbClub = FirebaseClub("Club")
     @FetchRequest( sortDescriptors: [] ) var list: FetchedResults<InterestedList>
     @Environment(\.managedObjectContext) var moc
     @State var bootcampList: [BootcampModel] = []
     @EnvironmentObject var userNotificationViewModel: UserNotificationViewModel
     @ObservedObject var mainViewHandler: MainViewHandler
+    var fbBootcamp = FirebaseBootcamp("BootCamp")
+    var fbClub = FirebaseClub("Club")
     
     
     var body: some View {
@@ -32,36 +32,35 @@ struct TabViews: View {
 extension TabViews {
     private var content: some View {
         TabView(selection: $viewModel.currentTab) {
-            if mainViewHandler.currentPage == SwitchView.main.rawValue {
             home
-            } else {
-                ho(ho: mainViewHandler)
-            }
             bootcamp
             club
-            description
+//            description
         }
         .accentColor(.dqGreen) // soon deprecated. change to tint.
         .edgesIgnoringSafeArea(.top)
+    }
+    func setChangeValue() async {
+        bootcampList = await fbBootcamp.fetchFireStore()
+        for i in 0..<list.count {
+            for j in 0..<bootcampList.count {
+                if list[i].elementID == bootcampList[j].id {
+                    if list[i].expireDate != bootcampList[j].applyDeadline.toDateString(flag: 1) {
+                        list[i].expireDate = bootcampList[j].applyDeadline.toDateString(flag: 1)
+                        try? moc.save()
+                        userNotificationViewModel.resetNotification(id: bootcampList[j].id,
+                                                                    name: bootcampList[j].name, expireDate: bootcampList[j].applyDeadline.toDateString(flag: 1), flag: 0)
+                    }
+                }
+            }
+        }
     }
     
     private var home: some View {
         HomeView(fbBootcamp: fbBootcamp,
                  fbClub: fbClub, ho: mainViewHandler)
         .task {
-            bootcampList = await fbBootcamp.fetchFireStore()
-            for i in 0..<list.count {
-                for j in 0..<bootcampList.count {
-                    if list[i].elementID == bootcampList[j].id {
-                        if list[i].expireDate != bootcampList[j].applyDeadline.toDateString(flag: 1) {
-                            list[i].expireDate = bootcampList[j].applyDeadline.toDateString(flag: 1)
-                            try? moc.save()
-                            userNotificationViewModel.resetNotification(id: bootcampList[j].id,
-                                                                        name: bootcampList[j].name, expireDate: bootcampList[j].applyDeadline.toDateString(flag: 1), flag: 0)
-                        }
-                    }
-                }
-            }
+            await setChangeValue()
         }
         .tag(Tabs.home)
         .tabItem(image: "homekit", text: "홈")
@@ -79,11 +78,11 @@ extension TabViews {
             .tabItem(image: "person.3.sequence", text: "동아리")
     }
     
-    private var description: some View {
-        DescriptionView()
-            .tag(Tabs.description)
-            .tabItem(image: "book", text: "분야별 소개")
-    }
+//    private var description: some View {
+//        DescriptionView()
+//            .tag(Tabs.description)
+//            .tabItem(image: "book", text: "분야별 소개")
+//    }
 }
 
 

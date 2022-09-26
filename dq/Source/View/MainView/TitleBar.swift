@@ -9,9 +9,13 @@ import SwiftUI
 import Firebase
 
 struct TitleBar: View {
+    // Use: Switch mainView to AdminView
     @ObservedObject var mainViewHandler: MainViewHandler
+    // Use: get admin UUID from realtimeFirebase
     @ObservedObject var realtimeFirebase = RealtimeFirebase()
+    // Use: Compare with adminUUID
     let deviceUUID = UIDevice.current.identifierForVendor!.uuidString
+    // Use: Get phone size
     var proxy: GeometryProxy
 
     var body: some View {

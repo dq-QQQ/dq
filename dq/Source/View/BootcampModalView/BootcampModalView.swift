@@ -9,33 +9,37 @@ import SwiftUI
 
 struct BootcampModalView: View {
     @EnvironmentObject private var viewModel: ViewModel
-    @Environment(\.presentationMode) var presentationMode
     @Binding var bootcampList: [BootcampModel]
-    @State var bootcamp : BootcampModel
+    @State var bootcamp : BootcampModel?
     @FetchRequest( sortDescriptors: [] ) var list: FetchedResults<InterestedList>
     @Environment(\.managedObjectContext) var moc
+    @EnvironmentObject var coredataStack: CoreDataStack
     
     
     var body: some View {
         NavigationView {
-            ScrollView(showsIndicators: false) {
-                LogoImage(bootcampList: bootcampList, bootcamp: $bootcamp)
-                
-                Spacer().frame(height: 30)
-                
-                BootcampInfo(bootcamp: $bootcamp)
-            }
-            .onAppear {
-                bootcamp = bootcampList.filter { $0.id == viewModel.selection}[0]
-            }
-            .toolbar {
-                ToolbarItem(placement: .navigationBarLeading) {
-                    goToLink
+            if bootcamp == nil {
+                EmptyView()
+            } else {
+                ScrollView(showsIndicators: false) {
+                    LogoImage(bootcampList: bootcampList, bootcamp: $bootcamp)
+                    
+                    Spacer().frame(height: 30)
+                    
+                    BootcampInfo(bootcamp: $bootcamp)
                 }
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    setInterest
+                .toolbar {
+                    ToolbarItem(placement: .navigationBarLeading) {
+                        goToLink
+                    }
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        setInterest
+                    }
                 }
             }
+        }
+        .onAppear() {
+            bootcamp = bootcampList.filter { $0.id == viewModel.selection}[0]
         }
     }
 }
@@ -47,21 +51,15 @@ extension BootcampModalView {
     var goToLink: some View {
         Button {
         } label: {
-            Link(destination: URL(string: bootcamp.homepage)!) { Text("Link").underline() }
+            Link(destination: URL(string: bootcamp!.homepage)!) { Text("홈페이지").underline() }
                 .font(.dqBigFont)
                 .foregroundColor(.dqGreen)
-//                .background {
-//                    Rectangle()
-//                        .fill(Color.dqWhite)
-//                        .cornerRadius(10)
-//                }
-//                .padding()
         }
     }
     
     
     var setInterest: some View {
-        let whether = isInterested(id: bootcamp.id)
+        let whether = isInterested(id: bootcamp!.id)
         if whether.0 {
             return Button {
                 moc.delete(list[whether.1])
@@ -73,12 +71,11 @@ extension BootcampModalView {
             }
         } else {
             return Button {
-                let interestedList = InterestedList(context: moc)
-                interestedList.elementName = bootcamp.name
-                interestedList.expireDate = bootcamp.applyDeadline.toDateString(flag: 0)
-                interestedList.elementID = bootcamp.id
-                interestedList.flag = 0
-                try? moc.save()
+                coredataStack.appendInterestedList(element: bootcamp!.name,
+                                                   date: bootcamp!.applyDeadline.toDateString(flag: 1),
+                                                   id: bootcamp!.id,
+                                                   flag: 0)
+                coredataStack.save()
             } label: {
                 Image(systemName: "heart")
                     .resizable()

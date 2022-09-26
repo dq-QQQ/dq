@@ -11,6 +11,8 @@ struct ElementsInList: View {
     @EnvironmentObject private var viewModel: ViewModel
     @Binding var bootcampList: [BootcampModel]
     @State private var showModal = false
+    @FetchRequest( sortDescriptors: [] ) var list: FetchedResults<InterestedList>
+    var flag: Int
     
     var body: some View {
         ForEach(bootcampList) { field in
@@ -19,7 +21,19 @@ struct ElementsInList: View {
                 imageOfEachField(field)
             }
             .sheet(isPresented: self.$showModal) {
-                BootcampModalView(bootcampList: $bootcampList, bootcamp: field)
+                BootcampModalView(bootcampList: $bootcampList)
+                    .onDisappear {
+                        if flag == 0 {
+                            bootcampList = bootcampList.filter {
+                                for element in list {
+                                    if element.elementID == $0.id {
+                                        return true
+                                    }
+                                }
+                                return false
+                            }
+                        }
+                    }
             }
             .onTapGesture {
                 viewModel.selection = field.id

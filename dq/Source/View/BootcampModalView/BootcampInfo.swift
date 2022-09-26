@@ -9,7 +9,7 @@ import SwiftUI
 
 struct BootcampInfo: View {
     @EnvironmentObject private var viewModel: ViewModel
-    @Binding var bootcamp : BootcampModel
+    @Binding var bootcamp : BootcampModel?
     
     var body: some View {
         HStack {
@@ -40,14 +40,14 @@ private extension BootcampInfo {
     var infoValue: some View {
         VStack() {
             Group {
-                Text(bootcamp.name)
-                Text(bootcamp.process.reduce("") { $0 + ($0 == "" ? "" : "/") + $1 })
-                Text(bootcamp.applyDeadline.toDateString(flag: 0))
-                Link(destination: URL(string: bootcamp.homepage)!) { Text("Link").underline() }
-                Text(bootcamp.fee)
-                Text(bootcamp.place[1])
-                Text(bootcamp.period)
-                Text(bootcamp.organizer)
+                Text(bootcamp!.name)
+                Text(bootcamp!.process.reduce("") { $0 + ($0 == "" ? "" : "/") + $1 })
+                Text(bootcamp!.applyDeadline.toDateString(flag: 0))
+                Link(destination: URL(string: bootcamp!.homepage)!) { Text("Link").underline() }
+                Text(bootcamp!.fee)
+                Text(bootcamp!.place[1])
+                Text(bootcamp!.period)
+                Text(bootcamp!.organizer)
             }
             .modifier(TextStyleInModalView())
         }

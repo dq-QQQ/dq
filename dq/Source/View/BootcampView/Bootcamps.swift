@@ -49,7 +49,7 @@ extension Bootcamps {
                     hideKeyboard()
                 }
                 .sheet(isPresented: self.$showModals) {
-                    BootcampModalView(bootcampList: $bootcampList, bootcamp: bootcamp)
+                    BootcampModalView(bootcampList: $bootcampList)
                 }
             }
         }

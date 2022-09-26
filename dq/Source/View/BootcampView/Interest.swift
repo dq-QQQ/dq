@@ -11,47 +11,24 @@ struct Interest: View {
     var bootcamp: BootcampModel
     @FetchRequest( sortDescriptors: [] ) var list: FetchedResults<InterestedList>
     @Environment(\.managedObjectContext) var moc
+    @EnvironmentObject var coredataStack: CoreDataStack
     @EnvironmentObject private var userNotificationViewModel: UserNotificationViewModel
     
     var body: some View {
         VStack {
-            let whether = isInterested(id: bootcamp.id)
-            if whether.0 {
-                Button {
-                    moc.delete(list[whether.1])
-                    userNotificationViewModel.removeNotification(id: bootcamp.id)
-                } label: {
-                    Image(systemName: "heart.fill")
-                        .resizable()
-                        .frame(width: 25, height: 25)
-                        .foregroundColor(.dqRed)
-                        .padding([.top, .trailing], 5)
-                }
+            let isInterested = isInterested(id: bootcamp.id)
+            if isInterested.0 {
+                notInterestedBootcamp(idx: isInterested.1)
             } else {
-                Button {
-                    let interestedList = InterestedList(context: moc)
-                    interestedList.elementName = bootcamp.name
-                    interestedList.expireDate = bootcamp.applyDeadline.toDateString(flag: 1)
-                    interestedList.elementID = bootcamp.id
-                    interestedList.flag = 0
-                    try? moc.save()
-                    userNotificationViewModel.addNotification(id: bootcamp.id,
-                                                              name: bootcamp.name,
-                                                              expireDate: bootcamp.applyDeadline.toDateString(flag: 1),
-                                                              flag: 0)
-                } label: {
-                    Image(systemName: "heart")
-                        .resizable()
-                        .frame(width: 25, height: 25)
-                        .foregroundColor(.dqRed)
-                        .padding([.top, .trailing], 5)
-                }
+                interestedBootcamp
             }
             Spacer()
             EmptyView()
         }
     }
-    
+}
+
+extension Interest {
     func isInterested(id: String) -> (Bool, Int) {
         for i in list.indices {
             if list[i].elementID == id {
@@ -60,7 +37,42 @@ struct Interest: View {
         }
         return (false, -1)
     }
+    
+    func notInterestedBootcamp(idx: Int) -> some View {
+        Button {
+            moc.delete(list[idx])
+            userNotificationViewModel.removeNotification(id: bootcamp.id)
+        } label: {
+            Image(systemName: "heart.fill")
+                .resizable()
+                .frame(width: 25, height: 25)
+                .foregroundColor(.dqRed)
+                .padding([.top, .trailing], 5)
+        }
+    }
+    
+    var interestedBootcamp: some View {
+        Button {
+            coredataStack.appendInterestedList(element: bootcamp.name,
+                                               date: bootcamp.applyDeadline.toDateString(flag: 1),
+                                               id: bootcamp.id,
+                                               flag: 0)
+            coredataStack.save()
+            userNotificationViewModel
+                .addNotification(id: bootcamp.id,
+                                 name: bootcamp.name,
+                                 expireDate: bootcamp.applyDeadline.toDateString(flag: 1),
+                                 flag: 0)
+        } label: {
+            Image(systemName: "heart")
+                .resizable()
+                .frame(width: 25, height: 25)
+                .foregroundColor(.dqRed)
+                .padding([.top, .trailing], 5)
+        }
+    }
 }
+
 //
 //struct Interest_Previews: PreviewProvider {
 //    static var previews: some View {
