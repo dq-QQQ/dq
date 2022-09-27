@@ -10,16 +10,21 @@ import SwiftUI
 struct Block: View {
     var title: String
     var flag: Int
-    var fbBootcamp: FirebaseBootcamp
+    var fbBootcamp: FirebaseBootcamp?
     @EnvironmentObject private var viewModel: ViewModel
     
     var body: some View {
         titleOfBlock(title)
-        ZStack {
-            blockRectangle
-            ListInBlock(flag: flag, fbBootcamp: fbBootcamp)
+        if flag == 2 {
+            FieldsDescriptionView()
+                .modifier(PaddingFromSideOnHomeView())
+        } else {
+            ZStack {
+                blockRectangle
+                ListInBlock(flag: flag, fbBootcamp: fbBootcamp!)
+            }
+            .modifier(PaddingFromSideOnHomeView())
         }
-        .modifier(PaddingFromSideOnHomeView())
     }
 }
 
@@ -36,10 +41,28 @@ private extension Block {
     }
     
     var blockRectangle: some View {
-        Rectangle()
-            .frame(height: phoneHeight / 4)
-            .foregroundColor(.dqWhite)
-            .cornerRadius(20)
+        ZStack() {
+            Rectangle()
+                .frame(height: phoneHeight / 3.7 + 20)
+                .foregroundColor(.dqVanilla)
+            VStack {
+                Circle()
+                    .foregroundColor(.dqGreen)
+                    .overlay {
+                        Text("x")
+                            .font(.dqSmallFont)
+                            .foregroundColor(.dqWhite)
+                            .padding(.top, 1)
+                    }
+                    .padding(.top, 10)
+                Rectangle()
+                    .frame(height: phoneHeight / 3.7)
+                    .foregroundColor(.dqWhite)
+            }
+        }
+        .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
+        .shadow(color: Color.black.opacity(0.5), radius: 8, x: 0, y: 6)
+        
     }
 }
 //

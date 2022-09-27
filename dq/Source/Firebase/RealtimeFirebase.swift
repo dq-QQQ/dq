@@ -18,6 +18,6 @@ class RealtimeFirebase: ObservableObject {
     }
     
     func getAdminUUID() -> String {
-        value
+        return value
     }
 }

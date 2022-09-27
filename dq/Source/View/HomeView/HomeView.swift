@@ -14,22 +14,32 @@ struct HomeView: View {
     @EnvironmentObject private var viewModel: ViewModel
     @ObservedObject var ho: MainViewHandler
     
+    
     var body: some View {
         ScrollView {
             Block(title: "관심있어요!", flag: 0, fbBootcamp: fbBootcamp)
             
-            Spacer().frame(height: viewModel.getPhoneSize().height / 15)
+            spacer
             
             Block(title: "지원기간이 얼마 안남았어요!", flag: 1, fbBootcamp: fbBootcamp)
             
-            Button {
-                ho.currentPage = SwitchView.admin.rawValue
-            } label: {
-                Text("ho")
-                    .font(.dqBigFont)
-            }
+            spacer
+            
+            Block(title: "분야별 설명이 필요해요!", flag: 2)
+//            Button {
+//                ho.currentPage = SwitchView.admin.rawValue
+//            } label: {
+//                Text("ho")
+//                    .font(.dqBigFont)
+//            }
         }
         
+    }
+}
+
+extension HomeView {
+    var spacer: some View {
+        Spacer().frame(height: viewModel.getPhoneSize().height / 15)
     }
 }
 //

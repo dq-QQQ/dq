@@ -71,7 +71,7 @@ extension ElementsInList {
             .size(width: 1, height: (phoneHeight / 4) - 20)
             .foregroundColor(.gray)
             .opacity(0.3)
-            .padding(.vertical, phoneWidth / 40)
+            .padding(.top, phoneWidth / 15)
             .padding(.leading, phoneWidth / 40)
     }
 }

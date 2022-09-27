@@ -15,6 +15,8 @@ struct MainView: View {
     // Use: getting authorization
     @EnvironmentObject private var userNotificationViewModel: UserNotificationViewModel
     
+    @ObservedObject var realtimeFirebase = RealtimeFirebase()
+    
     var body: some View {
         GeometryReader { proxy in
             switch mainViewHandler.currentPage {
@@ -32,10 +34,13 @@ struct MainView: View {
 private extension MainView {
     private func main(_ proxy: GeometryProxy) -> some View {
         VStack {
-            TitleBar(mainViewHandler: mainViewHandler, proxy: proxy)
+            TitleBar(mainViewHandler: mainViewHandler, realtimeFirebase: realtimeFirebase, proxy: proxy)
             TabViews(mainViewHandler: mainViewHandler)
         }
-        .onAppear { viewModel.setGeoProxy(proxy) }
+        .onAppear {
+            viewModel.setGeoProxy(proxy)
+            realtimeFirebase.setAdminUUID()
+        }
     }
 }
 

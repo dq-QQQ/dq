@@ -13,6 +13,7 @@ extension Color {
     static let dqGray = Color(hex: "#86868B")
     static let dqWhite = Color(hex: "#EAEBE2")
     static let dqRed = Color(hex: "C24E6D")
+    static let dqVanilla = Color(hex: "c2c5ab")
     
     //16진수로 RGB를 받는 이니셜라이저
     init(hex: String) {
@@ -95,5 +96,11 @@ extension String {
         let endIndex = index(self.startIndex, offsetBy: to + 1)
         
         return String(self[startIndex ..< endIndex])
+    }
+}
+
+extension Animation {
+    static var transitionSpring: Animation {
+       self.spring(response: 0.5, dampingFraction: 0.6, blendDuration: 0.7)
     }
 }

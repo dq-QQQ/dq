@@ -32,6 +32,7 @@ private extension ListInBlock {
         HStack {
             ElementsInList(bootcampList: $bootcampList, flag: flag)
         }
+        .padding(.top, 20)
         .padding(.horizontal, 10)
     }
     

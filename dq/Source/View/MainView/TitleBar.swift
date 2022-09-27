@@ -12,7 +12,7 @@ struct TitleBar: View {
     // Use: Switch mainView to AdminView
     @ObservedObject var mainViewHandler: MainViewHandler
     // Use: get admin UUID from realtimeFirebase
-    @ObservedObject var realtimeFirebase = RealtimeFirebase()
+    @ObservedObject var realtimeFirebase: RealtimeFirebase
     // Use: Compare with adminUUID
     let deviceUUID = UIDevice.current.identifierForVendor!.uuidString
     // Use: Get phone size
@@ -27,9 +27,6 @@ struct TitleBar: View {
             } else {
                 EmptyView()
             }
-        }
-        .onAppear {
-            realtimeFirebase.setAdminUUID()
         }
         .padding(.horizontal, proxy.size.width / 15)
     }
