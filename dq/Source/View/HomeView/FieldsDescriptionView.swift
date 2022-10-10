@@ -24,16 +24,18 @@ struct FieldsDescriptionView: View {
                     }
                     .onTapGesture {
                                 showDetail = true
-                    }
+                }
             }
         }
         .onAppear {
+            if datas.count == 0 {
                 for field in FieldsForDescription.allCases {
                     datas.append(ListData(name: field.rawValue,
                                           description: field.getShortDescription(),
                                           img: Image(systemName: field.getImageName())
                                          ))
                 }
+            }
         }
     }
 }

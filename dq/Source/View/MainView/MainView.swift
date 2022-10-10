@@ -17,6 +17,8 @@ struct MainView: View {
     
     @ObservedObject var realtimeFirebase = RealtimeFirebase()
     
+    @EnvironmentObject var toastViewModel: ToastViewModel
+    
     var body: some View {
         GeometryReader { proxy in
             switch mainViewHandler.currentPage {
@@ -28,6 +30,9 @@ struct MainView: View {
         .onAppear {
             userNotificationViewModel.getAuthorization()
         }
+        .showToast(showToast: $toastViewModel.showTopToast, content:
+                    ToastView(showToast: $toastViewModel.showTopToast,
+                              flag: toastViewModel.flag))
     }
 }
 

@@ -34,6 +34,8 @@
 		A129892C28AA19C200282503 /* MethodExtenstion.swift in Sources */ = {isa = PBXBuildFile; fileRef = A129892B28AA19C200282503 /* MethodExtenstion.swift */; };
 		A129893328AA1EE200282503 /* Mabinogi_Classic_OTF.otf in Resources */ = {isa = PBXBuildFile; fileRef = A129893228AA1EE200282503 /* Mabinogi_Classic_OTF.otf */; };
 		A129893828AA229100282503 /* FontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A129893728AA229100282503 /* FontExtension.swift */; };
+		A15D574A28F4629F00114915 /* ToastMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15D574928F4629F00114915 /* ToastMessage.swift */; };
+		A15D574C28F467D700114915 /* ToastViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15D574B28F467D700114915 /* ToastViewModel.swift */; };
 		A160D17228D8C00A004B1A0B /* AdminView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A160D17128D8C00A004B1A0B /* AdminView.swift */; };
 		A160D17E28D8C4CC004B1A0B /* RealtimeFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A160D17D28D8C4CC004B1A0B /* RealtimeFirebase.swift */; };
 		A17E7DD828B3CEAE00147D71 /* ClubModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17E7DD728B3CEAE00147D71 /* ClubModel.swift */; };
@@ -128,6 +130,8 @@
 		A129893228AA1EE200282503 /* Mabinogi_Classic_OTF.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Mabinogi_Classic_OTF.otf; sourceTree = "<group>"; };
 		A129893628AA202B00282503 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		A129893728AA229100282503 /* FontExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontExtension.swift; sourceTree = "<group>"; };
+		A15D574928F4629F00114915 /* ToastMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastMessage.swift; sourceTree = "<group>"; };
+		A15D574B28F467D700114915 /* ToastViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastViewModel.swift; sourceTree = "<group>"; };
 		A160D17128D8C00A004B1A0B /* AdminView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminView.swift; sourceTree = "<group>"; };
 		A160D17D28D8C4CC004B1A0B /* RealtimeFirebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealtimeFirebase.swift; sourceTree = "<group>"; };
 		A17E7DD728B3CEAE00147D71 /* ClubModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ClubModel.swift; path = dq/Source/Extension/ClubModel.swift; sourceTree = SOURCE_ROOT; };
@@ -365,6 +369,7 @@
 				A1BF879428AD1FF0003079B4 /* ViewModel.swift */,
 				A197604928D61D34001F3198 /* ViewHandler.swift */,
 				A197604D28D6CE70001F3198 /* UserNotificationViewModel.swift */,
+				A15D574B28F467D700114915 /* ToastViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -385,6 +390,7 @@
 				A1BF879828AD4108003079B4 /* CustomModifier.swift */,
 				A17F721728B0870A007C9FFE /* CustomType.swift */,
 				A11B9F4F28CB240E0005A906 /* MyAsyncImage.swift */,
+				A15D574928F4629F00114915 /* ToastMessage.swift */,
 			);
 			path = Custom;
 			sourceTree = "<group>";
@@ -622,8 +628,10 @@
 				A11B9F2E28BD07110005A906 /* Bootcamps.swift in Sources */,
 				A11B9F1128BCEF8F0005A906 /* TabViews.swift in Sources */,
 				A160D17E28D8C4CC004B1A0B /* RealtimeFirebase.swift in Sources */,
+				A15D574A28F4629F00114915 /* ToastMessage.swift in Sources */,
 				A1BF879528AD1FF0003079B4 /* ViewModel.swift in Sources */,
 				A1864EC128E3076E00681264 /* FieldsDescriptionView.swift in Sources */,
+				A15D574C28F467D700114915 /* ToastViewModel.swift in Sources */,
 				A129892C28AA19C200282503 /* MethodExtenstion.swift in Sources */,
 				A129893828AA229100282503 /* FontExtension.swift in Sources */,
 				A129892A28AA19A100282503 /* ClubView.swift in Sources */,

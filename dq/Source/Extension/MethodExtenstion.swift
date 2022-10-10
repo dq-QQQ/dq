@@ -65,6 +65,32 @@ extension View {
         clipShape( RoundedCorner(radius: radius, corners: corners) )
     }
 }
+
+struct ToastModifier<T: View>: ViewModifier {
+    @Binding var showToast: Bool
+    let content: T
+    
+    func body(content: Content) -> some View {
+        ZStack {
+            content
+            ZStack {
+                if showToast {
+                    self.content
+                }else {
+                    EmptyView()
+                }
+            }
+        }
+    }
+}
+
+extension View {
+    func showToast<T: View>(showToast: Binding<Bool>, content: T) -> some View {
+        self.modifier(ToastModifier(showToast: showToast, content: content))
+    }
+}
+
+
 struct RoundedCorner: Shape {
     var radius: CGFloat = .infinity
     var corners: UIRectCorner = .allCorners

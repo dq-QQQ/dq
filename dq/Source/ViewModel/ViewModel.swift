@@ -11,6 +11,7 @@ import SwiftUI
 class ViewModel : ObservableObject {
     @Published var currentTab: Tabs = .home
     @Published var selection: String?
+
     
     private var geoProxy: GeometryProxy?
     func setGeoProxy(_ proxy: GeometryProxy) { geoProxy = proxy }

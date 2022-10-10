@@ -13,6 +13,7 @@ struct Interest: View {
     @Environment(\.managedObjectContext) var moc
     @EnvironmentObject var coredataStack: CoreDataStack
     @EnvironmentObject private var userNotificationViewModel: UserNotificationViewModel
+    @EnvironmentObject private var toastViewModel: ToastViewModel
     
     var body: some View {
         VStack {
@@ -21,6 +22,7 @@ struct Interest: View {
                 notInterestedBootcamp(idx: isInterested.1)
             } else {
                 interestedBootcamp
+                    
             }
             Spacer()
             EmptyView()
@@ -42,6 +44,9 @@ extension Interest {
         Button {
             moc.delete(list[idx])
             userNotificationViewModel.removeNotification(id: bootcamp.id)
+            withAnimation {
+                toastViewModel.toggleData()
+            }
         } label: {
             Image(systemName: "heart.fill")
                 .resizable()
@@ -49,6 +54,7 @@ extension Interest {
                 .foregroundColor(.dqRed)
                 .padding([.top, .trailing], 5)
         }
+        
     }
     
     var interestedBootcamp: some View {
@@ -63,6 +69,9 @@ extension Interest {
                                  name: bootcamp.name,
                                  expireDate: bootcamp.applyDeadline.toDateString(flag: 1),
                                  flag: 0)
+            withAnimation {
+                toastViewModel.toggleData()
+            }
         } label: {
             Image(systemName: "heart")
                 .resizable()

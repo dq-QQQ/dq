@@ -31,6 +31,7 @@ struct dqApp: App {
             MainView()
                 .environmentObject(ViewModel())
                 .environmentObject(UserNotificationViewModel())
+                .environmentObject(ToastViewModel())
                 .environmentObject(coreDataStack)
                 .environment(\.managedObjectContext, coreDataStack.managedObjectContext)
         }
