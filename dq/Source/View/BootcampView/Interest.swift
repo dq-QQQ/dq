@@ -43,9 +43,10 @@ extension Interest {
     func notInterestedBootcamp(idx: Int) -> some View {
         Button {
             moc.delete(list[idx])
+            try? moc.save()
             userNotificationViewModel.removeNotification(id: bootcamp.id)
             withAnimation {
-                toastViewModel.toggleData()
+                toastViewModel.toggleData(flag: false)
             }
         } label: {
             Image(systemName: "heart.fill")
@@ -70,7 +71,7 @@ extension Interest {
                                  expireDate: bootcamp.applyDeadline.toDateString(flag: 1),
                                  flag: 0)
             withAnimation {
-                toastViewModel.toggleData()
+                toastViewModel.toggleData(flag: true)
             }
         } label: {
             Image(systemName: "heart")

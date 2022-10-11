@@ -12,7 +12,7 @@ struct ToastMessage: View {
     
     var body: some View {
         HStack {
-            if flag == false {
+            if flag == true {
                 Image(systemName: "plus.circle")
                     .padding(.trailing, 5)
                 Text(LocalizedStringKey("관심목록에 추가되었어요!"))

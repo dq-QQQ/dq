@@ -14,7 +14,7 @@ struct BootcampModalView: View {
     @FetchRequest( sortDescriptors: [] ) var list: FetchedResults<InterestedList>
     @Environment(\.managedObjectContext) var moc
     @EnvironmentObject var coredataStack: CoreDataStack
-    
+    @EnvironmentObject private var userNotificationViewModel: UserNotificationViewModel
     
     var body: some View {
         NavigationView {
@@ -64,6 +64,7 @@ extension BootcampModalView {
             return Button {
                 moc.delete(list[whether.1])
                 try? moc.save()
+                userNotificationViewModel.removeNotification(id: bootcamp!.id)
             } label: {
                 Image(systemName: "heart.fill")
                     .resizable()
@@ -76,6 +77,11 @@ extension BootcampModalView {
                                                    id: bootcamp!.id,
                                                    flag: 0)
                 coredataStack.save()
+                userNotificationViewModel
+                    .addNotification(id: bootcamp!.id,
+                                     name: bootcamp!.name,
+                                     expireDate: bootcamp!.applyDeadline.toDateString(flag: 1),
+                                     flag: 0)
             } label: {
                 Image(systemName: "heart")
                     .resizable()

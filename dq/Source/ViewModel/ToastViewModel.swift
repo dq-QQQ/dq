@@ -12,8 +12,8 @@ class ToastViewModel : ObservableObject {
     @Published var showTopToast = false
     @Published var flag = false
     
-    func toggleData() {
+    func toggleData(flag: Bool) {
         showTopToast = true
-        flag.toggle()
+        self.flag = flag
     }
 }
