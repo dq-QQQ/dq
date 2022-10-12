@@ -19,6 +19,8 @@ struct MainView: View {
     
     @EnvironmentObject var toastViewModel: ToastViewModel
     
+    @AppStorage("_isFirstLaunching") var isFirstLaunching: Bool = true
+    
     var body: some View {
         GeometryReader { proxy in
             switch mainViewHandler.currentPage {
@@ -26,6 +28,9 @@ struct MainView: View {
             case SwitchView.admin.rawValue: AdminView(mainViewHandler: mainViewHandler)
             default                       : main(proxy)
             }
+        }
+        .fullScreenCover(isPresented: $isFirstLaunching) {
+            OnboardingView(isFirstLaunching: $isFirstLaunching)
         }
         .onAppear {
             userNotificationViewModel.getAuthorization()
@@ -40,7 +45,7 @@ private extension MainView {
     private func main(_ proxy: GeometryProxy) -> some View {
         VStack {
             TitleBar(mainViewHandler: mainViewHandler, realtimeFirebase: realtimeFirebase, proxy: proxy)
-            TabViews(mainViewHandler: mainViewHandler)
+            TabViews(mainViewHandler: mainViewHandler, isFirstLaunching: $isFirstLaunching)
         }
         .onAppear {
             viewModel.setGeoProxy(proxy)

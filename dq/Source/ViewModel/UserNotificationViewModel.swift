@@ -121,6 +121,7 @@ class UserNotificationViewModel: ObservableObject {
         for i in 0..<models.count {
             if models[i].id == id {
                 models.remove(at: i)
+                break
             }
         }
         UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: removeIdentifiers)

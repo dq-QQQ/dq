@@ -48,7 +48,7 @@ struct ToastView: View {
         .opacity(self.showToast ? 0.9 : 0)
         .transition(.move(edge: .top))
         .onAppear {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
                 withAnimation {
                     self.showToast = false
                 }

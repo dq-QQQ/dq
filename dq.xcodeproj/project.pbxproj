@@ -36,6 +36,9 @@
 		A129893828AA229100282503 /* FontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A129893728AA229100282503 /* FontExtension.swift */; };
 		A15D574A28F4629F00114915 /* ToastMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15D574928F4629F00114915 /* ToastMessage.swift */; };
 		A15D574C28F467D700114915 /* ToastViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15D574B28F467D700114915 /* ToastViewModel.swift */; };
+		A15D577128F5571E00114915 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15D577028F5571E00114915 /* OnboardingView.swift */; };
+		A15D577328F5575100114915 /* FirstPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15D577228F5575100114915 /* FirstPageView.swift */; };
+		A15D577528F5577300114915 /* LastPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15D577428F5577300114915 /* LastPageView.swift */; };
 		A160D17228D8C00A004B1A0B /* AdminView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A160D17128D8C00A004B1A0B /* AdminView.swift */; };
 		A160D17E28D8C4CC004B1A0B /* RealtimeFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A160D17D28D8C4CC004B1A0B /* RealtimeFirebase.swift */; };
 		A17E7DD828B3CEAE00147D71 /* ClubModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17E7DD728B3CEAE00147D71 /* ClubModel.swift */; };
@@ -132,6 +135,9 @@
 		A129893728AA229100282503 /* FontExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontExtension.swift; sourceTree = "<group>"; };
 		A15D574928F4629F00114915 /* ToastMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastMessage.swift; sourceTree = "<group>"; };
 		A15D574B28F467D700114915 /* ToastViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastViewModel.swift; sourceTree = "<group>"; };
+		A15D577028F5571E00114915 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		A15D577228F5575100114915 /* FirstPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstPageView.swift; sourceTree = "<group>"; };
+		A15D577428F5577300114915 /* LastPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastPageView.swift; sourceTree = "<group>"; };
 		A160D17128D8C00A004B1A0B /* AdminView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminView.swift; sourceTree = "<group>"; };
 		A160D17D28D8C4CC004B1A0B /* RealtimeFirebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealtimeFirebase.swift; sourceTree = "<group>"; };
 		A17E7DD728B3CEAE00147D71 /* ClubModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ClubModel.swift; path = dq/Source/Extension/ClubModel.swift; sourceTree = SOURCE_ROOT; };
@@ -352,6 +358,7 @@
 		A129892228AA17C700282503 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A15D576F28F5570200114915 /* OnboardingView */,
 				A160D17328D8C019004B1A0B /* AdminView */,
 				A11B9F0928BCE7CA0005A906 /* MainView */,
 				A11B9F1228BCF2250005A906 /* HomeView */,
@@ -393,6 +400,16 @@
 				A15D574928F4629F00114915 /* ToastMessage.swift */,
 			);
 			path = Custom;
+			sourceTree = "<group>";
+		};
+		A15D576F28F5570200114915 /* OnboardingView */ = {
+			isa = PBXGroup;
+			children = (
+				A15D577028F5571E00114915 /* OnboardingView.swift */,
+				A15D577228F5575100114915 /* FirstPageView.swift */,
+				A15D577428F5577300114915 /* LastPageView.swift */,
+			);
+			path = OnboardingView;
 			sourceTree = "<group>";
 		};
 		A160D16F28D8AD40004B1A0B /* Firebase */ = {
@@ -616,6 +633,7 @@
 				A1DF43FE28D36A33000128E0 /* InterestedList.xcdatamodeld in Sources */,
 				A129892628AA198200282503 /* HomeView.swift in Sources */,
 				A17F721C28B0A300007C9FFE /* FirebaseLogic.swift in Sources */,
+				A15D577128F5571E00114915 /* OnboardingView.swift in Sources */,
 				A1DF43FB28D36733000128E0 /* CoreDataStack.swift in Sources */,
 				A11B9F3228BD0B230005A906 /* Interest.swift in Sources */,
 				A197604A28D61D34001F3198 /* ViewHandler.swift in Sources */,
@@ -631,11 +649,13 @@
 				A15D574A28F4629F00114915 /* ToastMessage.swift in Sources */,
 				A1BF879528AD1FF0003079B4 /* ViewModel.swift in Sources */,
 				A1864EC128E3076E00681264 /* FieldsDescriptionView.swift in Sources */,
+				A15D577528F5577300114915 /* LastPageView.swift in Sources */,
 				A15D574C28F467D700114915 /* ToastViewModel.swift in Sources */,
 				A129892C28AA19C200282503 /* MethodExtenstion.swift in Sources */,
 				A129893828AA229100282503 /* FontExtension.swift in Sources */,
 				A129892A28AA19A100282503 /* ClubView.swift in Sources */,
 				A11B9F2C28BD05960005A906 /* FieldsList.swift in Sources */,
+				A15D577328F5575100114915 /* FirstPageView.swift in Sources */,
 				A17F721828B0870A007C9FFE /* CustomType.swift in Sources */,
 				A129892828AA199300282503 /* BootcampView.swift in Sources */,
 				A12988F328AA04EB00282503 /* MainView.swift in Sources */,

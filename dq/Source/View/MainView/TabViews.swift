@@ -14,6 +14,7 @@ struct TabViews: View {
     @State var bootcampList: [BootcampModel] = []
     @EnvironmentObject var userNotificationViewModel: UserNotificationViewModel
     @ObservedObject var mainViewHandler: MainViewHandler
+    @Binding var isFirstLaunching: Bool
     var fbBootcamp = FirebaseBootcamp("BootCamp")
     var fbClub = FirebaseClub("Club")
     
@@ -58,7 +59,7 @@ extension TabViews {
     
     private var home: some View {
         HomeView(fbBootcamp: fbBootcamp,
-                 fbClub: fbClub, ho: mainViewHandler)
+                 fbClub: fbClub, ho: mainViewHandler, isFirstLaunching: $isFirstLaunching)
         .task {
             await setChangeValue()
         }

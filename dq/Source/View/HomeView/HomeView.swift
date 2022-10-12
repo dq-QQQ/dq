@@ -13,7 +13,7 @@ struct HomeView: View {
     var fbClub: FirebaseClub
     @EnvironmentObject private var viewModel: ViewModel
     @ObservedObject var ho: MainViewHandler
-    
+    @Binding var isFirstLaunching: Bool
     
     var body: some View {
         ScrollView {
@@ -26,12 +26,12 @@ struct HomeView: View {
             spacer
             
             Block(title: "분야별 설명이 필요해요!", flag: 2)
-//            Button {
-//                ho.currentPage = SwitchView.admin.rawValue
-//            } label: {
-//                Text("ho")
-//                    .font(.dqBigFont)
-//            }
+            Button {
+                isFirstLaunching = true
+            } label: {
+                Text("사용방법 다시")
+                    .font(.dqBigFont)
+            }
         }
         
     }
