@@ -130,3 +130,14 @@ extension Animation {
        self.spring(response: 0.5, dampingFraction: 0.6, blendDuration: 0.7)
     }
 }
+
+
+extension GeometryProxy {
+    var minSize: CGFloat {
+        min(self.size.width, self.size.height)
+    }
+    
+    var maxSize: CGFloat {
+        max(self.size.width, self.size.height)
+    }
+}

@@ -14,13 +14,21 @@ struct OnboardingView: View {
         TabView {
             FirstPageView()
             
+            SecondPageView()
+            
             OnboardingLastPageView(
-                imageName: "eyes",
-                title: "끝",
-                subtitle: "dq",
                 isFirstLaunching: $isFirstLaunching
             )
         }
-        .tabViewStyle(PageTabViewStyle())
+        .background(Color.dqGreen
+        )
+        .tabViewStyle(.page(indexDisplayMode: .never))
+    }
+}
+
+
+struct ho: View {
+    var body: some View {
+        Text("ho")
     }
 }

@@ -15,7 +15,8 @@ struct AppFontName {
 extension Font {
     static let dqLogoFont = Font.custom(AppFontName.logofont, size: Font.TextStyle.title.size
                                         , relativeTo: .largeTitle)
-    
+    static let dqBigLogoFont = Font.custom(AppFontName.logofont, size: 150
+                                        , relativeTo: .largeTitle)
     static let dqVeryBigFont = Font.custom(AppFontName.mainfont, size: Font.TextStyle.largeTitle.size
                                            , relativeTo: .caption)
     static let dqBigBigFont = Font.custom(AppFontName.mainfont, size: Font.TextStyle.title.size
@@ -37,6 +38,7 @@ extension Font {
 }
 
 extension Font.TextStyle {
+    
     var size: CGFloat {
         switch self {
         case .largeTitle: return 60

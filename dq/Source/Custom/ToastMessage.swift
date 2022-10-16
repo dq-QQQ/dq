@@ -13,21 +13,18 @@ struct ToastMessage: View {
     var body: some View {
         HStack {
             if flag == true {
-                Image(systemName: "plus.circle")
-                    .padding(.trailing, 5)
                 Text(LocalizedStringKey("관심목록에 추가되었어요!"))
                     .font(.headline)
             } else {
-                Image(systemName: "minus.circle")
-                    .padding(.trailing, 5)
                 Text(LocalizedStringKey("관심목록에서 삭제되었어요!"))
                     .font(.headline)
             }
-            
-            Spacer()
+            LottieView(filename: "Check", speed: 2)
+                .frame(width: 40, height: 40)
+                .padding(.trailing, 5)
         }
+        .padding(.horizontal, 10)
         .foregroundColor(.dqGreen)
-        .padding(10)
     }
 }
 
@@ -48,7 +45,7 @@ struct ToastView: View {
         .opacity(self.showToast ? 0.9 : 0)
         .transition(.move(edge: .top))
         .onAppear {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                 withAnimation {
                     self.showToast = false
                 }

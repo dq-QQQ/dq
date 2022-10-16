@@ -37,8 +37,15 @@
 		A15D574A28F4629F00114915 /* ToastMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15D574928F4629F00114915 /* ToastMessage.swift */; };
 		A15D574C28F467D700114915 /* ToastViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15D574B28F467D700114915 /* ToastViewModel.swift */; };
 		A15D577128F5571E00114915 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15D577028F5571E00114915 /* OnboardingView.swift */; };
-		A15D577328F5575100114915 /* FirstPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15D577228F5575100114915 /* FirstPageView.swift */; };
+		A15D577328F5575100114915 /* SecondPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15D577228F5575100114915 /* SecondPageView.swift */; };
 		A15D577528F5577300114915 /* LastPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15D577428F5577300114915 /* LastPageView.swift */; };
+		A15D579428FBD17D00114915 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = A15D579328FBD17D00114915 /* Lottie */; };
+		A15D579628FBD1A800114915 /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15D579528FBD1A800114915 /* LottieView.swift */; };
+		A15D579828FBD25300114915 /* Check.json in Resources */ = {isa = PBXBuildFile; fileRef = A15D579728FBD25300114915 /* Check.json */; };
+		A15D57A128FBE04B00114915 /* Macbook.json in Resources */ = {isa = PBXBuildFile; fileRef = A15D579C28FBE04B00114915 /* Macbook.json */; };
+		A15D57A628FBE15800114915 /* SwiftLogo.json in Resources */ = {isa = PBXBuildFile; fileRef = A15D57A528FBE15800114915 /* SwiftLogo.json */; };
+		A15D57A828FBE1F700114915 /* FirstPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15D57A728FBE1F700114915 /* FirstPageView.swift */; };
+		A15D57AA28FBE93600114915 /* Hello.json in Resources */ = {isa = PBXBuildFile; fileRef = A15D57A928FBE93600114915 /* Hello.json */; };
 		A160D17228D8C00A004B1A0B /* AdminView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A160D17128D8C00A004B1A0B /* AdminView.swift */; };
 		A160D17E28D8C4CC004B1A0B /* RealtimeFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A160D17D28D8C4CC004B1A0B /* RealtimeFirebase.swift */; };
 		A17E7DD828B3CEAE00147D71 /* ClubModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17E7DD728B3CEAE00147D71 /* ClubModel.swift */; };
@@ -136,8 +143,14 @@
 		A15D574928F4629F00114915 /* ToastMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastMessage.swift; sourceTree = "<group>"; };
 		A15D574B28F467D700114915 /* ToastViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastViewModel.swift; sourceTree = "<group>"; };
 		A15D577028F5571E00114915 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
-		A15D577228F5575100114915 /* FirstPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstPageView.swift; sourceTree = "<group>"; };
+		A15D577228F5575100114915 /* SecondPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondPageView.swift; sourceTree = "<group>"; };
 		A15D577428F5577300114915 /* LastPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastPageView.swift; sourceTree = "<group>"; };
+		A15D579528FBD1A800114915 /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
+		A15D579728FBD25300114915 /* Check.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = Check.json; path = ../../../../Downloads/Check.json; sourceTree = "<group>"; };
+		A15D579C28FBE04B00114915 /* Macbook.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = Macbook.json; path = ../../../../Downloads/Archive/Macbook.json; sourceTree = "<group>"; };
+		A15D57A528FBE15800114915 /* SwiftLogo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = SwiftLogo.json; path = ../../../../Downloads/Archive/SwiftLogo.json; sourceTree = "<group>"; };
+		A15D57A728FBE1F700114915 /* FirstPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstPageView.swift; sourceTree = "<group>"; };
+		A15D57A928FBE93600114915 /* Hello.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = Hello.json; path = ../../../../Downloads/Hello.json; sourceTree = "<group>"; };
 		A160D17128D8C00A004B1A0B /* AdminView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminView.swift; sourceTree = "<group>"; };
 		A160D17D28D8C4CC004B1A0B /* RealtimeFirebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealtimeFirebase.swift; sourceTree = "<group>"; };
 		A17E7DD728B3CEAE00147D71 /* ClubModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ClubModel.swift; path = dq/Source/Extension/ClubModel.swift; sourceTree = SOURCE_ROOT; };
@@ -188,6 +201,7 @@
 				A1DF43F328D36398000128E0 /* FirebaseStorage in Frameworks */,
 				A1A9C4E828AF2A5800A0FF94 /* FirebaseRemoteConfig in Frameworks */,
 				A1DF43EF28D36398000128E0 /* FirebaseRemoteConfig in Frameworks */,
+				A15D579428FBD17D00114915 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -318,6 +332,10 @@
 				A129891C28AA0B1C00282503 /* LaunchScreen.storyboard */,
 				A1BF879228AD1831003079B4 /* Pacific Northwest Letters W01.ttf */,
 				A129893228AA1EE200282503 /* Mabinogi_Classic_OTF.otf */,
+				A15D57A928FBE93600114915 /* Hello.json */,
+				A15D579728FBD25300114915 /* Check.json */,
+				A15D579C28FBE04B00114915 /* Macbook.json */,
+				A15D57A528FBE15800114915 /* SwiftLogo.json */,
 				A12988F428AA04EC00282503 /* Assets.xcassets */,
 			);
 			path = Resources;
@@ -398,6 +416,7 @@
 				A17F721728B0870A007C9FFE /* CustomType.swift */,
 				A11B9F4F28CB240E0005A906 /* MyAsyncImage.swift */,
 				A15D574928F4629F00114915 /* ToastMessage.swift */,
+				A15D579528FBD1A800114915 /* LottieView.swift */,
 			);
 			path = Custom;
 			sourceTree = "<group>";
@@ -406,7 +425,8 @@
 			isa = PBXGroup;
 			children = (
 				A15D577028F5571E00114915 /* OnboardingView.swift */,
-				A15D577228F5575100114915 /* FirstPageView.swift */,
+				A15D57A728FBE1F700114915 /* FirstPageView.swift */,
+				A15D577228F5575100114915 /* SecondPageView.swift */,
 				A15D577428F5577300114915 /* LastPageView.swift */,
 			);
 			path = OnboardingView;
@@ -502,6 +522,7 @@
 				A1DF43F028D36398000128E0 /* FirebaseRemoteConfigSwift */,
 				A1DF43F228D36398000128E0 /* FirebaseStorage */,
 				A1DF43F428D36398000128E0 /* FirebaseStorageCombine-Community */,
+				A15D579328FBD17D00114915 /* Lottie */,
 			);
 			productName = dq;
 			productReference = A12988ED28AA04EB00282503 /* dq.app */;
@@ -579,6 +600,7 @@
 				A1BF879A28ADD276003079B4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				A1A9C49928AF20FA00A0FF94 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				A1DF43E128D36398000128E0 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				A15D579228FBD17D00114915 /* XCRemoteSwiftPackageReference "lottie-ios" */,
 			);
 			productRefGroup = A12988EE28AA04EB00282503 /* Products */;
 			projectDirPath = "";
@@ -596,12 +618,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A15D57AA28FBE93600114915 /* Hello.json in Resources */,
+				A15D57A128FBE04B00114915 /* Macbook.json in Resources */,
 				A129891D28AA0B1C00282503 /* LaunchScreen.storyboard in Resources */,
 				A12988F828AA04EC00282503 /* Preview Assets.xcassets in Resources */,
 				A129893328AA1EE200282503 /* Mabinogi_Classic_OTF.otf in Resources */,
 				A1BF879328AD1831003079B4 /* Pacific Northwest Letters W01.ttf in Resources */,
 				A12988F528AA04EC00282503 /* Assets.xcassets in Resources */,
+				A15D579828FBD25300114915 /* Check.json in Resources */,
 				A1BF87B028ADD7B3003079B4 /* GoogleService-Info.plist in Resources */,
+				A15D57A628FBE15800114915 /* SwiftLogo.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -628,6 +654,7 @@
 			files = (
 				A1BF878F28AD1703003079B4 /* ClubModalView.swift in Sources */,
 				A17F721E28B0A9C8007C9FFE /* FirebaseBootcamp.swift in Sources */,
+				A15D579628FBD1A800114915 /* LottieView.swift in Sources */,
 				A197604C28D61DEA001F3198 /* UserNotificationModel.swift in Sources */,
 				A17E7DD828B3CEAE00147D71 /* ClubModel.swift in Sources */,
 				A1DF43FE28D36A33000128E0 /* InterestedList.xcdatamodeld in Sources */,
@@ -635,6 +662,7 @@
 				A17F721C28B0A300007C9FFE /* FirebaseLogic.swift in Sources */,
 				A15D577128F5571E00114915 /* OnboardingView.swift in Sources */,
 				A1DF43FB28D36733000128E0 /* CoreDataStack.swift in Sources */,
+				A15D57A828FBE1F700114915 /* FirstPageView.swift in Sources */,
 				A11B9F3228BD0B230005A906 /* Interest.swift in Sources */,
 				A197604A28D61D34001F3198 /* ViewHandler.swift in Sources */,
 				A11B9F3028BD09680005A906 /* ShortInfo.swift in Sources */,
@@ -655,7 +683,7 @@
 				A129893828AA229100282503 /* FontExtension.swift in Sources */,
 				A129892A28AA19A100282503 /* ClubView.swift in Sources */,
 				A11B9F2C28BD05960005A906 /* FieldsList.swift in Sources */,
-				A15D577328F5575100114915 /* FirstPageView.swift in Sources */,
+				A15D577328F5575100114915 /* SecondPageView.swift in Sources */,
 				A17F721828B0870A007C9FFE /* CustomType.swift in Sources */,
 				A129892828AA199300282503 /* BootcampView.swift in Sources */,
 				A12988F328AA04EB00282503 /* MainView.swift in Sources */,
@@ -1005,6 +1033,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		A15D579228FBD17D00114915 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
 		A1A9C49928AF20FA00A0FF94 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -1032,6 +1068,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		A15D579328FBD17D00114915 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A15D579228FBD17D00114915 /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
 		A1A9C49328AF1DF900A0FF94 /* FirebaseFirestore */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = A1BF879A28ADD276003079B4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
