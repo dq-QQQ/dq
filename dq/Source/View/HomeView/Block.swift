@@ -10,21 +10,18 @@ import SwiftUI
 struct Block: View {
     var title: String
     var flag: Int
-    var fbBootcamp: FirebaseBootcamp?
+    var fbBootcamp: FirebaseBootcamp
     @EnvironmentObject private var viewModel: ViewModel
     
     var body: some View {
         titleOfBlock(title)
-        if flag == 2 {
-            FieldsDescriptionView()
-                .modifier(PaddingFromSideOnHomeView())
-        } else {
+        
             ZStack {
                 blockRectangle
-                ListInBlock(flag: flag, fbBootcamp: fbBootcamp!)
+                ListInBlock(flag: flag, fbBootcamp: fbBootcamp)
             }
             .modifier(PaddingFromSideOnHomeView())
-        }
+        
     }
 }
 

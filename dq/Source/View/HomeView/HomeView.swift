@@ -25,7 +25,6 @@ struct HomeView: View {
             
             spacer
             
-            Block(title: "분야별 설명이 필요해요!", flag: 2)
             Button {
                 isFirstLaunching = true
             } label: {
