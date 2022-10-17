@@ -15,6 +15,12 @@ struct ListInBlock: View {
     @FetchRequest( sortDescriptors: [] ) var list: FetchedResults<InterestedList>
     
     var body: some View {
+        if bootcampList.count == 0 && flag == 0 {
+            Text("관심목록을 추가해보세요!")
+                .foregroundColor(.dqGreen)
+                .font(.dqBigSmallFont)
+                .frame(width: viewModel.getPhoneSize().width - 50, alignment: .center)
+        }
         ScrollView(.horizontal)  {
             if #available(iOS 15.0, *) {
                 content
