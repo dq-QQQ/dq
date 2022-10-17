@@ -9,13 +9,19 @@ import SwiftUI
 
 struct TabViews: View {
     @EnvironmentObject var viewModel: ViewModel
+    
     @FetchRequest( sortDescriptors: [] ) var list: FetchedResults<InterestedList>
     @Environment(\.managedObjectContext) var moc
-    @State var bootcampList: [BootcampModel] = []
+    
     @EnvironmentObject var userNotificationViewModel: UserNotificationViewModel
+    
     @ObservedObject var mainViewHandler: MainViewHandler
+    
     @Binding var isFirstLaunching: Bool
+    
     var fbBootcamp = FirebaseBootcamp("BootCamp")
+    @State var bootcampList: [BootcampModel] = []
+    
     var fbClub = FirebaseClub("Club")
     
     
@@ -41,6 +47,7 @@ extension TabViews {
         .accentColor(.dqGreen) // soon deprecated. change to tint.
         .edgesIgnoringSafeArea(.top)
     }
+    
     func setChangeValue() async {
         bootcampList = await fbBootcamp.fetchFireStore()
         for i in 0..<list.count {

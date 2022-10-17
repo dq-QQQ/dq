@@ -17,18 +17,17 @@ class FirebaseLogic<T: Identifiable & Codable> {
         dbCollection = Firestore.firestore().collection(collectionName)
     }
 
-    func updateFireStore(data: T)  {
+    func updateFireStore(data: T, date: Date)  {
         dbCollection.whereField("id", isEqualTo: data.id).getDocuments { snap, err in
             if err != nil {
                 print("Error")
                 return
             }
-            
+
             for i in snap!.documents {
-                var isInterested = i.get("isInterested") as! Bool
-                isInterested.toggle()
+                let dueDate = Timestamp(date: date)
                 DispatchQueue.main.async {
-                    i.reference.updateData(["isInterested":isInterested])
+                    i.reference.updateData(["applyDeadline": dueDate])
                 }
             }
         }

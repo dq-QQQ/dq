@@ -46,6 +46,9 @@
 		A15D57A628FBE15800114915 /* SwiftLogo.json in Resources */ = {isa = PBXBuildFile; fileRef = A15D57A528FBE15800114915 /* SwiftLogo.json */; };
 		A15D57A828FBE1F700114915 /* FirstPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15D57A728FBE1F700114915 /* FirstPageView.swift */; };
 		A15D57AA28FBE93600114915 /* Hello.json in Resources */ = {isa = PBXBuildFile; fileRef = A15D57A928FBE93600114915 /* Hello.json */; };
+		A15D57B028FC3EC800114915 /* AdminBootcampView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15D57AF28FC3EC800114915 /* AdminBootcampView.swift */; };
+		A15D57B228FC3EDA00114915 /* AdminClubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15D57B128FC3EDA00114915 /* AdminClubView.swift */; };
+		A15D57B428FC53BC00114915 /* CollapsibleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15D57B328FC53BC00114915 /* CollapsibleView.swift */; };
 		A160D17228D8C00A004B1A0B /* AdminView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A160D17128D8C00A004B1A0B /* AdminView.swift */; };
 		A160D17E28D8C4CC004B1A0B /* RealtimeFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A160D17D28D8C4CC004B1A0B /* RealtimeFirebase.swift */; };
 		A17E7DD828B3CEAE00147D71 /* ClubModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17E7DD728B3CEAE00147D71 /* ClubModel.swift */; };
@@ -151,6 +154,9 @@
 		A15D57A528FBE15800114915 /* SwiftLogo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = SwiftLogo.json; path = ../../../../Downloads/Archive/SwiftLogo.json; sourceTree = "<group>"; };
 		A15D57A728FBE1F700114915 /* FirstPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstPageView.swift; sourceTree = "<group>"; };
 		A15D57A928FBE93600114915 /* Hello.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = Hello.json; path = ../../../../Downloads/Hello.json; sourceTree = "<group>"; };
+		A15D57AF28FC3EC800114915 /* AdminBootcampView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminBootcampView.swift; sourceTree = "<group>"; };
+		A15D57B128FC3EDA00114915 /* AdminClubView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminClubView.swift; sourceTree = "<group>"; };
+		A15D57B328FC53BC00114915 /* CollapsibleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollapsibleView.swift; sourceTree = "<group>"; };
 		A160D17128D8C00A004B1A0B /* AdminView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminView.swift; sourceTree = "<group>"; };
 		A160D17D28D8C4CC004B1A0B /* RealtimeFirebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealtimeFirebase.swift; sourceTree = "<group>"; };
 		A17E7DD728B3CEAE00147D71 /* ClubModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ClubModel.swift; path = dq/Source/Extension/ClubModel.swift; sourceTree = SOURCE_ROOT; };
@@ -447,6 +453,9 @@
 			isa = PBXGroup;
 			children = (
 				A160D17128D8C00A004B1A0B /* AdminView.swift */,
+				A15D57AF28FC3EC800114915 /* AdminBootcampView.swift */,
+				A15D57B128FC3EDA00114915 /* AdminClubView.swift */,
+				A15D57B328FC53BC00114915 /* CollapsibleView.swift */,
 			);
 			path = AdminView;
 			sourceTree = "<group>";
@@ -677,6 +686,7 @@
 				A15D574A28F4629F00114915 /* ToastMessage.swift in Sources */,
 				A1BF879528AD1FF0003079B4 /* ViewModel.swift in Sources */,
 				A1864EC128E3076E00681264 /* FieldsDescriptionView.swift in Sources */,
+				A15D57B028FC3EC800114915 /* AdminBootcampView.swift in Sources */,
 				A15D577528F5577300114915 /* LastPageView.swift in Sources */,
 				A15D574C28F467D700114915 /* ToastViewModel.swift in Sources */,
 				A129892C28AA19C200282503 /* MethodExtenstion.swift in Sources */,
@@ -685,12 +695,14 @@
 				A11B9F2C28BD05960005A906 /* FieldsList.swift in Sources */,
 				A15D577328F5575100114915 /* SecondPageView.swift in Sources */,
 				A17F721828B0870A007C9FFE /* CustomType.swift in Sources */,
+				A15D57B228FC3EDA00114915 /* AdminClubView.swift in Sources */,
 				A129892828AA199300282503 /* BootcampView.swift in Sources */,
 				A12988F328AA04EB00282503 /* MainView.swift in Sources */,
 				A160D17228D8C00A004B1A0B /* AdminView.swift in Sources */,
 				A11B9F5028CB240E0005A906 /* MyAsyncImage.swift in Sources */,
 				A1BF87B228ADDAB6003079B4 /* BootcampModel.swift in Sources */,
 				A11B9F1628BCF8740005A906 /* Block.swift in Sources */,
+				A15D57B428FC53BC00114915 /* CollapsibleView.swift in Sources */,
 				A1BF879928AD4108003079B4 /* CustomModifier.swift in Sources */,
 				A1BF878D28AD16F7003079B4 /* BootcampModalView.swift in Sources */,
 				A11B9F0D28BCE83E0005A906 /* TitleBar.swift in Sources */,
