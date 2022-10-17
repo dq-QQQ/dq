@@ -33,6 +33,21 @@ class FirebaseLogic<T: Identifiable & Codable> {
         }
     }
     
+    func deleteFireStore(data: T)  {
+        dbCollection.whereField("id", isEqualTo: data.id).getDocuments { snap, err in
+            if err != nil {
+                print("Error")
+                return
+            }
+
+            for i in snap!.documents {
+                DispatchQueue.main.async {
+                    i.reference.delete()
+                }
+            }
+        }
+    }
+    
     func fetchFireStore() async -> [T] {
         guard let snapshot = try? await dbCollection.getDocuments() else {
             return []

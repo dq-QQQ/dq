@@ -20,8 +20,7 @@ struct OnboardingView: View {
                 isFirstLaunching: $isFirstLaunching
             )
         }
-        .background(Color.dqGreen
-        )
+        .background(Color.dqGreen)
         .tabViewStyle(.page(indexDisplayMode: .never))
     }
 }

@@ -17,9 +17,11 @@ struct CollapsibleView<Content: View>: View {
     @Binding var bootcampList: [BootcampModel]
     var fbBootcamp: FirebaseBootcamp
     
-    @Binding var date: Date
+    @State var date = Date()
     
     var flag: (tabFlag: Int, ListFlag: Int)
+    
+    @Binding var values: (info: [String: String], date: Date)
     
     var body: some View {
         VStack {
@@ -36,22 +38,27 @@ struct CollapsibleView<Content: View>: View {
                     }
                 )
                 .buttonStyle(PlainButtonStyle())
+                Spacer()
                 if flag.ListFlag == 0 {
                     DatePicker("", selection: $date, displayedComponents: [.date, .hourAndMinute])
                 }
                 Image(systemName: self.collapsed ? "chevron.down" : "chevron.up")
             }
             
-            VStack(alignment: .leading) {
-                if flag.ListFlag == 0 {
+            VStack {
+                if flag.ListFlag == 0 || flag.ListFlag == 2{
                     ForEach(bootcampList) { bootcamp in
                         HStack {
                             Text(bootcamp.name)
                             Spacer()
                             Button {
-                                fbBootcamp.updateFireStore(data: bootcamp, date: date)
+                                if flag.ListFlag == 0 {
+                                    fbBootcamp.updateFireStore(data: bootcamp, date: date)
+                                } else if flag.ListFlag == 2 {
+                                    fbBootcamp.deleteFireStore(data: bootcamp)
+                                }
                             } label: {
-                                Image(systemName: "arrow.up.doc")
+                                Image(systemName: "checkmark.circle.fill")
                                     .resizable()
                                     .frame(width: 30, height: 30)
                             }
@@ -61,6 +68,16 @@ struct CollapsibleView<Content: View>: View {
                     }
                 } else if flag.ListFlag == 1 {
                     self.content()
+                    Button {
+                        Task { await fbBootcamp.newBootcamp(values: values) }
+                    } label: {
+                        Text("Push")
+                            .font(.dqBigFont)
+                            .foregroundColor(.dqWhite)
+                            .background(Color.dqGreen)
+                            .cornerRadius(6)
+                    }
+
                 }
             }
             .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: collapsed ? 0 : .none)

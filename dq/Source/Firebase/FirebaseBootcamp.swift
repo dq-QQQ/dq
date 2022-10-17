@@ -10,9 +10,22 @@ import Firebase
 import FirebaseFirestoreSwift
 
 class FirebaseBootcamp: FirebaseLogic<BootcampModel> {
-    func newBootcamp() async {
-        let tmp = BootcampModel(id: UUID().uuidString, name: "tmp", process: ["cs"], applyDeadline: Timestamp(), homepage: "q", period: "q", place: ["1234","1234"], fee: "1234", organizer: "1234")
+    func newBootcamp(values: (info: [String: String], date: Date)) async {
+        let tmp = BootcampModel(id: UUID().uuidString,
+                                name: values.info["name"] ?? "",
+                                process: parseString(str: values.info["process"] ?? ""),
+                                applyDeadline: Timestamp(date: values.date),
+                                homepage: values.info["homepage"] ?? "",
+                                period: values.info["period"] ?? "",
+                                place: parseString(str: values.info["place"] ?? ""),
+                                fee: values.info["fee"] ?? "",
+                                organizer: values.info["organizer"] ?? "")
+        
         _ = try? dbCollection.addDocument(from: tmp)
+    }
+    
+    func parseString(str: String) -> [String] {
+        str.components(separatedBy: "/")
     }
 }
 
