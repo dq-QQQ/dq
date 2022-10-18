@@ -15,9 +15,11 @@ struct BootcampModel : Identifiable, Codable {
     var name: String
     let process: [String]
     var applyDeadline: Timestamp
-    var homepage: String
-    var period : String
-    var place: [String]
-    var fee: String
-    var organizer: String
+    let homepage: String
+    let period : String
+    let place: [String]
+    let fee: String
+    let organizer: String
+    let curriculum: String
+    let selection: String
 }

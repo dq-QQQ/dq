@@ -81,11 +81,12 @@ enum BootcampInformations: String, CaseIterable {
     case name = "이름"
     case process = "과정"
     case time = "지원 마감일"
-    case homepage = "홈페이지"
     case fee = "비용"
     case place = "장소"
     case period = "기간"
     case organizer = "주관"
+    case curriculum = "커리큘럼"
+    case selection = "선발절차"
 }
 
 

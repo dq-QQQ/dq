@@ -17,6 +17,10 @@ extension Font {
                                         , relativeTo: .largeTitle)
     static let dqBigLogoFont = Font.custom(AppFontName.logofont, size: 150
                                         , relativeTo: .largeTitle)
+    static let dqMediumLogoFont = Font.custom(AppFontName.logofont, size: Font.TextStyle.title2.size
+                                        , relativeTo: .largeTitle)
+    static let dqSmallLogoFont = Font.custom(AppFontName.logofont, size: Font.TextStyle.title3.size
+                                        , relativeTo: .largeTitle)
     static let dqVeryBigFont = Font.custom(AppFontName.mainfont, size: Font.TextStyle.largeTitle.size
                                            , relativeTo: .caption)
     static let dqBigBigFont = Font.custom(AppFontName.mainfont, size: Font.TextStyle.title.size

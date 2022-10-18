@@ -19,7 +19,9 @@ class FirebaseBootcamp: FirebaseLogic<BootcampModel> {
                                 period: values.info["period"] ?? "",
                                 place: parseString(str: values.info["place"] ?? ""),
                                 fee: values.info["fee"] ?? "",
-                                organizer: values.info["organizer"] ?? "")
+                                organizer: values.info["organizer"] ?? "",
+                                curriculum: values.info["curriculum"] ?? "",
+                                selection: values.info["selection"] ?? "")
         
         _ = try? dbCollection.addDocument(from: tmp)
     }

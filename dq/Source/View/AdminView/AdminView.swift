@@ -6,12 +6,14 @@
 //
 
 import SwiftUI
+import SystemConfiguration
 
 struct AdminView: View {
     var mainViewHandler: MainViewHandler
     @State private var tab = Tabs.bootcamp
     
     var body: some View {
+        
         VStack {
             Button {
                 mainViewHandler.currentPage = SwitchView.main.rawValue

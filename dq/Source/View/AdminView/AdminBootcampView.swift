@@ -60,6 +60,7 @@ extension AdminBootcampView {
     
     var addElements: some View {
         Group {
+            Group {
             GetSingleString(info: "logoURL", values: $values.info)
             GetSingleString(info: "name", values: $values.info)
             GetSingleString(info: "homepage", values: $values.info)
@@ -68,8 +69,11 @@ extension AdminBootcampView {
             GetSingleString(info: "organizer", values: $values.info)
             GetSingleString(info: "process", values: $values.info)
             GetSingleString(info: "place", values: $values.info)
-            
-            DatePicker("duedate", selection: $values.date, displayedComponents: [.date, .hourAndMinute])
+            GetSingleString(info: "curriculum", values: $values.info)
+            GetSingleString(info: "selection", values: $values.info)
+            }
+            DatePicker("duedate", selection: $values.date,
+                       displayedComponents: [.date, .hourAndMinute])
             
         }
         .padding()
