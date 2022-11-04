@@ -41,7 +41,7 @@ extension TabViews {
         TabView(selection: $viewModel.currentTab) {
             home
             bootcamp
-            club
+//            club
 //            description
         }
         .accentColor(.dqGreen) // soon deprecated. change to tint.

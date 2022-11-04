@@ -65,6 +65,7 @@ extension Interest {
                                                id: bootcamp.id,
                                                flag: 0)
             coredataStack.save()
+            print(list[0])
             userNotificationViewModel
                 .addNotification(id: bootcamp.id,
                                  name: bootcamp.name,

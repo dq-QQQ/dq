@@ -26,6 +26,7 @@ class FirebaseLogic<T: Identifiable & Codable> {
 
             for i in snap!.documents {
                 let dueDate = Timestamp(date: date)
+                print("\n\n\n\(dueDate)\n\n\n")
                 DispatchQueue.main.async {
                     i.reference.updateData(["applyDeadline": dueDate])
                 }

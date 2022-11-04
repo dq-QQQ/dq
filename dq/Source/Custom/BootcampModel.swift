@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import Firebase
+import FirebaseFirestore
 import SwiftUI
 
 struct BootcampModel : Identifiable, Codable {
