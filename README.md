@@ -1,18 +1,17 @@
-# dq
-
-졸업작품
-
-8/15 ~ 
+<div align="center">
+  <img src="https://user-images.githubusercontent.com/79088896/204134698-93a3cc7a-7451-4305-a6e1-dd9d6e977e96.png" alt="App Icon" height="120" width="120"/>
 
 
-8/30 ~ 9/4 토익 시험(졸업요건)
+## 🤝 Introduction
+  
 
-9/4 ~ 9/5 학교 대면 수업
 
-9/10 ~ 9/13 42서울 과제(Inception : Docker-compose를 이용하여 MariaDB, NginX, WordPress를 서버에 올리고 나만의 블로그 만들기)
+</div>
 
-9/13 ~ 9/14 학교 대면 수업
 
-9/15 코드 다시 보기, CoreData 복습
-
-9/28 ~ 10/8 맥북 고장, 수리기간
+## 🧩 Functions
+```
+1. 개발자 부트캠프와 동아리들을 소개해줘요!
+2. 로그인 기능 없이 관심목록을 저장할 수 있어요!
+3. 관심목록들의 지원날짜가 다가온다면 푸시알림을 통해 리마인드 해줘요!
+```
