@@ -7,9 +7,13 @@
 
 # 🤝 Introduction
 
-**개발자가 되고 싶은가요?**
+**개발자가 되고 싶은가요?** 
 
 **개발자 부트캠프와 동아리를 알아보고 일정관리까지 dq에서 한번에!**
+
+**Do you want to be a developer?**
+
+**Find out about developer bootcamps and clubs, and Manage bootcamp schedule at once in dq!**
 
 <br>
 
@@ -20,13 +24,33 @@
 <br>
 
 
-
-</div>
-
-
 ## 🧩 Functions
 ```
 1. 개발자 부트캠프와 동아리들을 소개해줘요!
 2. 로그인 기능 없이 관심목록을 저장할 수 있어요!
 3. 관심목록들의 지원날짜가 다가온다면 푸시알림을 통해 리마인드 해줘요!
+
+1. Introducing developer bootcamps and clubs!
+2. You can store some interesting things without Sign in/up!
+3. If the deadline of the interesting list is approaching, dq will remind through push notifications!
+```
+
+<br>
+  <img src="https://user-images.githubusercontent.com/79088896/205839822-c34630f9-a8b6-4fc1-9462-5cf86aed110a.png"/>　　　
+<br>
+
+</div>
+
+
+## ⚙️ Stacks
+
+```
+* SwiftUI
+* Swift
+* Coredata
+* Combine
+* UserNotification
+* Firebase
+* Github
+* Figma
 ```
