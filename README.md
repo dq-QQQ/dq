@@ -39,7 +39,7 @@
   <img src="https://user-images.githubusercontent.com/79088896/205839822-c34630f9-a8b6-4fc1-9462-5cf86aed110a.png"/>　　　
 <br>
 
-</div>
+
 
 
 ## ⚙️ Stacks
@@ -54,3 +54,5 @@
 * Github
 * Figma
 ```
+
+  </div>
