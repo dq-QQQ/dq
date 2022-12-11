@@ -60,3 +60,5 @@
 ---
 
 자세한 내용은 wiki에서 확인하세요!
+
+[Figma](https://www.figma.com/file/RA8twsNyJ1n57DMTnEMdMy/dq?node-id=0%3A1&t=ZujQtRrBsvBkgO7U-0)
